@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5qT-8i-nO5">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Deal Controller-->
+        <scene sceneID="Sq4-2h-vO4">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oKD-dB-0Mg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="7ql-q5-dpo" customClass="DPDealController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dcR-vs-qYD"/>
+                        <viewControllerLayoutGuide type="bottom" id="yX8-ig-Mrf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zkM-f2-Ghh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WLP-di-N8q">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="7ql-q5-dpo" id="I9W-WJ-YVy"/>
+                                    <outlet property="delegate" destination="7ql-q5-dpo" id="kxA-5h-VIj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="WLP-di-N8q" secondAttribute="bottom" id="15j-0f-xfb"/>
+                            <constraint firstAttribute="trailing" secondItem="WLP-di-N8q" secondAttribute="trailing" id="Zk1-ZZ-xu4"/>
+                            <constraint firstItem="WLP-di-N8q" firstAttribute="top" secondItem="dcR-vs-qYD" secondAttribute="top" id="cX7-5I-Kka"/>
+                            <constraint firstItem="WLP-di-N8q" firstAttribute="leading" secondItem="zkM-f2-Ghh" secondAttribute="leading" id="sEq-5Z-YLw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wiJ-z7-j6a"/>
+                    <connections>
+                        <outlet property="tableview" destination="WLP-di-N8q" id="tcf-qT-enW"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="584" y="-231"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="k2b-0C-4xA">
+            <objects>
+                <viewController id="qPe-4B-DbD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ehi-uK-Yys"/>
+                        <viewControllerLayoutGuide type="bottom" id="ABc-4D-3ct"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W64-f4-e8f">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DML-et-FdZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ye-Ov-W5k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="625" y="310"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CRT-58-GQl">
+            <objects>
+                <viewController id="nhu-vb-wSf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lnn-6x-dgQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="1C3-Xf-Npx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m8P-oJ-f1e">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jGB-kj-F6s"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="88m-KL-ABT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="625" y="910"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="c7j-Kf-9TA">
+            <objects>
+                <viewController id="RFj-Nn-HND" customClass="DPHomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="59Y-CQ-wZu"/>
+                        <viewControllerLayoutGuide type="bottom" id="tTz-V1-2Lb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Z1-Y3-SpX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="HdX-Ki-Sip">
+                                <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tTz-V1-2Lb" firstAttribute="top" secondItem="HdX-Ki-Sip" secondAttribute="bottom" id="Zv1-b1-Eja"/>
+                            <constraint firstItem="HdX-Ki-Sip" firstAttribute="leading" secondItem="6Z1-Y3-SpX" secondAttribute="leading" id="izO-I1-NVY"/>
+                            <constraint firstItem="HdX-Ki-Sip" firstAttribute="top" secondItem="59Y-CQ-wZu" secondAttribute="bottom" id="k10-2k-Jmi"/>
+                            <constraint firstAttribute="trailing" secondItem="HdX-Ki-Sip" secondAttribute="trailing" id="m0s-hN-JuL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="46G-mH-cdi">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="广州" id="lI6-Y3-wZt">
+                            <connections>
+                                <action selector="ChooseCityClicked:" destination="RFj-Nn-HND" id="TKg-Sg-8YV"/>
+                            </connections>
+                        </barButtonItem>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="8C68149C-6C47-4231-A10F-90C9F0D65900" id="lFX-H7-adU">
+                            <rect key="frame" x="48" y="7" width="217" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <barButtonItem key="rightBarButtonItem" image="home_navibar_icon_letter" id="Fgf-RA-iJZ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableview" destination="HdX-Ki-Sip" id="dEN-xP-FPZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8bT-so-Dbz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="615" y="-801"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="QNy-iM-an0">
+            <objects>
+                <tabBarController id="5qT-8i-nO5" customClass="YQTabBarController" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="XBs-Ip-5lP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="aXt-4c-mOq" kind="relationship" relationship="viewControllers" id="Ue0-79-ckg"/>
+                        <segue destination="XQb-t4-ogb" kind="relationship" relationship="viewControllers" id="Ymm-DC-4Pl"/>
+                        <segue destination="Zmf-tQ-poS" kind="relationship" relationship="viewControllers" id="esW-Kb-1Xe"/>
+                        <segue destination="jN0-tJ-6vl" kind="relationship" relationship="viewControllers" id="gf4-RG-8dL"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fop-21-w0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-232" y="310"/>
+        </scene>
+        <!--首页-->
+        <scene sceneID="zkc-mY-ydJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aXt-4c-mOq" customClass="YQNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="首页" image="home_footbar_icon_dianping" id="1YX-hM-hmn"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Ii-hR-Mq2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RFj-Nn-HND" kind="relationship" relationship="rootViewController" id="fEM-zJ-r4C"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aFV-sV-erD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="227" y="-801"/>
+        </scene>
+        <!--团购闪惠-->
+        <scene sceneID="K9E-O0-6QC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XQb-t4-ogb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="团购闪惠" image="home_footbar_icon_group" id="e8f-k9-HDm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zl4-2h-QoP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7ql-q5-dpo" kind="relationship" relationship="rootViewController" id="sgp-2f-7Bg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DTe-un-sgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="227" y="-231"/>
+        </scene>
+        <!--发现-->
+        <scene sceneID="drg-sU-gob">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zmf-tQ-poS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="发现" image="home_footbar_icon_found" id="jFq-SN-fQ7"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="biN-3x-l0H">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qPe-4B-DbD" kind="relationship" relationship="rootViewController" id="1NX-5S-QR2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wXw-Vm-s9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="213" y="322"/>
+        </scene>
+        <!--我的-->
+        <scene sceneID="w9E-V7-7kR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jN0-tJ-6vl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="我的" image="home_footbar_icon_my" id="r2o-Kh-4Vg"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gdx-O4-JLp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nhu-vb-wSf" kind="relationship" relationship="rootViewController" id="hrI-ZR-hUG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="33G-fu-VLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="227" y="918"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="8C68149C-6C47-4231-A10F-90C9F0D65900" width="28" height="30">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
+GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
+c1dOU0NvbG9ygAKADRIgwAAAgAOAC1h7MjgsIDMwfdIVChYYWk5TLm9iamVjdHOhF4AEgArSFQoaHaIb
+HIAFgAaACRAA0iAKISJfEBROU1RJRkZSZXByZXNlbnRhdGlvboAHgAhPERWOTU0AKgAADSgAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAgENNQsDRXUYCZWpJQ3YwSoP9sEqD/apJQ3YdRgJ
+lTULA0UKAgENAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAABIEARdfFAh6qSQO1M8sEf/WLRL/1y0R/9YuEv/WLhL/1y0R/9YtEv/PLBH/qSQO
+1F8UCHoSBAEXAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AEEOBVSvJQ7a2S4S/90vEv/cLhL/3S4S/90uEv/eLhL/3i4S/90uEv/dLhL/3C4S/90vEv/ZLhL/ryUO
+2kEOBVQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAEABWgWCYTPLBH73S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/QLBH7aBYJ
+hAMBAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgEAA3IYCZHaLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/9ouEv9xGAmQAgEA
+AwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF0UB3bZLhL/3i4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/eLhL/2S4S/10UB3YAAAAAAAAA
+AAAAAAAAAAAAAAAAADAKBD3MKxH13y4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/98uEv/NKxH1MAoEPQAAAAAAAAAAAAAA
+AAcBAQmfIg3E4S8S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/4S8S/58iDcQGAQEJAAAAAAAAAABCDgVS2i4S
+/94uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/94uEv/aLhL/Qg4FUgAAAAACAAACliAMt+IvEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/4y8S/5UgDLYBAAABHQYCJMorEfDgLxL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/+AvEv/JKxHvHQYCJE8QBmDfLxL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3y8S/08QBmGQIA2v3y8S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/98vEv+QIA2vvSkR490uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/vSkR
+4tUtEvzdLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/9UtEfzWLhL83S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/SLRH4wSsR498uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/fLhL/wCoR4ZcjELHgLxL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/4C8S/5cjELJWFgtm4i8S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/+IvEv9XFgtmIQkFKNEtEvLfLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/98uEv/QLRLxIQkFJwMBAgOhJBC75C8S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/kLxL/oCQP
+ugIBAQMAAAAATBQKWOIvEv/eLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/eLhL/4i8S/0wUClgAAAAAAAAA
+AAkEAwquJxHI5C8S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/5C8S/64nEcgJBAMKAAAAAAAAAAAAAAAAPBIK
+RdguEvbfLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3y4S/9kuEvY8EgpFAAAAAAAAAAAAAAAAAAAAAAABAQFuHA9/4y8S
+/94uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S
+/90uEv/dLhL/3i4S/+MvEv9uHA9/AAEBAQAAAAAAAAAAAAAAAAAAAAAAAAAABQQDBoYiEJnkLxL/3i4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3i4S
+/+QvEv+EIhCYBQQDBgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIBgUJeyAQjt4vEv3hLxL/3S4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/90uEv/dLhL/4S8S/94vEv17IBCOBwYF
+CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEDBARSGQ9dwywT3uUvEv/hLhL/3i4S
+/90uEv/dLhL/3S4S/90uEv/dLhL/3S4S/94uEv/hLhL/5S8S/8MsE95SGQ9dAQMEBAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABARwNCh9zIBGEvSsS2d4uEv/hLhL/3i4S
+/90uEv/dLhL/3i4S/+EuEv/eLhL/vSsS2XMgEYQcDQofAAABAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIDAxUMCxdNHBRWjSQSob8qEtzWLRH41i0R
++L8qEtyNJRKhTR0UVhUMCxcAAgMDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgEAAAMA
+AAABABwAAAEBAAMAAAABAB4AAAECAAMAAAAEAAAN1gEDAAMAAAABAAEAAAEGAAMAAAABAAIAAAERAAQA
+AAABAAAACAESAAMAAAABAAEAAAEVAAMAAAABAAQAAAEWAAMAAAABAB4AAAEXAAQAAAABAAANIAEcAAMA
+AAABAAEAAAFSAAMAAAABAAEAAAFTAAMAAAAEAAAN3odzAAcAAAeoAAAN5gAAAAAACAAIAAgACAABAAEA
+AQABAAAHqGFwcGwCIAAAbW50clJHQiBYWVogB9kAAgAZAAsAGgALYWNzcEFQUEwAAAAAYXBwbAAAAAAA
+AAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAALZGVzYwAAAQgAAABvZHNjbQAAAXgAAAVsY3BydAAABuQAAAA4d3RwdAAABxwA
+AAAUclhZWgAABzAAAAAUZ1hZWgAAB0QAAAAUYlhZWgAAB1gAAAAUclRSQwAAB2wAAAAOY2hhZAAAB3wA
+AAAsYlRSQwAAB2wAAAAOZ1RSQwAAB2wAAAAOZGVzYwAAAAAAAAAUR2VuZXJpYyBSR0IgUHJvZmlsZQAA
+AAAAAAAAAAAAFEdlbmVyaWMgUkdCIFByb2ZpbGUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAG1sdWMAAAAAAAAAHgAAAAxza1NLAAAAKAAAAXhockhSAAAAKAAAAaBj
+YUVTAAAAJAAAAchwdEJSAAAAJgAAAex1a1VBAAAAKgAAAhJmckZVAAAAKAAAAjx6aFRXAAAAFgAAAmRp
+dElUAAAAKAAAAnpuYk5PAAAAJgAAAqJrb0tSAAAAFgAAAshjc0NaAAAAIgAAAt5oZUlMAAAAHgAAAwBk
+ZURFAAAALAAAAx5odUhVAAAAKAAAA0pzdlNFAAAAJgAAAqJ6aENOAAAAFgAAA3JqYUpQAAAAGgAAA4hy
+b1JPAAAAJAAAA6JlbEdSAAAAIgAAA8ZwdFBPAAAAJgAAA+hubE5MAAAAKAAABA5lc0VTAAAAJgAAA+h0
+aFRIAAAAJAAABDZ0clRSAAAAIgAABFpmaUZJAAAAKAAABHxwbFBMAAAALAAABKRydVJVAAAAIgAABNBh
+ckVHAAAAJgAABPJlblVTAAAAJgAABRhkYURLAAAALgAABT4AVgFhAGUAbwBiAGUAYwBuAP0AIABSAEcA
+QgAgAHAAcgBvAGYAaQBsAEcAZQBuAGUAcgBpAQ0AawBpACAAUgBHAEIAIABwAHIAbwBmAGkAbABQAGUA
+cgBmAGkAbAAgAFIARwBCACAAZwBlAG4A6AByAGkAYwBQAGUAcgBmAGkAbAAgAFIARwBCACAARwBlAG4A
+6QByAGkAYwBvBBcEMAQzBDAEOwRMBD0EOAQ5ACAEPwRABD4ERAQwBDkEOwAgAFIARwBCAFAAcgBvAGYA
+aQBsACAAZwDpAG4A6QByAGkAcQB1AGUAIABSAFYAQpAadSgAIABSAEcAQgAggnJfaWPPj/AAUAByAG8A
+ZgBpAGwAbwAgAFIARwBCACAAZwBlAG4AZQByAGkAYwBvAEcAZQBuAGUAcgBpAHMAawAgAFIARwBCAC0A
+cAByAG8AZgBpAGzHfLwYACAAUgBHAEIAINUEuFzTDMd8AE8AYgBlAGMAbgD9ACAAUgBHAEIAIABwAHIA
+bwBmAGkAbAXkBegF1QXkBdkF3AAgAFIARwBCACAF2wXcBdwF2QBBAGwAbABnAGUAbQBlAGkAbgBlAHMA
+IABSAEcAQgAtAFAAcgBvAGYAaQBsAMEAbAB0AGEAbADhAG4AbwBzACAAUgBHAEIAIABwAHIAbwBmAGkA
+bGZukBoAIABSAEcAQgAgY8+P8GWHTvZOAIIsACAAUgBHAEIAIDDXMO0w1TChMKQw6wBQAHIAbwBmAGkA
+bAAgAFIARwBCACAAZwBlAG4AZQByAGkAYwOTA7UDvQO5A7oDzAAgA8ADwQO/A8YDrwO7ACAAUgBHAEIA
+UABlAHIAZgBpAGwAIABSAEcAQgAgAGcAZQBuAOkAcgBpAGMAbwBBAGwAZwBlAG0AZQBlAG4AIABSAEcA
+QgAtAHAAcgBvAGYAaQBlAGwOQg4bDiMORA4fDiUOTAAgAFIARwBCACAOFw4xDkgOJw5EDhsARwBlAG4A
+ZQBsACAAUgBHAEIAIABQAHIAbwBmAGkAbABpAFkAbABlAGkAbgBlAG4AIABSAEcAQgAtAHAAcgBvAGYA
+aQBpAGwAaQBVAG4AaQB3AGUAcgBzAGEAbABuAHkAIABwAHIAbwBmAGkAbAAgAFIARwBCBB4EMQRJBDgE
+OQAgBD8EQAQ+BEQEOAQ7BEwAIABSAEcAQgZFBkQGQQAgBioGOQYxBkoGQQAgAFIARwBCACAGJwZEBjkG
+JwZFAEcAZQBuAGUAcgBpAGMAIABSAEcAQgAgAFAAcgBvAGYAaQBsAGUARwBlAG4AZQByAGUAbAAgAFIA
+RwBCAC0AYgBlAHMAawByAGkAdgBlAGwAcwBldGV4dAAAAABDb3B5cmlnaHQgMjAwNyBBcHBsZSBJbmMu
+LCBhbGwgcmlnaHRzIHJlc2VydmVkLgBYWVogAAAAAAAA81IAAQAAAAEWz1hZWiAAAAAAAAB0TQAAPe4A
+AAPQWFlaIAAAAAAAAFp1AACscwAAFzRYWVogAAAAAAAAKBoAABWfAAC4NmN1cnYAAAAAAAAAAQHNAABz
+ZjMyAAAAAAABDEIAAAXe///zJgAAB5IAAP2R///7ov///aMAAAPcAADAbNIlJicoWiRjbGFzc25hbWVY
+JGNsYXNzZXNfEBBOU0JpdG1hcEltYWdlUmVwoykqK18QEE5TQml0bWFwSW1hZ2VSZXBaTlNJbWFnZVJl
+cFhOU09iamVjdNIlJi0uV05TQXJyYXmiLSvSJSYwMV5OU011dGFibGVBcnJheaMwLSvTMzQKNTY3V05T
+V2hpdGVcTlNDb2xvclNwYWNlRDAgMAAQA4AM0iUmOTpXTlNDb2xvcqI5K9IlJjw9V05TSW1hZ2WiPCtf
+EA9OU0tleWVkQXJjaGl2ZXLRQEFUcm9vdIABAAgAEQAaACMALQAyADcARgBMAFcAXgBlAHIAeQCBAIMA
+hQCKAIwAjgCXAJwApwCpAKsArQCyALUAtwC5ALsAvQDCANkA2wDdFm8WdBZ/FogWmxafFrIWvRbGFssW
+0xbWFtsW6hbuFvUW/RcKFw8XERcTFxgXIBcjFygXMBczF0UXSBdNAAAAAAAAAgEAAAAAAAAAQgAAAAAA
+AAAAAAAAAAAAF08
+</mutableData>
+        </image>
+        <image name="home_footbar_icon_dianping" width="24" height="24"/>
+        <image name="home_footbar_icon_found" width="24" height="24"/>
+        <image name="home_footbar_icon_group" width="24" height="24"/>
+        <image name="home_footbar_icon_my" width="24" height="24"/>
+        <image name="home_navibar_icon_letter" width="22" height="22"/>
+    </resources>
+</document>

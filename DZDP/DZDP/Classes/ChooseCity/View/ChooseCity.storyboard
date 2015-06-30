@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OHw-5V-Yzv">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="AcM-qG-Q4d">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OHw-5V-Yzv" customClass="YQNavigationController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fku-kz-1LT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="itE-fq-NlS" kind="relationship" relationship="rootViewController" id="zh4-3e-Uvl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QMf-9K-riR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="638.5" y="220.5"/>
+        </scene>
+        <!--Sort City Controller-->
+        <scene sceneID="eDU-y4-jZl">
+            <objects>
+                <viewController id="itE-fq-NlS" customClass="DPSortCityController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AXq-Kz-zBX"/>
+                        <viewControllerLayoutGuide type="bottom" id="bXU-i9-NO9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ogb-1G-bpQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="输入城市或拼音查询" translatesAutoresizingMaskIntoConstraints="NO" id="n2f-B0-ImJ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rox-Sa-wXY">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="city" id="nnq-Rd-9se">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nnq-Rd-9se" id="TYR-AV-6cw">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="itE-fq-NlS" id="H3T-7C-Kt5"/>
+                                    <outlet property="delegate" destination="itE-fq-NlS" id="MDB-gU-lmX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rox-Sa-wXY" firstAttribute="top" secondItem="n2f-B0-ImJ" secondAttribute="bottom" id="COe-lK-0bo"/>
+                            <constraint firstItem="bXU-i9-NO9" firstAttribute="top" secondItem="rox-Sa-wXY" secondAttribute="bottom" id="ZVH-eh-ZxQ"/>
+                            <constraint firstItem="n2f-B0-ImJ" firstAttribute="leading" secondItem="ogb-1G-bpQ" secondAttribute="leading" id="hp9-2d-9Cl"/>
+                            <constraint firstItem="rox-Sa-wXY" firstAttribute="leading" secondItem="ogb-1G-bpQ" secondAttribute="leading" id="k2S-pf-eKl"/>
+                            <constraint firstAttribute="trailing" secondItem="n2f-B0-ImJ" secondAttribute="trailing" id="kx6-fg-Ysf"/>
+                            <constraint firstAttribute="trailing" secondItem="rox-Sa-wXY" secondAttribute="trailing" id="n53-BL-PhN"/>
+                            <constraint firstItem="n2f-B0-ImJ" firstAttribute="top" secondItem="AXq-Kz-zBX" secondAttribute="bottom" id="qNN-0l-tsF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GqJ-zM-gqv">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="IVv-cw-h5L">
+                            <connections>
+                                <action selector="close:" destination="itE-fq-NlS" id="1oJ-b2-heF"/>
+                            </connections>
+                        </barButtonItem>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="rdy-u0-4PI">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="全部"/>
+                                <segment title="海外"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UCm-OO-d4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1058.5" y="209.5"/>
+        </scene>
+    </scenes>
+</document>
