@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		461B4F3E1B4302FB006223FE /* HMSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 461B4F391B4302FB006223FE /* HMSort.m */; };
 		461B4F411B43031D006223FE /* DPCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 461B4F401B43031D006223FE /* DPCity.m */; };
 		461B4F441B430354006223FE /* DPRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 461B4F431B430354006223FE /* DPRegion.m */; };
 		461B4F471B43038A006223FE /* DPCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 461B4F461B43038A006223FE /* DPCategory.m */; };
@@ -84,8 +83,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		461B4F381B4302FB006223FE /* HMSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSort.h; sourceTree = "<group>"; };
-		461B4F391B4302FB006223FE /* HMSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSort.m; sourceTree = "<group>"; };
 		461B4F3F1B43031D006223FE /* DPCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPCity.h; sourceTree = "<group>"; };
 		461B4F401B43031D006223FE /* DPCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPCity.m; sourceTree = "<group>"; };
 		461B4F421B430354006223FE /* DPRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRegion.h; sourceTree = "<group>"; };
@@ -463,8 +460,6 @@
 		467D56981B400B7C00F0A951 /* MetaData */ = {
 			isa = PBXGroup;
 			children = (
-				461B4F381B4302FB006223FE /* HMSort.h */,
-				461B4F391B4302FB006223FE /* HMSort.m */,
 				461B4F3F1B43031D006223FE /* DPCity.h */,
 				461B4F401B43031D006223FE /* DPCity.m */,
 				461B4F421B430354006223FE /* DPRegion.h */,
@@ -760,7 +755,6 @@
 				467D56931B400A5400F0A951 /* NSString+MJExtension.m in Sources */,
 				46EBAD5C1B414093005C8757 /* UIImageView+WebCache.m in Sources */,
 				46EBACE61B401E7B005C8757 /* DPBusiness.m in Sources */,
-				461B4F3E1B4302FB006223FE /* HMSort.m in Sources */,
 				461B4F441B430354006223FE /* DPRegion.m in Sources */,
 				46EBAD571B414093005C8757 /* UIButton+WebCache.m in Sources */,
 				46EBAD531B414093005C8757 /* SDWebImageDownloader.m in Sources */,
