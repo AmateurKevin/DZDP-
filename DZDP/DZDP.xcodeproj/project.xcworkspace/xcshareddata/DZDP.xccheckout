@@ -10,6 +10,8 @@
 	<string>DZDP</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>3A8F0500AE543B19198B92D6A68CC95AB37A616C</key>
+		<string>https://github.com/nickqiao/DZDP-.git</string>
 		<key>4F2DE2780BBEBB68F1A451BA5F4D4BF2B06B35EC</key>
 		<string>https://github.com/nickqiao/DZDP-.git</string>
 	</dict>
@@ -17,15 +19,17 @@
 	<string>DZDP/DZDP.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>4F2DE2780BBEBB68F1A451BA5F4D4BF2B06B35EC</key>
+		<key>3A8F0500AE543B19198B92D6A68CC95AB37A616C</key>
 		<string>../../..</string>
+		<key>4F2DE2780BBEBB68F1A451BA5F4D4BF2B06B35EC</key>
+		<string>../../../../DZDP</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/nickqiao/DZDP-.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>4F2DE2780BBEBB68F1A451BA5F4D4BF2B06B35EC</string>
+	<string>3A8F0500AE543B19198B92D6A68CC95AB37A616C</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>4F2DE2780BBEBB68F1A451BA5F4D4BF2B06B35EC</string>
 			<key>IDESourceControlWCCName</key>
 			<string>DZDP</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3A8F0500AE543B19198B92D6A68CC95AB37A616C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DZDP%E5%A4%A7%E4%BC%97%E7%82%B9%E8%AF%84</string>
 		</dict>
 	</array>
 </dict>

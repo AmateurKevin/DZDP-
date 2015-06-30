@@ -68,8 +68,8 @@
 		46EBAD5B1B414093005C8757 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EBAD491B414093005C8757 /* UIImageView+HighlightedWebCache.m */; };
 		46EBAD5C1B414093005C8757 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EBAD4B1B414093005C8757 /* UIImageView+WebCache.m */; };
 		46EBAD5D1B414093005C8757 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EBAD4D1B414093005C8757 /* UIView+WebCacheOperation.m */; };
-		46EBAD671B4151A5005C8757 /* DPDealController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EBAD661B4151A5005C8757 /* DPDealController.m */; };
 		46EBAD6D1B42234D005C8757 /* DPCenterLineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EBAD6C1B42234D005C8757 /* DPCenterLineLabel.m */; };
+		46F830EF1B430AC1007C22B4 /* DPDealController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F830EC1B430AC1007C22B4 /* DPDealController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -202,10 +202,10 @@
 		46EBAD4B1B414093005C8757 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		46EBAD4C1B414093005C8757 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		46EBAD4D1B414093005C8757 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
-		46EBAD651B4151A5005C8757 /* DPDealController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPDealController.h; path = ../../../../../../../../Documents/DPDealController.h; sourceTree = "<group>"; };
-		46EBAD661B4151A5005C8757 /* DPDealController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPDealController.m; path = ../../../../../../../../Documents/DPDealController.m; sourceTree = "<group>"; };
 		46EBAD6B1B42234D005C8757 /* DPCenterLineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPCenterLineLabel.h; sourceTree = "<group>"; };
 		46EBAD6C1B42234D005C8757 /* DPCenterLineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPCenterLineLabel.m; sourceTree = "<group>"; };
+		46F830EB1B430AC1007C22B4 /* DPDealController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDealController.h; sourceTree = "<group>"; };
+		46F830EC1B430AC1007C22B4 /* DPDealController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDealController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,7 +286,7 @@
 		467D56581B3EB0A600F0A951 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				46EBAD5E1B4150AA005C8757 /* Deal */,
+				46F830E91B430AC1007C22B4 /* Deal */,
 				46EBAD081B40E4C2005C8757 /* ChooseCity */,
 				467D56591B3EB0A600F0A951 /* Home */,
 				467D565D1B3EB0A600F0A951 /* Main */,
@@ -586,33 +586,33 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
-		46EBAD5E1B4150AA005C8757 /* Deal */ = {
+		46F830E91B430AC1007C22B4 /* Deal */ = {
 			isa = PBXGroup;
 			children = (
-				46EBAD5F1B41513C005C8757 /* Controller */,
-				46EBAD601B41513C005C8757 /* Model */,
-				46EBAD611B41513C005C8757 /* View */,
+				46F830EA1B430AC1007C22B4 /* Controller */,
+				46F830ED1B430AC1007C22B4 /* Model */,
+				46F830EE1B430AC1007C22B4 /* View */,
 			);
 			path = Deal;
 			sourceTree = "<group>";
 		};
-		46EBAD5F1B41513C005C8757 /* Controller */ = {
+		46F830EA1B430AC1007C22B4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				46EBAD651B4151A5005C8757 /* DPDealController.h */,
-				46EBAD661B4151A5005C8757 /* DPDealController.m */,
+				46F830EB1B430AC1007C22B4 /* DPDealController.h */,
+				46F830EC1B430AC1007C22B4 /* DPDealController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		46EBAD601B41513C005C8757 /* Model */ = {
+		46F830ED1B430AC1007C22B4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		46EBAD611B41513C005C8757 /* View */ = {
+		46F830EE1B430AC1007C22B4 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -741,10 +741,10 @@
 				461B4F4D1B4303D5006223FE /* DPSort.m in Sources */,
 				467D56A11B400E0C00F0A951 /* DPGetSingleDealParam.m in Sources */,
 				467D568D1B400A5400F0A951 /* MJFoundation.m in Sources */,
-				46EBAD671B4151A5005C8757 /* DPDealController.m in Sources */,
 				467D568F1B400A5400F0A951 /* MJType.m in Sources */,
 				467D566C1B3EB0A600F0A951 /* AppDelegate.m in Sources */,
 				46EBAD221B4122E0005C8757 /* DPSortCityController.m in Sources */,
+				46F830EF1B430AC1007C22B4 /* DPDealController.m in Sources */,
 				467D566B1B3EB0A600F0A951 /* YQTabBarController.m in Sources */,
 				467D569B1B400BA300F0A951 /* DPFindDealsParam.m in Sources */,
 				46EBAD581B414093005C8757 /* UIImage+GIF.m in Sources */,
