@@ -37,6 +37,7 @@
 		467D569B1B400BA300F0A951 /* DPFindDealsParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D569A1B400BA300F0A951 /* DPFindDealsParam.m */; };
 		467D56A11B400E0C00F0A951 /* DPGetSingleDealParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D56A01B400E0C00F0A951 /* DPGetSingleDealParam.m */; };
 		467D56A41B400E2F00F0A951 /* DPGetSingleDealResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D56A31B400E2F00F0A951 /* DPGetSingleDealResult.m */; };
+		4680498B1B430B7300332333 /* DPDealHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4680498A1B430B7300332333 /* DPDealHeaderView.m */; };
 		46D295D71B4013F800619339 /* DPFindDealsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D295D61B4013F800619339 /* DPFindDealsResult.m */; };
 		46D295DA1B40151600619339 /* DPDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D295D91B40151600619339 /* DPDeal.m */; };
 		46EBACE61B401E7B005C8757 /* DPBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EBACE51B401E7B005C8757 /* DPBusiness.m */; };
@@ -145,6 +146,8 @@
 		467D56A21B400E2F00F0A951 /* DPGetSingleDealResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPGetSingleDealResult.h; sourceTree = "<group>"; };
 		467D56A31B400E2F00F0A951 /* DPGetSingleDealResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPGetSingleDealResult.m; sourceTree = "<group>"; };
 		467D56A51B400EA300F0A951 /* DPPch.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPPch.pch; sourceTree = "<group>"; };
+		468049891B430B7300332333 /* DPDealHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDealHeaderView.h; sourceTree = "<group>"; };
+		4680498A1B430B7300332333 /* DPDealHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDealHeaderView.m; sourceTree = "<group>"; };
 		46D295D51B4013F800619339 /* DPFindDealsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPFindDealsResult.h; sourceTree = "<group>"; };
 		46D295D61B4013F800619339 /* DPFindDealsResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPFindDealsResult.m; sourceTree = "<group>"; };
 		46D295D81B40151600619339 /* DPDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDeal.h; sourceTree = "<group>"; };
@@ -615,6 +618,8 @@
 		46F830EE1B430AC1007C22B4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				468049891B430B7300332333 /* DPDealHeaderView.h */,
+				4680498A1B430B7300332333 /* DPDealHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -777,6 +782,7 @@
 				46EBAD6D1B42234D005C8757 /* DPCenterLineLabel.m in Sources */,
 				46EBAD4F1B414093005C8757 /* NSData+ImageContentType.m in Sources */,
 				46EBAD5B1B414093005C8757 /* UIImageView+HighlightedWebCache.m in Sources */,
+				4680498B1B430B7300332333 /* DPDealHeaderView.m in Sources */,
 				467D566A1B3EB0A600F0A951 /* YQNavigationController.m in Sources */,
 				467D568E1B400A5400F0A951 /* MJProperty.m in Sources */,
 			);
