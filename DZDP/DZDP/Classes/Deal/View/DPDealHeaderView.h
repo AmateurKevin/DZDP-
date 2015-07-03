@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+@class DPDealHeaderView;
+@protocol DealHeaderViewDelegate <NSObject>
+
+@optional
+-(void)dealHeaderView:(DPDealHeaderView *)dealHeaderView buttonClicked:(UIButton *)button;
+
+@end
 
 @interface DPDealHeaderView : UIView
+
++ (instancetype)DealHeaderViewWith:(NSArray *)items;
+
+@property(nonatomic,weak) id<DealHeaderViewDelegate> delegate;
 
 @end

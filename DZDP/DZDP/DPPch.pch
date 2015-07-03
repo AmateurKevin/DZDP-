@@ -9,3 +9,19 @@
 
 
 #import "MJExtension.h"
+#define DPScreenWidth ([UIScreen mainScreen].bounds.size.width)
+
+/** 通知 */
+#define DPSortDidSelectNotification @"DPSortDidSelectNotification"
+#define DPSelectedSort @"DPSelectedSort"
+
+#define DPCityDidSelectNotification @"DPCityDidSelectNotification"
+#define DPSelectedCity @"DPSelectedCity"
+
+#define DPCategoryDidSelectNotification @"DPCategoryDidSelectNotification"
+#define DPSelectedCategory @"DPSelectedCategory"
+#define DPSelectedSubCategoryName @"DPSelectedSubCategoryName"
+
+#define DPRegionDidSelectNotification @"DPRegionDidSelectNotification"
+#define DPSelectedRegion @"DPSelectedRegion"
+#define DPSelectedSubRegionName @"DPSelectedSubRegionName"

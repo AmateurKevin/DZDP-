@@ -272,11 +272,21 @@
 		<key>icon</key>
 		<string>icon_category_5</string>
 		<key>name</key>
-		<string>抽奖</string>
+		<string>家装</string>
 		<key>small_highlighted_icon</key>
 		<string>icon_filter_category_highlighted_5</string>
 		<key>small_icon</key>
 		<string>icon_filter_category_5</string>
+		<key>subcategories</key>
+		<array>
+			<string>全部</string>
+			<string>装修设计</string>
+			<string>厨房卫浴</string>
+			<string>建材</string>
+			<string>家具家居</string>
+			<string>家装卖场</string>
+			<string>家用电器</string>
+		</array>
 	</dict>
 </array>
 </plist>

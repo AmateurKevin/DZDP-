@@ -70,4 +70,13 @@
     return muArray;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    DPCityGroup *cityGroup = self.cityGroups[indexPath.section];
+    NSString *cityName = cityGroup.cities[indexPath.row];
+    DPCity *city = [DPMetaDataTool cityWithName:cityName];
+    // 发出城市选择通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:DPCityDidSelectNotification object:nil userInfo:@{DPSelectedCity:city}];
+}
+
 @end

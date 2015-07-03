@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "DPCity.h"
 @interface DPMetaDataTool : NSObject
 
 + (NSArray *)categories;
@@ -17,5 +17,7 @@
 + (NSArray *)cityGroups;
 
 + (NSArray *)cities;
+
++ (DPCity *)cityWithName:(NSString *)name;
 
 @end

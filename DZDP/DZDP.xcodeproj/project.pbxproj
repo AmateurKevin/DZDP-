@@ -37,6 +37,12 @@
 		467D56A11B400E0C00F0A951 /* DPGetSingleDealParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D56A01B400E0C00F0A951 /* DPGetSingleDealParam.m */; };
 		467D56A41B400E2F00F0A951 /* DPGetSingleDealResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 467D56A31B400E2F00F0A951 /* DPGetSingleDealResult.m */; };
 		4680498B1B430B7300332333 /* DPDealHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4680498A1B430B7300332333 /* DPDealHeaderView.m */; };
+		469BB26E1B44E4FC005A01FB /* DPDealNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 469BB26D1B44E4FC005A01FB /* DPDealNavigationController.m */; };
+		469BB2711B451588005A01FB /* DPButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 469BB2701B451588005A01FB /* DPButtonItem.m */; };
+		469BB2871B461874005A01FB /* DPCategoryMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 469BB2861B461874005A01FB /* DPCategoryMenuController.m */; };
+		469BB28A1B4619E4005A01FB /* DPCategroryMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 469BB2891B4619E4005A01FB /* DPCategroryMenuCell.m */; };
+		469BB28E1B4634EF005A01FB /* DPFilterHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 469BB28C1B4634EF005A01FB /* DPFilterHeaderView.m */; };
+		469BB28F1B4634EF005A01FB /* DPFilterHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 469BB28D1B4634EF005A01FB /* DPFilterHeaderView.xib */; };
 		46D295D71B4013F800619339 /* DPFindDealsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D295D61B4013F800619339 /* DPFindDealsResult.m */; };
 		46D295DA1B40151600619339 /* DPDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D295D91B40151600619339 /* DPDeal.m */; };
 		46EBACE61B401E7B005C8757 /* DPBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EBACE51B401E7B005C8757 /* DPBusiness.m */; };
@@ -145,6 +151,17 @@
 		467D56A51B400EA300F0A951 /* DPPch.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPPch.pch; sourceTree = "<group>"; };
 		468049891B430B7300332333 /* DPDealHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDealHeaderView.h; sourceTree = "<group>"; };
 		4680498A1B430B7300332333 /* DPDealHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDealHeaderView.m; sourceTree = "<group>"; };
+		469BB26C1B44E4FC005A01FB /* DPDealNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDealNavigationController.h; sourceTree = "<group>"; };
+		469BB26D1B44E4FC005A01FB /* DPDealNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDealNavigationController.m; sourceTree = "<group>"; };
+		469BB26F1B451588005A01FB /* DPButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPButtonItem.h; sourceTree = "<group>"; };
+		469BB2701B451588005A01FB /* DPButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPButtonItem.m; sourceTree = "<group>"; };
+		469BB2851B461874005A01FB /* DPCategoryMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPCategoryMenuController.h; sourceTree = "<group>"; };
+		469BB2861B461874005A01FB /* DPCategoryMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPCategoryMenuController.m; sourceTree = "<group>"; };
+		469BB2881B4619E4005A01FB /* DPCategroryMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPCategroryMenuCell.h; sourceTree = "<group>"; };
+		469BB2891B4619E4005A01FB /* DPCategroryMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPCategroryMenuCell.m; sourceTree = "<group>"; };
+		469BB28B1B4634EF005A01FB /* DPFilterHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPFilterHeaderView.h; sourceTree = "<group>"; };
+		469BB28C1B4634EF005A01FB /* DPFilterHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPFilterHeaderView.m; sourceTree = "<group>"; };
+		469BB28D1B4634EF005A01FB /* DPFilterHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPFilterHeaderView.xib; sourceTree = "<group>"; };
 		46D295D51B4013F800619339 /* DPFindDealsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPFindDealsResult.h; sourceTree = "<group>"; };
 		46D295D61B4013F800619339 /* DPFindDealsResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPFindDealsResult.m; sourceTree = "<group>"; };
 		46D295D81B40151600619339 /* DPDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDeal.h; sourceTree = "<group>"; };
@@ -599,6 +616,10 @@
 			children = (
 				46F830EB1B430AC1007C22B4 /* DPDealController.h */,
 				46F830EC1B430AC1007C22B4 /* DPDealController.m */,
+				469BB26C1B44E4FC005A01FB /* DPDealNavigationController.h */,
+				469BB26D1B44E4FC005A01FB /* DPDealNavigationController.m */,
+				469BB2851B461874005A01FB /* DPCategoryMenuController.h */,
+				469BB2861B461874005A01FB /* DPCategoryMenuController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -615,6 +636,13 @@
 			children = (
 				468049891B430B7300332333 /* DPDealHeaderView.h */,
 				4680498A1B430B7300332333 /* DPDealHeaderView.m */,
+				469BB26F1B451588005A01FB /* DPButtonItem.h */,
+				469BB2701B451588005A01FB /* DPButtonItem.m */,
+				469BB2881B4619E4005A01FB /* DPCategroryMenuCell.h */,
+				469BB2891B4619E4005A01FB /* DPCategroryMenuCell.m */,
+				469BB28B1B4634EF005A01FB /* DPFilterHeaderView.h */,
+				469BB28C1B4634EF005A01FB /* DPFilterHeaderView.m */,
+				469BB28D1B4634EF005A01FB /* DPFilterHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -705,6 +733,7 @@
 				46755FD91B3E3661005C58B4 /* Main.storyboard in Resources */,
 				46755FDE1B3E3661005C58B4 /* LaunchScreen.xib in Resources */,
 				46EBAD181B40E67C005C8757 /* cityGroups.plist in Resources */,
+				469BB28F1B4634EF005A01FB /* DPFilterHeaderView.xib in Resources */,
 				46EBAD0D1B40E51C005C8757 /* ChooseCity.storyboard in Resources */,
 				46EBAD171B40E67C005C8757 /* cities.plist in Resources */,
 				46EBAD161B40E67C005C8757 /* categories.plist in Resources */,
@@ -733,6 +762,7 @@
 				467D56A41B400E2F00F0A951 /* DPGetSingleDealResult.m in Sources */,
 				467D566D1B3EB0A600F0A951 /* main.m in Sources */,
 				467D56791B3F848300F0A951 /* DPAPITool.m in Sources */,
+				469BB2711B451588005A01FB /* DPButtonItem.m in Sources */,
 				46EBAD5D1B414093005C8757 /* UIView+WebCacheOperation.m in Sources */,
 				46EBAD251B412D54005C8757 /* DPGetBatchDealsParam.m in Sources */,
 				46EBAD541B414093005C8757 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -748,6 +778,7 @@
 				467D566B1B3EB0A600F0A951 /* YQTabBarController.m in Sources */,
 				467D569B1B400BA300F0A951 /* DPFindDealsParam.m in Sources */,
 				46EBAD581B414093005C8757 /* UIImage+GIF.m in Sources */,
+				469BB28E1B4634EF005A01FB /* DPFilterHeaderView.m in Sources */,
 				46EBACED1B404771005C8757 /* DPGetNewDailyDealParam.m in Sources */,
 				467D56921B400A5400F0A951 /* NSObject+MJProperty.m in Sources */,
 				461B4F4A1B4303B9006223FE /* DPCityGroup.m in Sources */,
@@ -757,12 +788,15 @@
 				46EBACE61B401E7B005C8757 /* DPBusiness.m in Sources */,
 				461B4F441B430354006223FE /* DPRegion.m in Sources */,
 				46EBAD571B414093005C8757 /* UIButton+WebCache.m in Sources */,
+				469BB2871B461874005A01FB /* DPCategoryMenuController.m in Sources */,
 				46EBAD531B414093005C8757 /* SDWebImageDownloader.m in Sources */,
 				46EBAD5A1B414093005C8757 /* UIImage+WebP.m in Sources */,
+				469BB28A1B4619E4005A01FB /* DPCategroryMenuCell.m in Sources */,
 				46EBAD591B414093005C8757 /* UIImage+MultiFormat.m in Sources */,
 				467D56901B400A5400F0A951 /* NSObject+MJCoding.m in Sources */,
 				467D56691B3EB0A600F0A951 /* DPHomeViewController.m in Sources */,
 				467D56751B3EB49E00F0A951 /* DPRequest.m in Sources */,
+				469BB26E1B44E4FC005A01FB /* DPDealNavigationController.m in Sources */,
 				461B4F411B43031D006223FE /* DPCity.m in Sources */,
 				46EBAD511B414093005C8757 /* SDWebImageCompat.m in Sources */,
 				46D295D71B4013F800619339 /* DPFindDealsResult.m in Sources */,

@@ -50,4 +50,13 @@ static NSArray *_cities;
     return _cities;
 }
 
++ (DPCity *)cityWithName:(NSString *)name{
+    if (name.length == 0)return nil;
+    
+    for (DPCity *city in [self cities]) {
+        if ([city.name isEqualToString:name])return city;
+    }
+    return nil;
+}
+
 @end
