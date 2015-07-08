@@ -10,4 +10,14 @@
 
 @implementation DPRegion
 
+- (NSString *)title
+{
+    return self.name;
+}
+
+- (NSArray *)subTitles
+{
+    return self.subregions;
+}
+
 @end

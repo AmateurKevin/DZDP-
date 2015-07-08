@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface DPCategory : NSObject
+#import "DPDropdownMenu.h"
+@interface DPCategory : NSObject<DPDropdownMenuItemDelegate>
 /** 类别名称 */
 @property (copy, nonatomic) NSString *name;
 /** 大图标 */

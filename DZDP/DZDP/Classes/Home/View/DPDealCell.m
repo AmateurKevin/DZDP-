@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *listPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *purchaceCountLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *reservationImage;
 
 @end
 
@@ -47,6 +48,14 @@
 {
     _deal = deal;
     [self.dealImage sd_setImageWithURL:[NSURL URLWithString:deal.image_url] placeholderImage:[UIImage imageNamed:@"default_loading_bigicon"]];
+    
+    if (deal.restrictions.is_reservation_required == 0) {
+        self.reservationImage.hidden = NO;
+        
+    }else{
+        self.reservationImage.hidden = YES;
+    }
+    
     self.titleLabel.text = deal.title;
     self.descLabel.text = deal.desc;
     self.currentPriceLabel.text = [NSString stringWithFormat:@"¥%@",deal.current_price];

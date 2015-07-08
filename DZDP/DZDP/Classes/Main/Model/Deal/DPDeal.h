@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "DPRestriction.h"
 @interface DPDeal : NSObject
 
 /** 团购单ID */
@@ -60,5 +60,7 @@
 /** 重要通知(一般为团购信息的临时变更) */
 @property (copy, nonatomic) NSString *notice;
 
+/** 限制条件 */
+@property(nonatomic,strong) DPRestriction *restrictions;
 
 @end

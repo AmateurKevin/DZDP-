@@ -9,5 +9,13 @@
 #import "DPCategory.h"
 
 @implementation DPCategory
+- (NSString *)title
+{
+    return self.name;
+}
 
+- (NSArray *)subTitles
+{
+    return self.subcategories;
+}
 @end
