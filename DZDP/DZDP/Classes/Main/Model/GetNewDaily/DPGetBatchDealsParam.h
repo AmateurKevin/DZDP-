@@ -3,7 +3,7 @@
 //  DZDP
 //
 //  Created by nickchen on 15/6/29.
-//  Copyright (c) 2015年 nickchen. All rights reserved.
+//  Copyright (c) 2015年 https://github.com/nickqiao All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

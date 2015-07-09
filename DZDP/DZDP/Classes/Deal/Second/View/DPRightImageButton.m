@@ -3,7 +3,7 @@
 //  DZDP
 //
 //  Created by nickchen on 15/7/7.
-//  Copyright (c) 2015年 nickchen. All rights reserved.
+//  Copyright (c) 2015年 https://github.com/nickqiao All rights reserved.
 //
 
 #import "DPRightImageButton.h"
@@ -32,7 +32,6 @@ static float const kImageToTextMargin = 7;
 {
     [self setImage: [UIImage imageNamed:@"tuangou_list_icon_arrow_down"]forState:UIControlStateNormal];
     [self setImage:[UIImage imageNamed:@"tuangou_list_icon_arrow_up"] forState:UIControlStateSelected];
-    //self.adjustsImageWhenHighlighted = NO;
 
     self.titleEdgeInsets = UIEdgeInsetsMake(0, -self.imageView.frame.size.width - kImageToTextMargin, 0, self.imageView.frame.size.width);
     self.imageEdgeInsets = UIEdgeInsetsMake(0, self.titleLabel.frame.size.width, 0, -self.titleLabel.frame.size.width);
