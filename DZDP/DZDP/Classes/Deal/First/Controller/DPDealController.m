@@ -17,11 +17,10 @@
 #import "DPCategory.h"
 #import "DPButtonItem.h"
 #import "DPCategoryMenuController.h"
-#import "DPAllDealViewController.h"
-
+#import "DPDealMainController.h"
+#import "DPRightImageButton.h"
 @interface DPDealController ()<UITableViewDataSource,UITableViewDelegate,DealHeaderViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *leftBarItem;
 
 @property(nonatomic,strong) NSArray *ButtonItems;
 
@@ -36,7 +35,9 @@
 @property (copy, nonatomic) NSString *selectedSubCategoryName;
 
 @property(nonatomic,strong) NSMutableArray *deals;
+
 - (IBAction)sortCityClicked:(id)sender;
+@property (weak, nonatomic) IBOutlet DPRightImageButton *leftBtn;
 
 @end
 
@@ -56,6 +57,14 @@
     [self presentViewController:sortCityVc animated:YES completion:nil];
 
 }
+
+//- (DPCity *)selectedCity
+//{
+//    if (!_selectedCity) {
+//        _selectedCity = [[DPCity alloc] init];
+//    }
+//    return _selectedCity;
+//}
 
 - (NSArray *)ButtonItems
 {
@@ -104,18 +113,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.leftBtn setTitle:UserDefaulsCityName forState:UIControlStateNormal];
+   
+
     DPDealHeaderView *headView = [DPDealHeaderView DealHeaderViewWith:self.ButtonItems];
     headView.delegate = self;
     self.tableview.tableHeaderView = headView;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(citySelect:) name:DPCityDidSelectNotification object:nil];
+    [self loadNewDeals];
 }
 
 - (void)citySelect:(NSNotification *)note
 {
     self.selectedCity = note.userInfo[DPSelectedCity];
-    self.leftBarItem.title = self.selectedCity.name;
-    
+    [self.leftBtn setTitle:self.selectedCity.name forState:UIControlStateNormal];
     [self loadNewDeals];
 }
 
@@ -125,7 +137,14 @@
 
 - (void)loadNewDeals{
     DPGetNewDailyDealParam  *params = [[DPGetNewDailyDealParam alloc] init];
-    params.city = self.selectedCity.name;
+    
+    if (UserDefaulsCityName) {
+        params.city = UserDefaulsCityName;
+    }else{
+        params.city = @"广州";
+        [self.leftBtn setTitle:@"选择" forState:UIControlStateNormal];
+    }
+    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YYYY-MM-dd"];
     params.date = [dateFormatter stringFromDate:[NSDate date]];
@@ -140,18 +159,18 @@
 
 }
 
+#pragma mark -- DealHeaderViewDelegate
 - (void)dealHeaderView:(DPDealHeaderView *)dealHeaderView buttonClicked:(UIButton *)button
 {
     if (button.tag == 8) {
         DPCategoryMenuController *vc = [[DPCategoryMenuController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }else{
-        UIStoryboard *stroryBoard = [UIStoryboard storyboardWithName:@"DPAllDealViewController" bundle:nil];
-        DPAllDealViewController *allVc = [stroryBoard instantiateInitialViewController];
-        allVc.param.city = self.selectedCity.name;
+        DPDealMainController *vc = [[DPDealMainController alloc] init];
+        vc.param.city = UserDefaulsCityName;
         DPButtonItem *buttonItem = self.ButtonItems[button.tag];
-        allVc.param.category = buttonItem.category;
-        [self.navigationController pushViewController:allVc animated:YES];
+        vc.param.category = buttonItem.category;
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
@@ -171,50 +190,5 @@
     return cell;
 }
 
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

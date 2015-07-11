@@ -11,7 +11,7 @@
 #import "DPCategory.h"
 #import "DPCategroryMenuCell.h"
 #import "DPFilterHeaderView.h"
-#import "DPAllDealViewController.h"
+#import "DPDealMainController.h"
 @interface DPCategoryMenuController ()
 @property(nonatomic,strong) NSArray *categoryArray;
 
@@ -156,16 +156,12 @@ static NSString * const kHeaderViewCellIdentifier = @"HeaderViewCellIdentifier";
         [self.cellDataPerSection replaceObjectAtIndex:indexPath.section withObject:arr];
         [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section]];
     }else{
-        UIStoryboard *stroryBoard = [UIStoryboard storyboardWithName:@"DPAllDealViewController" bundle:nil];
-        DPAllDealViewController *allVc = [stroryBoard instantiateInitialViewController];
-        allVc.param.city = @"广州";
+        DPDealMainController *vc = [[DPDealMainController alloc] init];
+        vc.param.city = UserDefaulsCityName;
         NSArray *perSection = self.cellDataPerSection[indexPath.section];
-        allVc.param.category = perSection[indexPath.item];
-        [self.navigationController pushViewController:allVc animated:YES];
-
+        vc.param.category = perSection[indexPath.item];
+        [self.navigationController pushViewController:vc animated:YES];
     }
-    
-    
 }
 
 /*

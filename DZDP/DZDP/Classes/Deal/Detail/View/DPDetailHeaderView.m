@@ -69,8 +69,8 @@
 {
     _imageURLs = imageURLs;
     
-    self.scrollView.contentSize = CGSizeMake(imageURLs.count * screenW, 0);
-    
+    self.scrollView.contentSize = CGSizeMake(imageURLs.count * screenW + 1, 0);
+   
     for (NSInteger i = 0; i < imageURLs.count; i++) {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i * screenW, 0, screenW, self.frame.size.height)];
         [self.scrollView addSubview:imageView];

@@ -25,6 +25,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.dealImage.layer.cornerRadius = 5;
+    self.dealImage.layer.masksToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

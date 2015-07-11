@@ -21,10 +21,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjU-nA-y3K" customClass="DPRightImageButton">
                                         <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="全部分类">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <state key="normal" title="全部分类"/>
                                         <connections>
                                             <action selector="btnClicked:" destination="oUk-HZ-fyl" eventType="touchUpInside" id="vk5-Om-sMu"/>
                                         </connections>

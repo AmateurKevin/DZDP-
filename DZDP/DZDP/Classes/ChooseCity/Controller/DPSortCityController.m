@@ -75,8 +75,18 @@
     DPCityGroup *cityGroup = self.cityGroups[indexPath.section];
     NSString *cityName = cityGroup.cities[indexPath.row];
     DPCity *city = [DPMetaDataTool cityWithName:cityName];
-    // 发出城市选择通知
-    [[NSNotificationCenter defaultCenter] postNotificationName:DPCityDidSelectNotification object:nil userInfo:@{DPSelectedCity:city}];
+    
+    if ([cityName isEqualToString:UserDefaulsCityName]) {
+        // 与沙盒中存的城市名字一样，什么也不用做
+        return;
+    }else{
+        // 将选择的城市存入偏好设置
+        [[NSUserDefaults standardUserDefaults] setObject:cityName forKey:cityNameKEY];
+        
+        // 发出城市选择通知
+        [[NSNotificationCenter defaultCenter] postNotificationName:DPCityDidSelectNotification object:nil userInfo:@{DPSelectedCity:city}];
+    }
+    
 }
 
 @end

@@ -9,7 +9,11 @@
 
 
 #import "MJExtension.h"
+
+#define cityNameKEY @"city"
+#define UserDefaulsCityName [[NSUserDefaults standardUserDefaults] stringForKey:cityNameKEY]
 #define DPScreenWidth ([UIScreen mainScreen].bounds.size.width)
+#define DPScreenHeight ([UIScreen mainScreen].bounds.size.height)
 
 /** 通知 */
 #define DPSortDidSelectNotification @"DPSortDidSelectNotification"
