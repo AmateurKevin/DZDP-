@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  
     DPDetailHeaderView *headerView = [DPDetailHeaderView detailHeaderView];
     self.automaticallyAdjustsScrollViewInsets = NO;
     headerView.frame = CGRectMake(0, 64, self.view.frame.size.width, 200);

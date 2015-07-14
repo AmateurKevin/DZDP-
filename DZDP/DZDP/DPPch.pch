@@ -8,7 +8,7 @@
 
 
 
-#import "MJExtension.h"
+#import <MJExtension/MJExtension.h>
 
 #define cityNameKEY @"city"
 #define UserDefaulsCityName [[NSUserDefaults standardUserDefaults] stringForKey:cityNameKEY]

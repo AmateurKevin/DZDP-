@@ -8,7 +8,7 @@
 
 #import "DPDealCell.h"
 #import "DPDeal.h"
-#import "UIImageView+WebCache.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface DPDealCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *dealImage;
