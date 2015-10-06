@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Ahr-ea-bCK" customClass="DPDetailHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="标题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zB7-qO-SZp" userLabel="标题">
+                    <rect key="frame" x="10" y="607" width="42" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="FNS-ld-Khb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="描述" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaA-Eh-beP" userLabel="描述">
+                    <rect key="frame" x="8" y="632" width="42" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySJ-n7-dgq" userLabel="page" customClass="DPCircleLabel">
+                    <rect key="frame" x="345" y="10" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="00s-mY-zg9"/>
+                        <constraint firstAttribute="width" constant="20" id="MvM-q1-dPi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="zB7-qO-SZp" firstAttribute="leading" secondItem="Ahr-ea-bCK" secondAttribute="leading" constant="10" id="AUV-MF-Hd1"/>
+                <constraint firstItem="iaA-Eh-beP" firstAttribute="top" secondItem="zB7-qO-SZp" secondAttribute="bottom" constant="5" id="MSD-hL-dFg"/>
+                <constraint firstItem="ySJ-n7-dgq" firstAttribute="top" secondItem="Ahr-ea-bCK" secondAttribute="top" constant="10" id="Mue-cO-MMQ"/>
+                <constraint firstAttribute="trailing" secondItem="ySJ-n7-dgq" secondAttribute="trailing" constant="10" id="NcL-jB-LWp"/>
+                <constraint firstAttribute="bottom" secondItem="zB7-qO-SZp" secondAttribute="bottom" constant="40" id="och-6W-4Bm"/>
+                <constraint firstItem="iaA-Eh-beP" firstAttribute="leading" secondItem="zB7-qO-SZp" secondAttribute="leading" constant="-2" id="qMY-1W-cCJ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <connections>
+                <outlet property="dealTitle" destination="zB7-qO-SZp" id="YSm-fy-zxT"/>
+                <outlet property="descLabel" destination="iaA-Eh-beP" id="cOT-7c-MHo"/>
+                <outlet property="pageLabel" destination="ySJ-n7-dgq" id="KZo-aD-eb5"/>
+            </connections>
+            <point key="canvasLocation" x="348.5" y="189.5"/>
+        </view>
+    </objects>
+</document>

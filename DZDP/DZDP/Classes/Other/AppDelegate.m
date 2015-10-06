@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import <YTKNetworkConfig.h>
+#import "DPDistrictAPI.h"
+#import "DPCityAPI.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    YTKNetworkConfig *config = [YTKNetworkConfig sharedInstance];
+    config.baseUrl = @"http://apis.baidu.com/baidunuomi/openapi";
+    DPLog(@"%@",DPDistricPlist);
+  
     return YES;
 }
 

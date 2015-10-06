@@ -26,7 +26,7 @@
     [tabBarItem0 setTitleTextAttributes:dictionary forState:UIControlStateSelected];
     
     UITabBarItem *tabBarItem1 = [tabbar.items objectAtIndex:1];
-    tabBarItem1.selectedImage = [[UIImage imageNamed:@"home_footbar_icon_group_pressed"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarItem1.selectedImage = [[UIImage imageNamed:@"home_footbar_icon_found_pressed"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [tabBarItem1 setTitleTextAttributes:dictionary forState:UIControlStateSelected];
     
     UITabBarItem *tabBarItem2 = [tabbar.items objectAtIndex:2];

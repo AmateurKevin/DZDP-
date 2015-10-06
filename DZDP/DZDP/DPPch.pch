@@ -7,25 +7,37 @@
 //
 
 
+#import <Mantle.h>
+#import "UIView+Frame.h"
 
-#import <MJExtension/MJExtension.h>
+#ifdef DEBUG
+#define DPLog(...) NSLog(__VA_ARGS__)
+#else
+#define DPLog(...)
+#endif
 
-#define cityNameKEY @"city"
-#define UserDefaulsCityName [[NSUserDefaults standardUserDefaults] stringForKey:cityNameKEY]
 #define DPScreenWidth ([UIScreen mainScreen].bounds.size.width)
 #define DPScreenHeight ([UIScreen mainScreen].bounds.size.height)
 
-/** 通知 */
-#define DPSortDidSelectNotification @"DPSortDidSelectNotification"
-#define DPSelectedSort @"DPSelectedSort"
+#define cityNameKEY @"city"
+#define UserDefaulsCityName [[NSUserDefaults standardUserDefaults] stringForKey:cityNameKEY]
 
+#define cityIDKEY @"cityID"
+#define UserDefaultCityID [[NSUserDefaults standardUserDefaults] objectForKey:cityIDKEY]
+
+#define locationCityNameKEY @"locationCity"
+#define UserDefaultlocationCityName [[NSUserDefaults standardUserDefaults] stringForKey:locationCityNameKEY]
+
+/** 通知 */
 #define DPCityDidSelectNotification @"DPCityDidSelectNotification"
 #define DPSelectedCity @"DPSelectedCity"
 
-#define DPCategoryDidSelectNotification @"DPCategoryDidSelectNotification"
-#define DPSelectedCategory @"DPSelectedCategory"
-#define DPSelectedSubCategoryName @"DPSelectedSubCategoryName"
+/** 对应城市的区域文件 */
+#define DPDistricPlist [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"districts.plist"]
 
-#define DPRegionDidSelectNotification @"DPRegionDidSelectNotification"
-#define DPSelectedRegion @"DPSelectedRegion"
-#define DPSelectedSubRegionName @"DPSelectedSubRegionName"
+
+#define DPRecentCityPlist [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"recentCity.plist"]
+
+#define DPBgColor [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1]
+
+#define DPMAMapAPIKey @"8b884af757a6426dcf472e6811cdd7a6"

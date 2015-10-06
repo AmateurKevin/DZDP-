@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="220" id="KGk-i7-Jjw" customClass="DPBuyDetailCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="219.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请问味儿认同与单刀赴会加快了雷寨西村 v 不那么美， " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGr-ND-u2j">
+                        <rect key="frame" x="8" y="8" width="304" height="31.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ff0-Ba-Ti2">
+                        <rect key="frame" x="8" y="44.5" width="304" height="1"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="EAQ-Og-TEm"/>
+                        </constraints>
+                    </webView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="ff0-Ba-Ti2" secondAttribute="trailing" id="5jS-8n-O61"/>
+                    <constraint firstItem="MGr-ND-u2j" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="GAT-28-P17"/>
+                    <constraint firstItem="MGr-ND-u2j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="i1c-9u-HIN"/>
+                    <constraint firstItem="ff0-Ba-Ti2" firstAttribute="top" secondItem="MGr-ND-u2j" secondAttribute="bottom" constant="5" id="oex-vl-Ut5"/>
+                    <constraint firstItem="ff0-Ba-Ti2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="wrd-zQ-mkq"/>
+                    <constraint firstItem="MGr-ND-u2j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="xcG-RM-d4v"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="buyDetailLabel" destination="MGr-ND-u2j" id="fcq-8E-62J"/>
+                <outlet property="heightConstraint" destination="EAQ-Og-TEm" id="93d-TL-stR"/>
+                <outlet property="webView" destination="ff0-Ba-Ti2" id="TjG-M6-MYX"/>
+            </connections>
+            <point key="canvasLocation" x="127" y="245"/>
+        </tableViewCell>
+    </objects>
+</document>

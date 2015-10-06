@@ -1,0 +1,174 @@
+{
+    "homepage": [
+        {
+            "cat_id": 326, 
+            "iconUrl": "http://p1.meituan.net/jungle/859ab37bffa735c889f47fa7a86d8eec1028.png", 
+            "name": "美食"
+        }, 
+        {
+            "subcat_id": 345, 
+            "iconUrl": "http://p1.meituan.net/jungle/__50132536__4700602.png", 
+            "name": "电影"
+        }, 
+        {
+            "cat_id": 377,
+            "iconUrl": "http://p0.meituan.net/jungle/__50132508__1184779.png", 
+            "name": "酒店"
+        }, 
+        {
+            "subcat_id": 341, 
+            "iconUrl": "http://p0.meituan.net/jungle/31baf87e05e1729fbc8b0006b139cc951609.png", 
+            "name": "KTV"   
+        }, 
+        {
+            "hasAttr": false, 
+            "id": 0, 
+            "dataType": "deal", 
+            "index": 4, 
+            "count": 811, 
+            "onRed": false, 
+            "iconUrl": "http://p0.meituan.net/jungle/__50126873__5348319.png", 
+            "name": "今日新单", 
+            "showType": "normal", 
+            "type": "poi"
+        }, 
+        {
+             "subcat_id": 682, 
+            "iconUrl": "http://p0.meituan.net/jungle/4d0b650caf1713f5f9198fd425b0ed3a1102.png", 
+            "name": "代金券"
+        }, 
+        {
+            "subcat_id": 688, 
+             "iconUrl": "http://p1.meituan.net/jungle/2349a657eb0d09d2b90d5a981009b8443243.png", 
+            "name": "周边游"
+        }, 
+        {
+            "cat_id": 320, 
+            "iconUrl": "http://p1.meituan.net/jungle/7d9d5eeec3584963f7108fff4724e7451352.png", 
+            "name": "休闲娱乐"
+        }, 
+        {
+        
+            "subcat_id": 956, 
+            "dataType": "multi", 
+            "index": 13, 
+            "count": 4278, 
+            "onRed": false, 
+            "iconUrl": "http://p0.meituan.net/jungle/99789ea64a3808ced799caed624e43051710.png", 
+            "name": "丽人"
+        }, 
+        {
+            "hasAttr": true, 
+            "id": 4, 
+            "subcat_id": 875, 
+            "dataType": "deal", 
+            "index": 8, 
+            "parentID": 0, 
+            "count": 5176, 
+            "onRed": false, 
+            "iconUrl": "http://p0.meituan.net/jungle/3584d2a8ffbcff517cbeffacdcd3f94d1841.png", 
+            "name": "购物", 
+            "showType": "normal", 
+            "type": "poi"
+        }, 
+        {
+            "hasAttr": true, 
+            "id": 36, 
+            "subcat_id": 380, 
+            "dataType": "multi", 
+            "index": 4, 
+            "parentID": 1, 
+            "count": 4928, 
+            "onRed": false, 
+            "withNoDeal": true, 
+            "name": "小吃快餐", 
+            "showType": "food", 
+            "type": "poi"
+        }, 
+        {
+            "hasHomepage": true, 
+            "hasAttr": true, 
+            "id": 3, 
+            "cat_id": 316, 
+            "dataType": "multi", 
+            "index": 10, 
+            "count": 9787, 
+            "onRed": false, 
+            "iconUrl": "http://p1.meituan.net/jungle/e95326abd27793cf1eda883222d763ee1535.png", 
+            "name": "生活服务", 
+            "showType": "poi", 
+            "type": "poi"
+        }, 
+        {
+            "hasAttr": true, 
+            "id": 52, 
+            "subcat_id": 347, 
+            "dataType": "multi", 
+            "index": 15, 
+            "count": 2384, 
+            "onRed": false, 
+            "iconUrl": "http://p1.meituan.net/jungle/f412a679a8e2ca1a319eee2a519c7e7c1616.png", 
+            "name": "足疗按摩", 
+            "showType": "poi", 
+            "type": "poi"
+        }, 
+        {
+            "hasAttr": true, 
+            "id": 78, 
+            "subcat_id": 708,
+            "dataType": "deal", 
+            "index": 12, 
+            "count": 5102, 
+            "onRed": false, 
+            "iconUrl": "http://p0.meituan.net/jungle/__50131944__6738115.png", 
+            "name": "旅游", 
+            "showType": "poi", 
+            "type": "poi"
+        }, 
+        {
+            "hasAttr": true, 
+            "id": 11, 
+            "subcat_id": 880, 
+            "dataType": "multi", 
+            "index": 14, 
+            "count": 4472, 
+            "onRed": false, 
+            "withNoDeal": true, 
+            "iconUrl": "http://p1.meituan.net/jungle/182fb65884ab7169e4f4f7b60ce723a01467.png", 
+            "name": "蛋糕甜点", 
+            "showType": "poi", 
+            "type": "poi"
+        }, 
+        {
+            "hasAttr": false, 
+            "cat_id": -1, 
+            "dataType": "deal", 
+            "index": 15, 
+            "count": 81949, 
+            "onRed": false, 
+            "iconUrl": "http://p1.meituan.net/jungle/__50126844__6346007.png", 
+            "name": "全部分类", 
+            "showType": "poi", 
+            "type": "poi"
+        }
+    ],
+    
+    "rushPage": [
+                 {
+                 "cat_id": 326,
+                 "iconUrl": "http://timg.baidu.com/timg?lbstsm&ref=http%3a%2f%2fbj.nuomi.com&quality=100&size=8&sec=1443509475&di=61e9baeb6eb7ea2120ba6ba923cb7026&src=http://e.hiphotos.baidu.com/bainuo/crop=0,0,470,285;w=230;q=80/sign=1aee0e718018367ab9c6259d1343a7e4/574e9258d109b3de363d2730cabf6c81810a4cec.jpg",
+                 "name": "肯德基"
+                 },
+                 {
+                 "cat_id": 326,
+                 "iconUrl": "http://timg.baidu.com/timg?lbstsm&ref=http%3a%2f%2fbj.nuomi.com&quality=100&size=8&sec=1443510841&di=dcba99f3e4415ff28d76ad52bf0dd438&src=http://e.hiphotos.baidu.com/bainuo/wh=230,140/sign=fde3a232332ac65c67506e71c8c29e20/86d6277f9e2f0708ef5c5452ef24b899a901f203.jpg",
+                 "name": "万达影城"
+                 },
+                 {
+                 "cat_id": 377,
+                 "iconUrl": "http://timg.baidu.com/timg?lbstsm&ref=http%3a%2f%2fbj.nuomi.com&quality=100&size=8&sec=1443511124&di=0adf0fb7f3d3bb9b7a07e2e5bb4a9f0d&src=http://e.hiphotos.baidu.com/bainuo/wh=230,140/sign=333b13c2d71373f0f56a679d973f67ca/574e9258d109b3de7efa6fd1cabf6c81810a4cc6.jpg",
+                 "name": "万豪酒店"
+                 }
+          
+    ]
+}

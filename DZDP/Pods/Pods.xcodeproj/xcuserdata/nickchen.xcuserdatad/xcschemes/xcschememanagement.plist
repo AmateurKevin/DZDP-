@@ -4,12 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-MJExtension.xcscheme</key>
+		<key>AFDownloadRequestOperation.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-SDWebImage.xcscheme</key>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>INTULocationManager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Mantle.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -19,20 +29,60 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>YTKNetwork.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>67D5219F69C1A804B158FCD5</key>
+		<key>43C581539FF688FE7A7B812A5C43D218</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7AA8F891E0366C6FBDCEA7C0</key>
+		<key>5352D432641F0656C90741034E32F31E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A31792F8CA3281093B4D2664</key>
+		<key>924F17CA11C675F6D23E1F27997FF7AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A7033906E904CE7A2E97E82D57C605ED</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B281DA29A9C3EDFB45BA53651F6BA611</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CFF6550D30FF965EEBE9F66FD84C048D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2F74799F9EF79F0CD94AC783D543A73</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E31DC497030F0B824D95725F6B3819E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

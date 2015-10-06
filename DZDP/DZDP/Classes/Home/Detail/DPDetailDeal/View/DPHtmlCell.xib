@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="73" id="COm-rg-1bT" customClass="DPHtmlCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="COm-rg-1bT" id="S51-Hp-h5P">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="72.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阿姐是否了解全文哦放假啊解放大路事件发生纠纷拉萨觉得法拉盛江东父老；叫阿说；离开房间阿克琉斯江东父老卡时间都浪费；加拉手机发呆了" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5t-wI-dV6">
+                        <rect key="frame" x="8" y="8" width="359" height="56.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="F5t-wI-dV6" secondAttribute="bottom" id="AQN-h7-NHI"/>
+                    <constraint firstItem="F5t-wI-dV6" firstAttribute="top" secondItem="S51-Hp-h5P" secondAttribute="topMargin" id="QnY-JZ-Q8V"/>
+                    <constraint firstItem="F5t-wI-dV6" firstAttribute="leading" secondItem="S51-Hp-h5P" secondAttribute="leadingMargin" id="Yo9-Tk-HRp"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="F5t-wI-dV6" secondAttribute="trailing" id="gsb-JC-IYl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="htmlLabel" destination="F5t-wI-dV6" id="yzO-pT-Z51"/>
+            </connections>
+            <point key="canvasLocation" x="277.5" y="296.5"/>
+        </tableViewCell>
+    </objects>
+</document>

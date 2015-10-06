@@ -10,4 +10,6 @@
 
 @interface DPSortCityController : UIViewController
 
++ (instancetype)sortCityController;
+
 @end

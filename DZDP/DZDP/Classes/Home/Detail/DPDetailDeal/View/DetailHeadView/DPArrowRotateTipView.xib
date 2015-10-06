@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="mpx-SJ-Cex" customClass="DPArrowRotateTipView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="滑动查看图文详情" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8G-Y0-vjF">
+                    <rect key="frame" x="37" y="106.5" width="10" height="95.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="10" id="6FZ-GL-oXE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="10"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail_icon_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="d07-Aj-mc8">
+                    <rect key="frame" x="10" y="141.5" width="17" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="VbH-mw-abm"/>
+                        <constraint firstAttribute="width" constant="17" id="uHH-Rd-vp4"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="d07-Aj-mc8" firstAttribute="leading" secondItem="mpx-SJ-Cex" secondAttribute="leading" constant="10" id="EDb-PS-ZNy"/>
+                <constraint firstItem="d07-Aj-mc8" firstAttribute="centerY" secondItem="j8G-Y0-vjF" secondAttribute="centerY" constant="-4.5" id="F4D-Zn-cbf"/>
+                <constraint firstAttribute="centerY" secondItem="d07-Aj-mc8" secondAttribute="centerY" id="abw-5m-Aqi"/>
+                <constraint firstItem="j8G-Y0-vjF" firstAttribute="leading" secondItem="d07-Aj-mc8" secondAttribute="trailing" constant="10" id="sW3-dP-biz"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="detailArrowView" destination="d07-Aj-mc8" id="vNc-rm-DkY"/>
+            </connections>
+            <point key="canvasLocation" x="420.5" y="176"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="detail_icon_arrow" width="17" height="17"/>
+    </resources>
+</document>

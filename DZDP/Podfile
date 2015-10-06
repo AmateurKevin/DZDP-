@@ -2,4 +2,16 @@ platform :ios, "6.0"
 
 pod "SDWebImage"
 
-pod 'MJExtension'
+pod "AFNetworking", "~> 2.0"
+
+pod "YTKNetwork"
+
+pod "Mantle"
+
+pod 'SVProgressHUD'
+
+pod 'INTULocationManager'
+
+pod 'AMap2DMap'
+
+pod 'AMapSearch'
