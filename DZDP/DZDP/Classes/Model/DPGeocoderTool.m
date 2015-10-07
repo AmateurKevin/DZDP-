@@ -10,6 +10,33 @@
 #import "DPMetaDataTool.h"
 @implementation  DPGeocoderTool
 
++ (NSString *)getCityNameFromLocation:(CLLocation *)currentLocation {
+
+    __block NSString *name = nil;
+    [[[CLGeocoder alloc] init] reverseGeocodeLocation:currentLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error){
+    
+        for (CLPlacemark * placemark in placemarks) {
+            NSDictionary *test = [placemark addressDictionary];
+            
+            NSString *stateName = [test objectForKey:@"State"];
+            NSString *cityName = [test objectForKey:@"City"];
+            
+            if ([stateName isEqualToString:@"北京市"]||
+                [stateName isEqualToString:@"天津市"]||
+                [stateName isEqualToString:@"重庆市"]||
+                [stateName isEqualToString:@"上海市"]) {
+                
+                name = stateName;
+                
+            }else{
+                
+                name = cityName;
+                
+            }
+        }
+    }];
+    return name;
+}
 
 + (void)getCityFromLocation:(CLLocation *)currentLocation andExecuteBlock:(void(^)(DPCity *city))block{
     
@@ -34,7 +61,11 @@
                 [stateName isEqualToString:@"上海市"]) {
                 [[NSUserDefaults standardUserDefaults] setObject:stateName forKey:locationCityNameKEY];
                 city =  [DPMetaDataTool cityWithName:stateName];
-                block(city);
+                
+                if (block) {
+                     block(city);
+                }
+               
                 
             }else{
                 [[NSUserDefaults standardUserDefaults] setObject:cityName forKey:locationCityNameKEY];

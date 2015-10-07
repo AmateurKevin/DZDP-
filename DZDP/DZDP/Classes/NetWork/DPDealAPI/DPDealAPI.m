@@ -35,7 +35,7 @@
             if (UserDefaulsCityName) {
                 _city_id = UserDefaultCityID;
             }else{
-                // 确保刚进入时候默认城市
+                // 确保刚进入时候默认城市 北京
                 _city_id = @(100010000);
             }
 

@@ -11,6 +11,9 @@
 #import "DPCity.h"
 @interface DPGeocoderTool : NSObject
 
+// 获得城市名
++ (NSString *)getCityNameFromLocation:(CLLocation *)currentLocation;
+
 // 获得城市名对应的Dpcity,
 + (void)getCityFromLocation:(CLLocation *)currentLocation andExecuteBlock:(void(^)(DPCity *city))block;
 

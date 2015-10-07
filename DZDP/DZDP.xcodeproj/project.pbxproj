@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20AC606B5C3D716885ABDC87 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B901E9FEC8BC885832A554EA /* libPods.a */; };
+		464152CD1BC5002C001958AC /* DPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 464152CC1BC5002C001958AC /* DPBaseViewController.m */; settings = {ASSET_TAGS = (); }; };
 		4669F10D1BBC251C00860DB8 /* DPDealFooterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669F10B1BBC251C00860DB8 /* DPDealFooterCell.m */; settings = {ASSET_TAGS = (); }; };
 		4669F10E1BBC251C00860DB8 /* DPDealFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4669F10C1BBC251C00860DB8 /* DPDealFooterCell.xib */; settings = {ASSET_TAGS = (); }; };
 		4669F1101BBC4D8800860DB8 /* hotCity.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4669F10F1BBC4D8800860DB8 /* hotCity.plist */; settings = {ASSET_TAGS = (); }; };
@@ -125,6 +126,8 @@
 
 /* Begin PBXFileReference section */
 		08B3F26D541FD441F1669761 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		464152CB1BC5002C001958AC /* DPBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPBaseViewController.h; sourceTree = "<group>"; };
+		464152CC1BC5002C001958AC /* DPBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPBaseViewController.m; sourceTree = "<group>"; };
 		4669F10A1BBC251C00860DB8 /* DPDealFooterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDealFooterCell.h; sourceTree = "<group>"; };
 		4669F10B1BBC251C00860DB8 /* DPDealFooterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDealFooterCell.m; sourceTree = "<group>"; };
 		4669F10C1BBC251C00860DB8 /* DPDealFooterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPDealFooterCell.xib; sourceTree = "<group>"; };
@@ -414,6 +417,8 @@
 				467D56601B3EB0A600F0A951 /* YQNavigationController.m */,
 				467D56611B3EB0A600F0A951 /* YQTabBarController.h */,
 				467D56621B3EB0A600F0A951 /* YQTabBarController.m */,
+				464152CB1BC5002C001958AC /* DPBaseViewController.h */,
+				464152CC1BC5002C001958AC /* DPBaseViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1115,6 +1120,7 @@
 				46B4228B1BC263840082FF93 /* DPDetailController.m in Sources */,
 				467D566A1B3EB0A600F0A951 /* YQNavigationController.m in Sources */,
 				46B422B01BC263BD0082FF93 /* DPShopTelCell.m in Sources */,
+				464152CD1BC5002C001958AC /* DPBaseViewController.m in Sources */,
 				4669F13F1BBD89F900860DB8 /* DPSortCitySectionSupplementView.m in Sources */,
 				46CD2CCC1BBAEA1E006B0C12 /* DPShopsAPI.m in Sources */,
 			);

@@ -10,6 +10,7 @@
 #import <YTKNetworkConfig.h>
 #import "DPDistrictAPI.h"
 #import "DPCityAPI.h"
+
 @interface AppDelegate ()
 
 @end
@@ -18,12 +19,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
-    YTKNetworkConfig *config = [YTKNetworkConfig sharedInstance];
-    config.baseUrl = @"http://apis.baidu.com/baidunuomi/openapi";
-    DPLog(@"%@",DPDistricPlist);
-  
+    // 配置全局网络请求
+    [self initNetWork];
+    
+   
+    
+    
     return YES;
 }
 
@@ -48,5 +50,16 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark -- method
+
+- (void)initNetWork{
+    
+    YTKNetworkConfig *config = [YTKNetworkConfig sharedInstance];
+    config.baseUrl = @"http://apis.baidu.com/baidunuomi/openapi";
+    DPLog(@"%@",DPDistricPlist);
+    
+}
+
 
 @end
