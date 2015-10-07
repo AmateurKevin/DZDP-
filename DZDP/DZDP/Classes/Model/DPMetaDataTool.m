@@ -11,14 +11,25 @@
 #import "DPCityGroup.h"
 #import "DPSort.h"
 #import "DPCategory.h"
+#import "DPRadius.h"
 static NSArray *_categories;
 static NSArray *_sorts;
 static NSArray *_cityGroups;
 static NSArray *_cities;
 static NSArray *_hotCities;
 static NSMutableArray *_recentCities;
-
+static NSArray *_searchRadius;
 @implementation DPMetaDataTool
+
++ (NSArray *)searchRadius{
+    if (!_searchRadius) {
+        
+        NSArray *jsonArray = [self jsonArrayOfResource:@"SearchRadius"];
+        _searchRadius = [MTLJSONAdapter modelsOfClass:[DPRadius class] fromJSONArray:jsonArray error:nil];
+        
+    }
+    return _searchRadius;
+}
 
 + (NSArray *)categories
 {

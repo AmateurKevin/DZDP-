@@ -28,6 +28,7 @@ PODS:
   - Mantle (2.0.5):
     - Mantle/extobjc (= 2.0.5)
   - Mantle/extobjc (2.0.5)
+  - Masonry (0.6.3)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - AMapSearch
   - INTULocationManager
   - Mantle
+  - Masonry
   - SDWebImage
   - SVProgressHUD
   - YTKNetwork
@@ -53,6 +55,7 @@ SPEC CHECKSUMS:
   AMapSearch: fd1ed96353f8a0f5c2e2463dac6a145bb3e6970f
   INTULocationManager: 754f2800415378b7bb2c07be103449e1f6a2cc70
   Mantle: 1912395033f601de5adc8ee91e48f46e4c7051ad
+  Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SVProgressHUD: 54de4d9ab38aa3f688da401f5766a5738084e7fb
   YTKNetwork: 3f163c181ce5f03d52cf88f39d6757f46894280c

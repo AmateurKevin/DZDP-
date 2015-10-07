@@ -137,7 +137,7 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
     }
     // 阴影部分
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:separatorCellReuseIdentifier];
-    cell.contentView.backgroundColor = [UIColor lightGrayColor];
+    cell.contentView.backgroundColor = DPBgGrayColor;
     return cell;
   
 }

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DPFindShopsParam.h"
+@interface DPNearController : UIViewController
 
-@interface DPFoundController : UIViewController
+/// DPFindShopsParam商家参数
+@property(nonatomic,strong) DPFindShopsParam *shopsParam;
 
 @end

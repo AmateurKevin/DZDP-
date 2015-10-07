@@ -25,6 +25,8 @@
  */
 + (NSMutableArray *)recentCities;
 
++ (NSArray *)searchRadius;
+
 /// 更新最近城市
 + (void)updateRecentCityWith:(NSArray *)cityArray;
 

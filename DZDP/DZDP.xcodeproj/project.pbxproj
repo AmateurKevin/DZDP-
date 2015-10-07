@@ -52,6 +52,12 @@
 		46B422BD1BC266740082FF93 /* DPShopInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B422BB1BC266740082FF93 /* DPShopInfoCell.m */; settings = {ASSET_TAGS = (); }; };
 		46B422BE1BC266740082FF93 /* DPShopInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46B422BC1BC266740082FF93 /* DPShopInfoCell.xib */; settings = {ASSET_TAGS = (); }; };
 		46B422C11BC2CE2E0082FF93 /* DPMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B422C01BC2CE2E0082FF93 /* DPMapController.m */; settings = {ASSET_TAGS = (); }; };
+		46B422C51BC3CA0C0082FF93 /* DPNearController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B422C41BC3CA0C0082FF93 /* DPNearController.m */; settings = {ASSET_TAGS = (); }; };
+		46B422CB1BC3CEE20082FF93 /* DPNearLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B422CA1BC3CEE20082FF93 /* DPNearLocationView.m */; settings = {ASSET_TAGS = (); }; };
+		46B422CD1BC3CF480082FF93 /* DPNearLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46B422CC1BC3CF480082FF93 /* DPNearLocationView.xib */; settings = {ASSET_TAGS = (); }; };
+		46B422CF1BC4040C0082FF93 /* SearchRadius.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46B422CE1BC4040C0082FF93 /* SearchRadius.plist */; settings = {ASSET_TAGS = (); }; };
+		46B422D21BC405F20082FF93 /* DPRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B422D11BC405F20082FF93 /* DPRadius.m */; settings = {ASSET_TAGS = (); }; };
+		46B422D51BC409DC0082FF93 /* DPGeocoderTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B422D41BC409DC0082FF93 /* DPGeocoderTool.m */; settings = {ASSET_TAGS = (); }; };
 		46CD2B511BB6D903006B0C12 /* DPBaseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD2B501BB6D903006B0C12 /* DPBaseAPI.m */; settings = {ASSET_TAGS = (); }; };
 		46CD2B541BB6D940006B0C12 /* DPCityAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD2B531BB6D940006B0C12 /* DPCityAPI.m */; settings = {ASSET_TAGS = (); }; };
 		46CD2B571BB6D972006B0C12 /* DPDetailDealAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD2B561BB6D972006B0C12 /* DPDetailDealAPI.m */; settings = {ASSET_TAGS = (); }; };
@@ -89,7 +95,6 @@
 		46CD2CA11BB97E8D006B0C12 /* DPHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD2C831BB97E8D006B0C12 /* DPHomeController.m */; settings = {ASSET_TAGS = (); }; };
 		46CD2CA21BB97E8D006B0C12 /* DPMoreDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD2C861BB97E8D006B0C12 /* DPMoreDetailController.m */; settings = {ASSET_TAGS = (); }; };
 		46CD2CA31BB97E8D006B0C12 /* DPMoreDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46CD2C871BB97E8D006B0C12 /* DPMoreDetailController.xib */; settings = {ASSET_TAGS = (); }; };
-		46CD2CAA1BB97EEE006B0C12 /* DPFoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD2CA91BB97EEE006B0C12 /* DPFoundController.m */; settings = {ASSET_TAGS = (); }; };
 		46CD2CAD1BB97FAB006B0C12 /* DPMetaDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD2CAC1BB97FAB006B0C12 /* DPMetaDataTool.m */; settings = {ASSET_TAGS = (); }; };
 		46CD2CB31BB98E1F006B0C12 /* DPHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD2CB21BB98E1F006B0C12 /* DPHomeHeaderView.m */; settings = {ASSET_TAGS = (); }; };
 		46CD2CB51BB98E39006B0C12 /* DPHomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46CD2CB41BB98E39006B0C12 /* DPHomeHeaderView.xib */; settings = {ASSET_TAGS = (); }; };
@@ -197,6 +202,16 @@
 		46B422BC1BC266740082FF93 /* DPShopInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPShopInfoCell.xib; sourceTree = "<group>"; };
 		46B422BF1BC2CE2E0082FF93 /* DPMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPMapController.h; sourceTree = "<group>"; };
 		46B422C01BC2CE2E0082FF93 /* DPMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPMapController.m; sourceTree = "<group>"; };
+		46B422C31BC3CA0C0082FF93 /* DPNearController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPNearController.h; sourceTree = "<group>"; };
+		46B422C41BC3CA0C0082FF93 /* DPNearController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPNearController.m; sourceTree = "<group>"; };
+		46B422C91BC3CEE20082FF93 /* DPNearLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPNearLocationView.h; sourceTree = "<group>"; };
+		46B422CA1BC3CEE20082FF93 /* DPNearLocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPNearLocationView.m; sourceTree = "<group>"; };
+		46B422CC1BC3CF480082FF93 /* DPNearLocationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPNearLocationView.xib; sourceTree = "<group>"; };
+		46B422CE1BC4040C0082FF93 /* SearchRadius.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SearchRadius.plist; sourceTree = "<group>"; };
+		46B422D01BC405F20082FF93 /* DPRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRadius.h; sourceTree = "<group>"; };
+		46B422D11BC405F20082FF93 /* DPRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRadius.m; sourceTree = "<group>"; };
+		46B422D31BC409DC0082FF93 /* DPGeocoderTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPGeocoderTool.h; sourceTree = "<group>"; };
+		46B422D41BC409DC0082FF93 /* DPGeocoderTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPGeocoderTool.m; sourceTree = "<group>"; };
 		46CD2B4F1BB6D903006B0C12 /* DPBaseAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPBaseAPI.h; sourceTree = "<group>"; };
 		46CD2B501BB6D903006B0C12 /* DPBaseAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPBaseAPI.m; sourceTree = "<group>"; };
 		46CD2B521BB6D940006B0C12 /* DPCityAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPCityAPI.h; sourceTree = "<group>"; };
@@ -262,8 +277,6 @@
 		46CD2C851BB97E8D006B0C12 /* DPMoreDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPMoreDetailController.h; sourceTree = "<group>"; };
 		46CD2C861BB97E8D006B0C12 /* DPMoreDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPMoreDetailController.m; sourceTree = "<group>"; };
 		46CD2C871BB97E8D006B0C12 /* DPMoreDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPMoreDetailController.xib; sourceTree = "<group>"; };
-		46CD2CA81BB97EEE006B0C12 /* DPFoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPFoundController.h; sourceTree = "<group>"; };
-		46CD2CA91BB97EEE006B0C12 /* DPFoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPFoundController.m; sourceTree = "<group>"; };
 		46CD2CAB1BB97FAB006B0C12 /* DPMetaDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPMetaDataTool.h; sourceTree = "<group>"; };
 		46CD2CAC1BB97FAB006B0C12 /* DPMetaDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPMetaDataTool.m; sourceTree = "<group>"; };
 		46CD2CB11BB98E1F006B0C12 /* DPHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPHomeHeaderView.h; sourceTree = "<group>"; };
@@ -375,7 +388,7 @@
 		467D56581B3EB0A600F0A951 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				46CD2CA41BB97E99006B0C12 /* Found */,
+				46B422C21BC3CA0C0082FF93 /* Near */,
 				46CD2C4E1BB97E8D006B0C12 /* Home */,
 				46CD2B581BB6E577006B0C12 /* Model */,
 				46CD2B4A1BB6D7BC006B0C12 /* NetWork */,
@@ -526,6 +539,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		46B422C21BC3CA0C0082FF93 /* Near */ = {
+			isa = PBXGroup;
+			children = (
+				46B422C31BC3CA0C0082FF93 /* DPNearController.h */,
+				46B422C41BC3CA0C0082FF93 /* DPNearController.m */,
+				46B422C91BC3CEE20082FF93 /* DPNearLocationView.h */,
+				46B422CA1BC3CEE20082FF93 /* DPNearLocationView.m */,
+				46B422CC1BC3CF480082FF93 /* DPNearLocationView.xib */,
+			);
+			path = Near;
+			sourceTree = "<group>";
+		};
 		46CD2B4A1BB6D7BC006B0C12 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,6 +604,8 @@
 		46CD2B581BB6E577006B0C12 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				46B422D31BC409DC0082FF93 /* DPGeocoderTool.h */,
+				46B422D41BC409DC0082FF93 /* DPGeocoderTool.m */,
 				46CD2CAB1BB97FAB006B0C12 /* DPMetaDataTool.h */,
 				46CD2CAC1BB97FAB006B0C12 /* DPMetaDataTool.m */,
 				46CD2C091BB83B21006B0C12 /* MetaDataModel */,
@@ -608,6 +635,8 @@
 				46CD2C241BB854D7006B0C12 /* DPBiz_area.m */,
 				46CD2C4B1BB93783006B0C12 /* DPShop.h */,
 				46CD2C4C1BB93783006B0C12 /* DPShop.m */,
+				46B422D01BC405F20082FF93 /* DPRadius.h */,
+				46B422D11BC405F20082FF93 /* DPRadius.m */,
 			);
 			path = MetaDataModel;
 			sourceTree = "<group>";
@@ -778,15 +807,6 @@
 			path = PicWordMoreDetail;
 			sourceTree = "<group>";
 		};
-		46CD2CA41BB97E99006B0C12 /* Found */ = {
-			isa = PBXGroup;
-			children = (
-				46CD2CA81BB97EEE006B0C12 /* DPFoundController.h */,
-				46CD2CA91BB97EEE006B0C12 /* DPFoundController.m */,
-			);
-			path = Found;
-			sourceTree = "<group>";
-		};
 		46CD2CC91BBAE9D5006B0C12 /* DPShopsAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -839,6 +859,7 @@
 				46CD2BF11BB7F9DD006B0C12 /* cityGroup.plist */,
 				46EBAD151B40E67C005C8757 /* sorts.plist */,
 				4669F10F1BBC4D8800860DB8 /* hotCity.plist */,
+				46B422CE1BC4040C0082FF93 /* SearchRadius.plist */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -948,11 +969,13 @@
 				46EBAD191B40E67C005C8757 /* sorts.plist in Resources */,
 				46CD2C8A1BB97E8D006B0C12 /* DPDealCell.xib in Resources */,
 				46755FD91B3E3661005C58B4 /* Main.storyboard in Resources */,
+				46B422CD1BC3CF480082FF93 /* DPNearLocationView.xib in Resources */,
 				46B422A81BC263BD0082FF93 /* DPDetailHeaderView.xib in Resources */,
 				46CD2CC01BB9B049006B0C12 /* homeCategory.json in Resources */,
 				46CD2CA01BB97E8D006B0C12 /* DPFilterHeaderView.xib in Resources */,
 				46B422AB1BC263BD0082FF93 /* DPDetailPriceCell.xib in Resources */,
 				4669F1401BBD89F900860DB8 /* DPSortCitySectionSupplementView.xib in Resources */,
+				46B422CF1BC4040C0082FF93 /* SearchRadius.plist in Resources */,
 				46CD2CA31BB97E8D006B0C12 /* DPMoreDetailController.xib in Resources */,
 				46B4225D1BC19A2A0082FF93 /* DPBuyDetailCell.xib in Resources */,
 				46755FDE1B3E3661005C58B4 /* LaunchScreen.xib in Resources */,
@@ -1034,12 +1057,14 @@
 				4669F14D1BBFC55C00860DB8 /* DPCountDownTimeView.m in Sources */,
 				467D566D1B3EB0A600F0A951 /* main.m in Sources */,
 				46CD2C8D1BB97E8D006B0C12 /* DPDealMainController.m in Sources */,
+				46B422C51BC3CA0C0082FF93 /* DPNearController.m in Sources */,
 				46CD2B571BB6D972006B0C12 /* DPDetailDealAPI.m in Sources */,
 				46CD2C921BB97E8D006B0C12 /* DPRightImageButton.m in Sources */,
 				46CD2C881BB97E8D006B0C12 /* DPCenterLineLabel.m in Sources */,
 				4669F1361BBD37A100860DB8 /* DPSortCityHeaderView.m in Sources */,
 				4669F13A1BBD728A00860DB8 /* DPSortCityCell.m in Sources */,
 				46CD2C4D1BB93783006B0C12 /* DPShop.m in Sources */,
+				46B422CB1BC3CEE20082FF93 /* DPNearLocationView.m in Sources */,
 				4669F10D1BBC251C00860DB8 /* DPDealFooterCell.m in Sources */,
 				46CD2CC81BBA7345006B0C12 /* DPRushModel.m in Sources */,
 				46CD2C1C1BB83B21006B0C12 /* DPDeal.m in Sources */,
@@ -1052,6 +1077,7 @@
 				467D566C1B3EB0A600F0A951 /* AppDelegate.m in Sources */,
 				46B4224E1BC135910082FF93 /* UILabel+Html.m in Sources */,
 				4669F1461BBFBCD400860DB8 /* NSTimer+NKHelper.m in Sources */,
+				46B422D51BC409DC0082FF93 /* DPGeocoderTool.m in Sources */,
 				46EBAD221B4122E0005C8757 /* DPSortCityController.m in Sources */,
 				46B422AA1BC263BD0082FF93 /* DPDetailPriceCell.m in Sources */,
 				467D566B1B3EB0A600F0A951 /* YQTabBarController.m in Sources */,
@@ -1075,8 +1101,8 @@
 				46CD2C9B1BB97E8D006B0C12 /* DPDealNavigationController.m in Sources */,
 				46B422A71BC263BD0082FF93 /* DPDetailHeaderView.m in Sources */,
 				46B422B91BC2645B0082FF93 /* DPShopDetailController.m in Sources */,
-				46CD2CAA1BB97EEE006B0C12 /* DPFoundController.m in Sources */,
 				46CD2CAD1BB97FAB006B0C12 /* DPMetaDataTool.m in Sources */,
+				46B422D21BC405F20082FF93 /* DPRadius.m in Sources */,
 				46B422C11BC2CE2E0082FF93 /* DPMapController.m in Sources */,
 				46CD2C221BB85440006B0C12 /* DPDistrict.m in Sources */,
 				46B422AC1BC263BD0082FF93 /* DPHtmlCell.m in Sources */,
@@ -1224,6 +1250,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DZDP/DPPch.pch;
 				INFOPLIST_FILE = DZDP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1239,6 +1266,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DZDP/DPPch.pch;
 				INFOPLIST_FILE = DZDP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

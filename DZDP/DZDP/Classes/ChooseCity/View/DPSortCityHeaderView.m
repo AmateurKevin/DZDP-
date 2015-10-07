@@ -12,6 +12,7 @@
 #import "DPCity.h"
 #import "DPMetaDataTool.h"
 #import <INTULocationManager.h>
+#import "DPGeocoderTool.h"
 static NSString * const CityReuseIdentifier = @"city";
 static NSString * const supplementCityReuseIdentifier = @"supplement";
 static NSTimeInterval  const LocationTimeOut = 10;
@@ -44,50 +45,19 @@ static NSTimeInterval  const LocationTimeOut = 10;
         
         [[INTULocationManager sharedInstance] requestLocationWithDesiredAccuracy:INTULocationAccuracyNeighborhood timeout:LocationTimeOut block:^(CLLocation *currentLocation, INTULocationAccuracy achievedAccuracy, INTULocationStatus status) {
             
-            [[[CLGeocoder alloc] init] reverseGeocodeLocation:currentLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-                
-                
-                for (CLPlacemark * placemark in placemarks) {
+            [DPGeocoderTool getCityFromLocation:currentLocation andExecuteBlock:^(DPCity *city) {
+                _locationCity =city;
+                dispatch_async(dispatch_get_main_queue(), ^{
                     
-                    NSDictionary *test = [placemark addressDictionary];
-                    //  Country(国家)  State(城市)  SubLocality(区)
-                    //DPLog(@"%@", [test objectForKey:@"State"]);
+                    [self reloadSections:[NSIndexSet indexSetWithIndex:0]];
                     
-                    [[NSUserDefaults standardUserDefaults] setObject:[test objectForKey:@"State"] forKey:locationCityNameKEY];
-                    
-                    NSString *stateName = [test objectForKey:@"State"];
-                    NSString *cityName = [test objectForKey:@"City"];
-                    
-                    if ([stateName isEqualToString:@"北京市"]||
-                        [stateName isEqualToString:@"天津市"]||
-                        [stateName isEqualToString:@"重庆市"]||
-                        [stateName isEqualToString:@"上海市"]) {
-                        _locationCity = [DPMetaDataTool cityWithName:stateName];
-                        [[NSUserDefaults standardUserDefaults] setObject:stateName forKey:locationCityNameKEY];
-                    }else{
-                         _locationCity = [DPMetaDataTool cityWithName:cityName];
-                        [[NSUserDefaults standardUserDefaults] setObject:cityName forKey:locationCityNameKEY];
-                    }
-                    
-                  
-                    // 返回数据后更新第一组label,即定位到的城市
-//                    DPLog(@"%@",[test objectForKey:@"State"]);
-//                    DPLog(@"%@",[test objectForKey:@"City"]);
-//                     DPLog(@"%@",[test objectForKey:@"Street"]);
-//                    DPLog(@"%@",[test objectForKey:@"FormattedAddressLines"]);
-//                    DPLog(@"%@",[test objectForKey:@"Name"]);
-//                    DPLog(@"%@",[test objectForKey:@"SubLocality"]);
-//                    DPLog(@"%@",[test objectForKey:@"Thoroughfare"]);
+                });
 
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self reloadSections:[NSIndexSet indexSetWithIndex:0]];
-                    });
-                    
-                }
-                
-                
-            }];
+            } ];
+            
+            
         }];
+      
 
         
     }

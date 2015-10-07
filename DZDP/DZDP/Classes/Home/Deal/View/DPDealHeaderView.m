@@ -10,7 +10,7 @@ static CGFloat const kMargin = 10;
 
 #import "DPDealHeaderView.h"
 #import "DPShop.h"
-
+#import "DPDeal.h"
 @interface DPDealHeaderView()
 
 @property(nonatomic,weak) UILabel *nameLabel;
@@ -34,13 +34,13 @@ static CGFloat const kMargin = 10;
         self.contentView.backgroundColor = [UIColor whiteColor];
         
         UIView *topLineView = [[UIView alloc] init];
-        topLineView.backgroundColor = [UIColor lightGrayColor];
+        topLineView.backgroundColor = DPBgGrayColor;
         [self.contentView addSubview:topLineView];
         
         self.topLineView = topLineView;
         
         UILabel *nameLabel = [[UILabel alloc] init];
-        nameLabel.font = [UIFont systemFontOfSize:14];
+        nameLabel.font = [UIFont systemFontOfSize:15];
         [self.contentView addSubview:nameLabel];
         self.nameLabel = nameLabel;
         
@@ -58,7 +58,7 @@ static CGFloat const kMargin = 10;
         self.distanceLabel = distanceLabel;
         
         UIView *bottomLineView = [[UIView alloc] init];
-        bottomLineView.backgroundColor = [UIColor lightGrayColor];
+        bottomLineView.backgroundColor = DPBgGrayColor;
         [self.contentView addSubview:bottomLineView];
 
         self.bottomLineView = bottomLineView;
@@ -95,8 +95,15 @@ static CGFloat const kMargin = 10;
 - (void)setShop:(DPShop *)shop{
     _shop = shop;
     self.nameLabel.text = shop.shop_name;
-    self.scoreLabel.text = @"4.7";
-    self.distanceLabel.text = @"100m";
+    
+    NSNumber *scoreNumber = [shop.deals[0] score];
+    if (scoreNumber) {
+        self.scoreLabel.text = [NSString stringWithFormat:@"%.2f分", scoreNumber.doubleValue];
+    }else{
+        self.scoreLabel.text = @"暂无评分";
+    }
+    
+    self.distanceLabel.text = [NSString stringWithFormat:@"%ldm",shop.distance.integerValue];
 }
 
 - (void)headerTaped{
