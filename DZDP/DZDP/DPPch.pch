@@ -46,6 +46,8 @@
 
 #define DPMAMapAPIKey @"8b884af757a6426dcf472e6811cdd7a6"
 
+#define DPIflyAPPID_VALUE @"5616859c"
+
 //define this constant if you want to use Masonry without the 'mas_' prefix
 #define MAS_SHORTHAND
 
@@ -53,4 +55,6 @@
 #define MAS_SHORTHAND_GLOBALS
 
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
+
 

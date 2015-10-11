@@ -21,7 +21,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QMf-9K-riR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="600.5" y="186.5"/>
+            <point key="canvasLocation" x="538.5" y="186.5"/>
         </scene>
         <!--Sort City Controller-->
         <scene sceneID="eDU-y4-jZl">
@@ -48,7 +48,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCm-OO-d4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1016.5" y="186.5"/>
+            <point key="canvasLocation" x="946.5" y="180.5"/>
         </scene>
     </scenes>
 </document>

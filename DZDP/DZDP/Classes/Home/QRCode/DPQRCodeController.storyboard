@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3lm-Po-EBu">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Code Controller-->
+        <scene sceneID="dT6-0R-NyV">
+            <objects>
+                <viewController id="3lm-Po-EBu" customClass="DPQRCodeController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="acn-Za-cYm"/>
+                        <viewControllerLayoutGuide type="bottom" id="j0p-lY-clu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="igv-Jj-Rlg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Llf-um-xfQ">
+                                <rect key="frame" x="87" y="233" width="200" height="200"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode_border" translatesAutoresizingMaskIntoConstraints="NO" id="5qA-Nb-5ou">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Scan_Line" translatesAutoresizingMaskIntoConstraints="NO" id="E28-zK-ugj">
+                                        <rect key="frame" x="5" y="0.0" width="190" height="5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="5" id="eJ7-2D-CjF"/>
+                                            <constraint firstAttribute="width" constant="190" id="zqG-Ke-u23"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="5qA-Nb-5ou" secondAttribute="bottom" id="HJ1-lZ-dsr"/>
+                                    <constraint firstAttribute="height" constant="200" id="HZZ-Oz-bdW"/>
+                                    <constraint firstItem="5qA-Nb-5ou" firstAttribute="leading" secondItem="Llf-um-xfQ" secondAttribute="leading" id="bMD-In-UzA"/>
+                                    <constraint firstAttribute="width" constant="200" id="jXq-3c-hPv"/>
+                                    <constraint firstAttribute="trailing" secondItem="5qA-Nb-5ou" secondAttribute="trailing" id="nEx-rQ-hSq"/>
+                                    <constraint firstItem="E28-zK-ugj" firstAttribute="top" secondItem="Llf-um-xfQ" secondAttribute="top" id="rFb-V0-1Po"/>
+                                    <constraint firstItem="5qA-Nb-5ou" firstAttribute="top" secondItem="Llf-um-xfQ" secondAttribute="top" id="yv2-TF-iob"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Llf-um-xfQ" firstAttribute="centerX" secondItem="igv-Jj-Rlg" secondAttribute="centerX" id="Q8b-Yf-HUX"/>
+                            <constraint firstItem="E28-zK-ugj" firstAttribute="centerX" secondItem="igv-Jj-Rlg" secondAttribute="centerX" id="fpQ-8T-duH"/>
+                            <constraint firstItem="Llf-um-xfQ" firstAttribute="centerY" secondItem="igv-Jj-Rlg" secondAttribute="centerY" id="gBQ-hY-DeK"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="containerHeight" destination="HZZ-Oz-bdW" id="9cY-dw-Fke"/>
+                        <outlet property="scanLineTop" destination="rFb-V0-1Po" id="x6E-Ei-Pf2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tOg-1T-vnO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="443.5" y="283.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Scan_Line" width="143" height="80"/>
+        <image name="qrcode_border" width="51" height="51"/>
+    </resources>
+</document>

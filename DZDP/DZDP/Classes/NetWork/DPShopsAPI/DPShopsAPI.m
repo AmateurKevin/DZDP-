@@ -9,6 +9,7 @@
 #import "DPShopsAPI.h"
 #import "DPFindShopsParam.h"
 #import "DPShop.h"
+#import <SVProgressHUD.h>
 @implementation DPShopsAPI{
     // 城市ID
     NSNumber *_city_id;
@@ -87,9 +88,20 @@
 }
 
 - (void)getShopsIfsuccess:(void(^)(NSArray* shops))success failure:(void(^)(YTKBaseRequest*request))failure{
+    
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+    
     [self startWithCompletionBlockWithSuccess:^(YTKBaseRequest *request) {
         DPLog(@"%@",request.responseString);
-        // 没有错误信息才开始解析
+        // 没有错误信息才开始解析 ,0代表成功
+        
+        if ([request.responseJSONObject[@"errno"] isEqualToNumber:@(1005)]) {
+            
+                [SVProgressHUD showSuccessWithStatus:@"没有获取到数据" maskType:SVProgressHUDMaskTypeBlack];
+            
+        }
+        
+        
         if ([request.responseJSONObject[@"errno"] isEqualToNumber: @(0)]) {
             
             if (success) {
@@ -99,16 +111,25 @@
                     NSArray *shops = [MTLJSONAdapter modelsOfClass:[DPShop class] fromJSONArray:request.responseJSONObject[@"data"][@"shops"] error:nil];
                     
                     if (shops) {
+                        
+                        [SVProgressHUD dismiss];
                         success(shops);
                     }
                 }
-                
             }
         }
     } failure:^(YTKBaseRequest *request) {
+        
+        if (![request.responseJSONObject[@"errno"] isEqualToNumber: @(0)]) {
+            
+            [SVProgressHUD showErrorWithStatus:@"网络不好,请检查网络设置"];
+            
+        }
+        
         if (failure) {
             failure(request);
         }
+        
     }];
 
 }

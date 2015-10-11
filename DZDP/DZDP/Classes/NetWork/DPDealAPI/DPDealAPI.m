@@ -8,6 +8,7 @@
 
 #import "DPDealAPI.h"
 #import "DPDeal.h"
+#import <SVProgressHUD.h>
 @implementation DPDealAPI{
     NSNumber *_city_id;
     NSString *_cat_ids;
@@ -84,6 +85,13 @@
     [self startWithCompletionBlockWithSuccess:^(YTKBaseRequest *request) {
         //DPLog(@"%@",request.responseString);
         // 没有错误信息才开始解析
+        if ([request.responseJSONObject[@"errno"] isEqualToNumber:@(1005)]) {
+            
+            [SVProgressHUD showSuccessWithStatus:@"没有获取到数据" maskType:SVProgressHUDMaskTypeBlack];
+            
+        }
+        
+        
         if ([request.responseJSONObject[@"errno"] isEqualToNumber: @(0)]) {
             
             if (success) {
@@ -93,6 +101,9 @@
                     NSArray *deals = [MTLJSONAdapter modelsOfClass:[DPDeal class] fromJSONArray:request.responseJSONObject[@"data"][@"deals"] error:nil];
                     
                     if (deals) {
+                        
+                        [SVProgressHUD dismiss];
+
                         success(deals);
                     }
                 }
@@ -100,9 +111,15 @@
         }
     }
     } failure:^(YTKBaseRequest *request) {
+        
         if (![request.responseJSONObject[@"errno"] isEqualToNumber: @(0)]) {
-            failure(request);
+            
+            [SVProgressHUD showErrorWithStatus:@"网络不好,请检查网络设置"];
+
         }
+        
+        if(failure) failure(request);
+        
     }];
 }
 

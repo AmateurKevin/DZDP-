@@ -72,7 +72,7 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
     //self.navigationController.automaticallyAdjustsScrollViewInsets = NO;
     [tableView registerClass:[DPDealHeaderView class] forHeaderFooterViewReuseIdentifier:headerReuseIdentifier];
     [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:separatorCellReuseIdentifier];
-    
+    tableView.separatorStyle =  UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tableView];
     
     self.tableView = tableView;
@@ -81,10 +81,10 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
 }
 
 - (void)loadNewShops:(DPFindShopsParam *)param{
-    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+    
+    
     [[[DPShopsAPI alloc] initWithShopsParam:param] getShopsIfsuccess:^(NSArray *Shops) {
         
-        [SVProgressHUD dismiss];
         [self.shops removeAllObjects];
         [self.shops addObjectsFromArray:Shops];
         
@@ -92,9 +92,7 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
         [self updateSectionShops];
         [self.tableView reloadData];
         
-    } failure:^(YTKBaseRequest *request) {
-        [SVProgressHUD showErrorWithStatus:@"网络不好"];
-    }];
+    } failure:nil];
     
 }
 
@@ -137,6 +135,8 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
     }
     // 阴影部分
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:separatorCellReuseIdentifier];
+    cell.userInteractionEnabled = NO;
+    
     cell.contentView.backgroundColor = DPBgGrayColor;
     return cell;
   
@@ -190,6 +190,9 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
 #pragma mark -- UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // 取消选中
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     NSArray *array = self.sectionShops[indexPath.section];
 
     if ([array[indexPath.row] isKindOfClass:[DPDeal class]]) {
@@ -199,14 +202,17 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
         detailVc.shop = _shops[indexPath.row];
         [self.navigationController pushViewController:detailVc animated:YES];
         
-    }else{
+    }
+     if ([array[indexPath.row] isKindOfClass:[NSNumber class]]){
         
         
         [self.sectionShops replaceObjectAtIndex:indexPath.section withObject:[self.shops[indexPath.section] deals]];
         [self.sectionShops[indexPath.section] addObject:separatorCellReuseIdentifier];
         
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationAutomatic];
-    }
+     }else{
+         
+     }
     
     
 }

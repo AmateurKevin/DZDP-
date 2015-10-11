@@ -19,13 +19,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WLP-di-N8q">
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <containerView key="tableFooterView" opaque="NO" contentMode="scaleToFill" id="Sm0-b9-R4L">
-                                    <rect key="frame" x="0.0" y="64" width="320" height="111"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                    <connections>
-                                        <segue destination="KKd-6e-V5M" kind="embed" id="ntl-3g-Xnc"/>
-                                    </connections>
-                                </containerView>
                                 <connections>
                                     <outlet property="dataSource" destination="7ql-q5-dpo" id="I9W-WJ-YVy"/>
                                     <outlet property="delegate" destination="7ql-q5-dpo" id="kxA-5h-VIj"/>
@@ -55,6 +48,11 @@
                                 </connections>
                             </button>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="oversea_navibar_icon_qr" id="5CS-zP-qlp">
+                            <connections>
+                                <action selector="QRCodeBtnClicked:" destination="7ql-q5-dpo" id="xFJ-Uk-NjT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="leftBtn" destination="xWN-BV-Bv0" id="2c1-WU-UTI"/>
@@ -63,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKD-dB-0Mg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="-231"/>
+            <point key="canvasLocation" x="602" y="-231"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="k2b-0C-4xA">
@@ -109,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="88m-KL-ABT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="625" y="910"/>
+            <point key="canvasLocation" x="1437" y="910"/>
         </scene>
         <!--附近-->
         <scene sceneID="c7j-Kf-9TA">
@@ -125,7 +123,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="附近" id="46G-mH-cdi">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Fgf-RA-iJZ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Fgf-RA-iJZ">
+                            <connections>
+                                <action selector="searchBtnClicked:" destination="RFj-Nn-HND" id="CHT-JA-aKa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bT-so-Dbz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -146,6 +148,7 @@
                     <connections>
                         <segue destination="XQb-t4-ogb" kind="relationship" relationship="viewControllers" id="Ymm-DC-4Pl"/>
                         <segue destination="aXt-4c-mOq" kind="relationship" relationship="viewControllers" id="Ue0-79-ckg"/>
+                        <segue destination="3k7-CO-EgU" kind="relationship" relationship="viewControllers" id="KD6-5v-hua"/>
                         <segue destination="Zmf-tQ-poS" kind="relationship" relationship="viewControllers" id="esW-Kb-1Xe"/>
                         <segue destination="jN0-tJ-6vl" kind="relationship" relationship="viewControllers" id="gf4-RG-8dL"/>
                     </connections>
@@ -184,6 +187,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="F5u-6N-Ov8">
+                        <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="7ql-q5-dpo" kind="relationship" relationship="rootViewController" id="sgp-2f-7Bg"/>
                     </connections>
@@ -195,7 +202,7 @@
         <!--发现-->
         <scene sceneID="drg-sU-gob">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zmf-tQ-poS" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zmf-tQ-poS" customClass="YQNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="发现" image="home_footbar_icon_found" id="jFq-SN-fQ7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="biN-3x-l0H">
@@ -228,25 +235,50 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="33G-fu-VLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="227" y="918"/>
+            <point key="canvasLocation" x="1039" y="918"/>
+        </scene>
+        <!--语音搜索-->
+        <scene sceneID="w60-Ax-9GA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3k7-CO-EgU" customClass="YQNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="2" title="语音搜索" id="jMQ-2y-q80"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Pg-K2-b96">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IEe-gW-sV2" kind="presentation" id="Xq8-OZ-rCS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qdt-ZW-Cnn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-205" y="990"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="w4p-Wf-Wbe">
+        <scene sceneID="kEj-Fq-5Lx">
             <objects>
-                <viewController id="KKd-6e-V5M" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZRL-UW-n0h">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
+                <viewController id="IEe-gW-sV2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ert-jC-IKw"/>
+                        <viewControllerLayoutGuide type="bottom" id="JKn-J1-ZEb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9bi-pX-YM1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hgx-pP-Drb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UnJ-84-r29" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="175" y="987"/>
         </scene>
     </scenes>
     <resources>
         <image name="home_footbar_icon_dianping" width="24" height="24"/>
         <image name="home_footbar_icon_found" width="24" height="24"/>
         <image name="home_footbar_icon_my" width="24" height="24"/>
+        <image name="oversea_navibar_icon_qr" width="20" height="20"/>
     </resources>
 </document>

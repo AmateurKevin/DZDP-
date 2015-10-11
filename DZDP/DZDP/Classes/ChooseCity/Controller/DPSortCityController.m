@@ -111,6 +111,8 @@ static NSString *const kCellIndentifier = @"city";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     DPCity *selectedCity = nil;
     
     if (tableView == self.tableView) {
@@ -241,7 +243,7 @@ static NSString *const kCellIndentifier = @"city";
 
 - (void)configureSearchController{
     
-    _resultsTableController = [[DPCitySearchResultsController alloc] init];
+    _resultsTableController = [[DPCitySearchResultsController alloc] init]; 
     
     // Init UISearchController with the search results controller
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:_resultsTableController];

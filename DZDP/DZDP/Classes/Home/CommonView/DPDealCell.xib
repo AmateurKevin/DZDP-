@@ -70,12 +70,20 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qkn-8t-FaL" userLabel="bottomLine">
+                        <rect key="frame" x="0.0" y="93" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.80392156862745101" green="0.80392156862745101" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="xOe-7U-zac"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Rde-ca-nuD" firstAttribute="top" secondItem="ELA-LL-E3Y" secondAttribute="top" id="1MW-SS-jIY"/>
                     <constraint firstItem="zhm-DC-vUs" firstAttribute="bottom" secondItem="DDR-W9-RbM" secondAttribute="bottom" id="2A8-MH-F9i"/>
                     <constraint firstItem="zhm-DC-vUs" firstAttribute="leading" secondItem="8ax-mP-s5D" secondAttribute="leading" id="6Vr-Pf-kOu"/>
                     <constraint firstItem="hXq-ZU-eDQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="HDe-xJ-Q4T"/>
+                    <constraint firstAttribute="trailing" secondItem="qkn-8t-FaL" secondAttribute="trailing" id="HeH-ox-FzY"/>
                     <constraint firstItem="ELA-LL-E3Y" firstAttribute="leading" secondItem="DDR-W9-RbM" secondAttribute="trailing" constant="5" id="HiG-7s-7Yh"/>
                     <constraint firstItem="MTT-do-s0N" firstAttribute="leading" secondItem="zhm-DC-vUs" secondAttribute="trailing" constant="5" id="JHX-OE-yB7"/>
                     <constraint firstItem="zhm-DC-vUs" firstAttribute="bottom" secondItem="DDR-W9-RbM" secondAttribute="bottom" id="Jh2-ki-H2h"/>
@@ -93,6 +101,8 @@
                     <constraint firstItem="DDR-W9-RbM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="q9X-3X-t0N"/>
                     <constraint firstItem="ELA-LL-E3Y" firstAttribute="leading" secondItem="8ax-mP-s5D" secondAttribute="leading" id="qf6-KL-tn8"/>
                     <constraint firstItem="zhm-DC-vUs" firstAttribute="bottom" secondItem="MTT-do-s0N" secondAttribute="bottom" constant="1" id="uAX-sb-nWP"/>
+                    <constraint firstAttribute="bottom" secondItem="qkn-8t-FaL" secondAttribute="bottom" id="uFe-Ci-7lz"/>
+                    <constraint firstItem="qkn-8t-FaL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="vle-y2-dPK"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">

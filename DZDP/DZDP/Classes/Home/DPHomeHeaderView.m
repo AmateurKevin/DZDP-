@@ -57,9 +57,7 @@ static NSUInteger const rowCount = 4;
         self.rushPurchaseDeals = deals;
         [self.DPRushPurchaseView reloadData];
         
-    } failure:^(YTKBaseRequest *request) {
-        
-    }];
+    } failure:nil];
     
     DPCountDownTimeView *countDownView = [DPCountDownTimeView countDownTimeLabel];
     [self addSubview:countDownView];

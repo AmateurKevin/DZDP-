@@ -212,6 +212,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     // 图文详情
     if (indexPath.section == 3 && indexPath.row == 2) {
         

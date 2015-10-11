@@ -39,6 +39,13 @@
         }
     } failure:^(YTKBaseRequest *request) {
         
+        if (![request.responseJSONObject[@"errno"] isEqualToNumber: @(0)]) {
+            
+            if (failure) failure(request);
+            
+        }
+
+        
     }];
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import "DPDetailDealAPI.h"
-
+#import <SVProgressHUD.h>
 @implementation DPDetailDealAPI{
     NSNumber *_deal_id;
 }
@@ -31,12 +31,31 @@
 }
 
 + (void)getDetailDealWithID:(NSNumber *)dealID success:(void(^)(DPDeal *deal))success failure:(void(^)(YTKBaseRequest *request))failure{
+    
     [[[self alloc] initWithDealID:dealID] startWithCompletionBlockWithSuccess:^(YTKBaseRequest *request) {
-        if (success) {
-            DPDeal *deal = [MTLJSONAdapter modelOfClass:[DPDeal class] fromJSONDictionary:request.responseJSONObject[@"deal"] error:nil];
-            success(deal);
+        
+        if ([request.responseJSONObject[@"errno"] isEqualToNumber:@(1005)]) {
+            
+            [SVProgressHUD showSuccessWithStatus:@"没有获取到数据" maskType:SVProgressHUDMaskTypeBlack];
+            
         }
-    } failure:^(YTKBaseRequest *request) {
+
+        if ([request.responseJSONObject[@"errno"] isEqualToNumber: @(0)]){
+            
+            if (success) {
+                DPDeal *deal = [MTLJSONAdapter modelOfClass:[DPDeal class] fromJSONDictionary:request.responseJSONObject[@"deal"] error:nil];
+                success(deal);
+            }
+
+            
+        }
+            } failure:^(YTKBaseRequest *request) {
+        
+        if (![request.responseJSONObject[@"errno"] isEqualToNumber: @(0)]) {
+            
+            if (failure) failure(request);
+            
+        }
         
     }];
 }

@@ -32,7 +32,7 @@
 }
 
 - (void)setup{
-    self.selectionStyle = UITableViewCellSeparatorStyleNone;
+    //self.selectionStyle = UITableViewCellSeparatorStyleNone;
 }
 
 @end

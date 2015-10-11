@@ -21,8 +21,10 @@
 #import "DPDetailController.h"
 #import "DPCategoryMenuController.h"
 #import "DPMetaDataTool.h"
-
-@interface DPHomeController ()<UITableViewDataSource,UITableViewDelegate,HomeHeaderViewDelegate>
+#import "DPNavSearchController.h"
+#import "DPQRCodeController.h"
+#import "DPNavSearchController.h"
+@interface DPHomeController ()<UITableViewDataSource,UITableViewDelegate,HomeHeaderViewDelegate,UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 
@@ -36,6 +38,8 @@
 - (IBAction)sortCityClicked:(id)sender;
 @property (weak, nonatomic) IBOutlet DPRightImageButton *leftBtn;
 
+@property(nonatomic,weak) UISearchBar *searchBar;
+
 @end
 
 @implementation DPHomeController
@@ -45,7 +49,6 @@
     
     DPSortCityController *sortCityVc = [DPSortCityController sortCityController];
     [self presentViewController:sortCityVc animated:YES completion:nil];
-
 }
 
 - (void)viewDidLoad {
@@ -60,6 +63,10 @@
     //
     [self initAttributes];
     
+    
+    self.tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
+
+    
     // 获取header数据
     // 加载主页分类模型
     DPHomeHeaderView *headView = [DPHomeHeaderView homeHeaderView];
@@ -71,6 +78,15 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(citySelect:) name:DPCityDidSelectNotification object:nil];
     
 }
+
+- (IBAction)QRCodeBtnClicked:(id)sender {
+    
+    DPQRCodeController *vc = [DPQRCodeController QRCodeController];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
 #pragma mark -- NSNotificationCenter handler
 - (void)citySelect:(NSNotification *)note
 {
@@ -91,13 +107,19 @@
     }else{
         [self.leftBtn setTitle:@"北京市" forState:UIControlStateNormal];
     }
+    
+    UISearchBar *searchBar = [[UISearchBar alloc] init];
+    searchBar.placeholder = @"搜索商家或地点";
+    self.searchBar = searchBar;
+    searchBar.delegate = self;
+    self.navigationItem.titleView = searchBar;
+    
 }
 
 - (void)initAttributes{
     
     _deals = [NSMutableArray array];
     _findDealsParam = [[DPFindDealsParam alloc] init];
-    
 }
 
 //  处理定位
@@ -114,7 +136,7 @@
                 
                  [DPGeocoderTool getCityFromLocation:currentLocation andExecuteBlock:^(DPCity *city) {
                      
-                     // 定位名称与当前使用城市不符合,弹出切换的提醒
+                     // 定位名称与当前使用城市不符合,弹出切换城市的提醒
                      if (![UserDefaulsCityName isEqualToString:city.city_name]) {
                          
                          dispatch_async(dispatch_get_main_queue(), ^{
@@ -130,13 +152,11 @@
             
         }];
         
-    }else{
-        
-        // 没开定位根据现有的城市直接刷新数据
-        [self loadNewDeals];
-        
     }
-    
+        
+        // 没开定位或者开了定位但城市一致都需要根据现有的城市直接刷新数据
+        [self loadNewDeals];
+ 
 }
 
 - (void)popTipAlertWithcurrentCityName:(NSString*)name andlocation:(NSString*)location{
@@ -174,19 +194,17 @@
 
 - (void)loadNewDeals{
     
-    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+    
     
     _findDealsParam.city_id = UserDefaultCityID;
     
     [[[DPDealAPI alloc] initWithDealParam:_findDealsParam] getDealsIfsuccess:^(NSArray *deals) {
-        [SVProgressHUD dismiss];
+       
         [self.deals removeAllObjects];
         [self.deals addObjectsFromArray:deals];
         [self.tableview reloadData];
         
-    } failure:^(YTKBaseRequest *request) {
-        [SVProgressHUD showErrorWithStatus:@"网络不好,没有得到团购数据"];
-    }];
+    } failure:nil];
 
 }
 
@@ -206,13 +224,14 @@
     if ([catID  isEqual: @(-1)]) {
         
         DPCategoryMenuController *vc = [[DPCategoryMenuController alloc] init];
-        self.hidesBottomBarWhenPushed = YES;
+        vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }
     
     DPDealMainController *vc = [[DPDealMainController alloc] init];
     vc.shopsParam = param;
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     
 }
@@ -225,8 +244,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     DPDealCell *cell = [DPDealCell cellWithTableView:tableView];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.deal = self.deals[indexPath.row];
     
     return cell;
@@ -235,11 +254,23 @@
 #pragma mark -- UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    //DPDetailController *detailVc = [DPDetailController detailController];
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     DPDetailController *detailVc = [[DPDetailController alloc] initWithStyle:UITableViewStyleGrouped];
     detailVc.deal = self.deals[indexPath.row];
-    self.hidesBottomBarWhenPushed = YES;
+    detailVc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detailVc animated:YES];
+}
+
+#pragma mark -- UISearchBarDelegate
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    
+    DPNavSearchController *vc = [DPNavSearchController sharedInstance];
+
+    [self presentViewController:vc animated:NO completion:nil];
+    
 }
 
 @end

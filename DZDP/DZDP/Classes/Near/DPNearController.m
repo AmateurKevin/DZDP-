@@ -28,7 +28,7 @@
 #import "DPShopDetailController.h"
 #import "DPNearLocationView.h"
 #import "DPRadius.h"
-
+#import "DPNavSearchController.h"
 
 static NSString * const reuseIdentifier = @"maincell";
 static NSString * const headerReuseIdentifier = @"header";
@@ -62,6 +62,14 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
     [self initlocationView];
     [self initTableView];
  
+}
+
+- (IBAction)searchBtnClicked:(id)sender {
+    
+    DPNavSearchController *vc = [DPNavSearchController sharedInstance];
+    
+    [self presentViewController:vc animated:YES completion:nil];
+    
 }
 
 #pragma mark -- init
@@ -113,10 +121,8 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
         
     }
     
-    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     [[[DPShopsAPI alloc] initWithShopsParam:param] getShopsIfsuccess:^(NSArray *Shops) {
         
-        [SVProgressHUD dismiss];
         [self.shops removeAllObjects];
         [self.shops addObjectsFromArray:Shops];
         
@@ -124,9 +130,7 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
         [self updateSectionShops];
         [self.tableView reloadData];
         
-    } failure:^(YTKBaseRequest *request) {
-        [SVProgressHUD showErrorWithStatus:@"网络不好"];
-    }];
+    } failure:nil];
     
 }
 
@@ -222,6 +226,9 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
 #pragma mark -- UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     NSArray *array = self.sectionShops[indexPath.section];
     
     if ([array[indexPath.row] isKindOfClass:[DPDeal class]]) {

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "787CCB0BA0CE354F401F45EB"
+               BlueprintIdentifier = "91E27FB6FCAB18C803D5B475"
                BuildableName = "libAFDownloadRequestOperation.a"
                BlueprintName = "AFDownloadRequestOperation"
                ReferencedContainer = "container:Pods.xcodeproj">

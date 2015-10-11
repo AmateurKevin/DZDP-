@@ -29,6 +29,7 @@
     self.dealImage.layer.masksToBounds = YES;
 }
 
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

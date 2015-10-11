@@ -1,0 +1,27 @@
+
+/* Class = "UITabBarItem"; title = "附近"; ObjectID = "1YX-hM-hmn"; */
+"1YX-hM-hmn.title" = "附近";
+
+/* Class = "UINavigationItem"; title = "附近"; ObjectID = "46G-mH-cdi"; */
+"46G-mH-cdi.title" = "附近";
+
+/* Class = "UIBarButtonItem"; title = "二维码"; ObjectID = "5CS-zP-qlp"; */
+"5CS-zP-qlp.title" = "二维码";
+
+/* Class = "UILabel"; text = "7月7日"; ObjectID = "ZD7-kd-I1H"; */
+"ZD7-kd-I1H.text" = "7月7日";
+
+/* Class = "UITabBarItem"; title = "首页"; ObjectID = "e8f-k9-HDm"; */
+"e8f-k9-HDm.title" = "首页";
+
+/* Class = "UITabBarItem"; title = "发现"; ObjectID = "jFq-SN-fQ7"; */
+"jFq-SN-fQ7.title" = "发现";
+
+/* Class = "UITabBarItem"; title = "语音搜索"; ObjectID = "jMQ-2y-q80"; */
+"jMQ-2y-q80.title" = "语音搜索";
+
+/* Class = "UITabBarItem"; title = "我的"; ObjectID = "r2o-Kh-4Vg"; */
+"r2o-Kh-4Vg.title" = "我的";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "xWN-BV-Bv0"; */
+"xWN-BV-Bv0.normalTitle" = "Button";
