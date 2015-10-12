@@ -37,12 +37,10 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
 @property(nonatomic,strong) NSArray *districts;
 @property(nonatomic,strong) NSArray *sorts;
 
-//@property(nonatomic,strong) NSMutableArray *deals;
 @property(nonatomic,strong) NSMutableArray *shops;
 
 @property(nonatomic,strong) NSMutableArray *sectionShops;
 
-@property (weak, nonatomic) UITableView *tableView;
 @end
 
 @implementation DPDealMainController
@@ -55,6 +53,7 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     
     //self.view.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1];
@@ -77,11 +76,23 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
     
     self.tableView = tableView;
     
+    // 允许下拉刷新
+    [self shouldPullDownRefresh:YES];
+    // 允许上拉加载更多
+    [self shouldPullUpRefresh:YES];
+    
+    
     [self loadNewShops:self.shopsParam];
+}
+
+- (void)loadMoreData{
+
+    [self loadMoreShops:_shopsParam];
 }
 
 - (void)loadNewShops:(DPFindShopsParam *)param{
     
+    [self beginFullScreenAnimation];
     
     [[[DPShopsAPI alloc] initWithShopsParam:param] getShopsIfsuccess:^(NSArray *Shops) {
         
@@ -90,13 +101,32 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
         
         [self.sectionShops removeAllObjects];
         [self updateSectionShops];
+        [self stopFullScreenAnimation];
         [self.tableView reloadData];
         
     } failure:nil];
     
 }
 
-- (void)loadMoreDeals:(DPFindDealsParam *)param{
+
+- (void)loadMoreShops:(DPFindShopsParam *)param{
+    
+    //[self shouldPullUpRefresh:YES];
+    
+    param.page = @(param.page.integerValue + 1);
+    
+    [[[DPShopsAPI alloc] initWithShopsParam:param] getShopsIfsuccess:^(NSArray *Shops) {
+        
+        [self.shops addObjectsFromArray:Shops];
+        [self.sectionShops removeAllObjects];
+        [self updateSectionShops];
+        [self endFooterRefreshing];
+        [self.tableView reloadData];
+        
+    } failure:^(YTKBaseRequest *request) {
+        [self endFooterRefreshing];
+    }];
+
     
 }
 

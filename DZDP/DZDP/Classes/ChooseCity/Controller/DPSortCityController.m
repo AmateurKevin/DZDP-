@@ -11,17 +11,15 @@
 #import "DPCityGroup.h"
 #import "DPCity.h"
 #import "DPDistrictAPI.h"
-#import "DPSortCityHeaderView.h"
+#import "DPSortCityHeaderController.h"
 #import "DPCitySearchResultsController.h"
 
 static NSString *const kCellIndentifier = @"city";
 
-@interface DPSortCityController ()<UITableViewDataSource,UITableViewDelegate,DPSortCityHeaderViewProxy,UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating>
+@interface DPSortCityController ()<DPSortCityHeaderControllerProxy,UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating>
 @property(nonatomic,strong) NSArray *cities;
 
 @property(nonatomic,strong) NSArray *cityGroups;
-
-@property (strong, nonatomic) UITableView *tableView;
 
 @property(nonatomic,strong) NSMutableArray *recentCities;
 // 搜索控制器
@@ -38,9 +36,18 @@ static NSString *const kCellIndentifier = @"city";
 
 + (instancetype)sortCityController{
     
-    UIStoryboard *stroryBoard = [UIStoryboard storyboardWithName:@"ChooseCity" bundle:nil];
+    UIStoryboard *stroryBoard = [UIStoryboard storyboardWithName:@"DPSortCityController" bundle:nil];
     return [stroryBoard instantiateInitialViewController];
     
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    if ([segue.identifier isEqualToString:@"sortcityHeader"]) {
+        
+        DPSortCityHeaderController *header = segue.destinationViewController;
+        header.proxy = self;
+    }
 }
 
 - (IBAction)close:(id)sender {
@@ -52,33 +59,21 @@ static NSString *const kCellIndentifier = @"city";
     [super viewDidLoad];
     
     [self configureSearchController];
-    
-    UITableView *tableView = [[UITableView alloc] init];
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    [self.view addSubview:tableView];
-    self.tableView = tableView;
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIndentifier];
-    
-    self.tableView.frame = CGRectMake(0, 64, self.view.width, self.view.height);
-    
-    [self configureSearchController];
-    
-    DPSortCityHeaderView *headerView = [[DPSortCityHeaderView alloc] init];
-    headerView.proxy = self;
-    self.tableView.tableHeaderView = headerView;
 
 }
 #pragma mark -- UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return self.cityGroups.count;
+    return self.cityGroups.count ;
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    DPCityGroup *cityGroup = self.cityGroups[section];
     
-    return cityGroup.cities.count;
+        DPCityGroup *cityGroup = self.cityGroups[section];
+        
+        return cityGroup.cities.count;
+   
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

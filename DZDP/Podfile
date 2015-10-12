@@ -8,6 +8,8 @@ pod "YTKNetwork"
 
 pod "Mantle"
 
+pod 'MJRefresh'
+
 pod 'SVProgressHUD'
 
 pod 'INTULocationManager'

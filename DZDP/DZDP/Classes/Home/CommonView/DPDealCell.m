@@ -65,9 +65,17 @@
     
     self.titleLabel.text = deal.title;
     self.descLabel.text = deal.desc;
-    self.currentPriceLabel.text = [NSString stringWithFormat:@"¥%d",deal.current_price.intValue / 100];
-    self.listPriceLabel.text = [NSString stringWithFormat:@"¥%d",deal.market_price.intValue / 100];
-    self.purchaceCountLabel.text = [NSString stringWithFormat:@"已售%d",deal.sale_num.intValue];
+    if (deal.current_price) {
+        self.currentPriceLabel.text = [NSString stringWithFormat:@"¥%d",deal.current_price.intValue / 100];
+    }
+    if (deal.market_price) {
+        self.listPriceLabel.text = [NSString stringWithFormat:@"¥%d",deal.market_price.intValue / 100];
+    }
+    
+    if (deal.sale_num) {
+        self.purchaceCountLabel.text = [NSString stringWithFormat:@"已售%d",deal.sale_num.intValue];
+    }
+    
 }
 
 @end

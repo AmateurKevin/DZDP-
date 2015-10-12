@@ -89,7 +89,7 @@
 
 - (void)getShopsIfsuccess:(void(^)(NSArray* shops))success failure:(void(^)(YTKBaseRequest*request))failure{
     
-    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+    //[SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
     
     [self startWithCompletionBlockWithSuccess:^(YTKBaseRequest *request) {
         DPLog(@"%@",request.responseString);
@@ -112,7 +112,7 @@
                     
                     if (shops) {
                         
-                        [SVProgressHUD dismiss];
+                        //[SVProgressHUD dismiss];
                         success(shops);
                     }
                 }

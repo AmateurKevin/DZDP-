@@ -106,6 +106,7 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
     
     tableView.delegate = self;
     tableView.dataSource = self;
+    tableView.separatorStyle =  UITableViewCellSeparatorStyleNone;
     
     [self.view addSubview:tableView];
     self.tableView = tableView;
@@ -114,6 +115,8 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
 
 #pragma mark -- netWork
 - (void)loadNewShops:(DPFindShopsParam *)param{
+    
+    [self beginFullScreenAnimation];
     
     if (param.location.length <= 0) {
         
@@ -128,6 +131,7 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
         
         [self.sectionShops removeAllObjects];
         [self updateSectionShops];
+        [self stopFullScreenAnimation];
         [self.tableView reloadData];
         
     } failure:nil];

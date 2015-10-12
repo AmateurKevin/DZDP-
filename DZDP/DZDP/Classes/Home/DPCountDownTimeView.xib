@@ -84,7 +84,7 @@
                 <outlet property="minLabel" destination="2ke-AW-0Xx" id="zXw-Bb-59O"/>
                 <outlet property="secLabel" destination="mKw-IB-l3t" id="di2-yI-XUa"/>
             </connections>
-            <point key="canvasLocation" x="362.5" y="-431"/>
+            <point key="canvasLocation" x="335.5" y="-426"/>
         </view>
     </objects>
 </document>

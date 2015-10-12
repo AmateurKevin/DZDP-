@@ -21,12 +21,19 @@
 #define DPScreenWidth ([UIScreen mainScreen].bounds.size.width)
 #define DPScreenHeight ([UIScreen mainScreen].bounds.size.height)
 
+// 当前访问城市的名称
 #define cityNameKEY @"city"
 #define UserDefaulsCityName [[NSUserDefaults standardUserDefaults] stringForKey:cityNameKEY]
 
+// 当前访问的城市ID
 #define cityIDKEY @"cityID"
 #define UserDefaultCityID [[NSUserDefaults standardUserDefaults] objectForKey:cityIDKEY]
 
+// 定位城市的坐标值（字符串）
+#define LocationCoordinateKey @"location"
+#define LocationCoordinate [[NSUserDefaults standardUserDefaults] stringForKey:LocationCoordinateKey]
+
+// 定位城市名称
 #define locationCityNameKEY @"locationCity"
 #define UserDefaultlocationCityName [[NSUserDefaults standardUserDefaults] stringForKey:locationCityNameKEY]
 
@@ -37,24 +44,21 @@
 /** 对应城市的区域文件 */
 #define DPDistricPlist [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"districts.plist"]
 
-
+//  最近访问过的城市plist路径
 #define DPRecentCityPlist [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"recentCity.plist"]
 
-#define DPBgColor [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1]
 
+//#define DPBgColor [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1]
+
+// 背景浅灰
 #define DPBgGrayColor [UIColor colorWithRed:231/255.0 green:231/255.0 blue:231/255.0 alpha:1]
 
+// 高德
 #define DPMAMapAPIKey @"8b884af757a6426dcf472e6811cdd7a6"
 
+// 讯飞
 #define DPIflyAPPID_VALUE @"5616859c"
 
-//define this constant if you want to use Masonry without the 'mas_' prefix
-#define MAS_SHORTHAND
-
-//define this constant if you want to enable auto-boxing for default syntax
-#define MAS_SHORTHAND_GLOBALS
-
-#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
 
 
