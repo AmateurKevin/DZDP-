@@ -74,6 +74,16 @@ static NSUInteger const RowCount = 4;
         return;
     }
     
+    // 当前城市与定位城市一致再传入坐标值,否则不传
+    if (sameCity) {
+        if (LocationCoordinate) {
+            param.location = LocationCoordinate;
+        }
+    }else{
+        
+        param.location = nil;
+    }
+    
     DPDealMainController *vc = [[DPDealMainController alloc] init];
     vc.shopsParam = param;
     vc.hidesBottomBarWhenPushed = YES;

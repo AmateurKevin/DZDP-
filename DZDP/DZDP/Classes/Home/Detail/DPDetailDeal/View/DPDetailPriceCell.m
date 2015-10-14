@@ -27,7 +27,7 @@
 
 - (void)setDeal:(DPDeal *)deal{
     _deal = deal;
-    self.promotionLabel.text = [NSString stringWithFormat:@"%ld",deal.promotion_price.integerValue / 100];
+    self.promotionLabel.text = [NSString stringWithFormat:@"¥ %ld",deal.promotion_price.integerValue / 100];
    
     self.currentLabel.text = [NSString stringWithFormat:@"%ld",deal.current_price.integerValue / 100];
     self.marketLabel.text =[NSString stringWithFormat:@"%ld",deal.market_price.integerValue / 100];

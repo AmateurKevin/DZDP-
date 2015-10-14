@@ -96,6 +96,7 @@
 }
 - (void)setShop:(DPShop *)shop{
     _shop = shop;
+   
     self.shopDeals = shop.deals;
     [DPDetailShopAPI getDetailShopWithID:shop.shop_id success:^(DPShop *returnshop) {
         

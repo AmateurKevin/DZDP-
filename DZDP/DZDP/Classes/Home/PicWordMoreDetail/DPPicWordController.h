@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 @class DPDeal;
-@interface DPMoreDetailController : UIViewController
+@interface DPPicWordController : UIViewController
+
++ (instancetype)picWordController;
+
 @property(nonatomic,strong) DPDeal *detailDeal;
+
 @end

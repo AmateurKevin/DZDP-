@@ -103,7 +103,23 @@ static CGFloat const kMargin = 10;
         self.scoreLabel.text = @"暂无评分";
     }
     
-    self.distanceLabel.text = [NSString stringWithFormat:@"%ldm",shop.distance.integerValue];
+    if (sameCity) {
+        self.distanceLabel.hidden = NO;
+        NSString *disStr = nil;
+        int dis = shop.distance.intValue;
+        if (dis <= 1000) {
+            disStr = [NSString stringWithFormat:@"%dm",dis];
+        }else{
+            
+            disStr = [NSString stringWithFormat:@"%.1fkm",dis / 1000.0];
+        }
+        
+        self.distanceLabel.text = disStr;
+        
+    }else{
+        self.distanceLabel.hidden = YES;
+    }
+
 }
 
 - (void)headerTaped{

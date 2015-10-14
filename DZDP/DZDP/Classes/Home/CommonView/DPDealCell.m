@@ -8,6 +8,7 @@
 
 #import "DPDealCell.h"
 #import "DPDeal.h"
+#import "DPShop.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 @interface DPDealCell ()
 
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *listPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *purchaceCountLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *reservationImage;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 
 @end
 
@@ -75,6 +77,32 @@
     if (deal.sale_num) {
         self.purchaceCountLabel.text = [NSString stringWithFormat:@"已售%d",deal.sale_num.intValue];
     }
+    
+    
+}
+
+- (void)setShop:(DPShop *)shop{
+
+    _shop = shop;
+    
+    if (sameCity) {
+        self.distanceLabel.hidden = NO;
+        NSString *disStr = nil;
+        int dis = shop.distance.intValue;
+        if (dis <= 1000) {
+            disStr = [NSString stringWithFormat:@"%dm",dis];
+        }else{
+            
+            disStr = [NSString stringWithFormat:@"%.1fkm",dis / 1000.0];
+        }
+        
+        self.distanceLabel.text = disStr;
+        
+    }else{
+        self.distanceLabel.hidden = YES;
+    }
+    
+
     
 }
 

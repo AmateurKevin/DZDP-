@@ -58,7 +58,7 @@
                             <constraint firstAttribute="width" constant="46" id="I4Y-g8-NIj"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.3km" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rde-ca-nuD">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rde-ca-nuD">
                         <rect key="frame" x="283" y="11" width="28.5" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -116,6 +116,7 @@
                 <outlet property="currentPriceLabel" destination="zhm-DC-vUs" id="xvV-Ey-1DK"/>
                 <outlet property="dealImage" destination="DDR-W9-RbM" id="pgw-A7-H6Z"/>
                 <outlet property="descLabel" destination="8ax-mP-s5D" id="kJ9-Xf-vCS"/>
+                <outlet property="distanceLabel" destination="Rde-ca-nuD" id="W1x-sE-e9q"/>
                 <outlet property="listPriceLabel" destination="MTT-do-s0N" id="3re-hE-kBx"/>
                 <outlet property="purchaceCountLabel" destination="Y5l-Dh-1xS" id="8zc-du-lqw"/>
                 <outlet property="reservationImage" destination="hXq-ZU-eDQ" id="1kC-aS-q4k"/>

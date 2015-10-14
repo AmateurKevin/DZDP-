@@ -7,14 +7,16 @@
 //
 
 #import "DPHomeController.h"
-#import "DPFindDealsParam.h"
-#import "DPDealAPI.h"
+#import "DPShopsAPI.h"
 #import "DPRushBuyCell.h"
 #import "DPMetaDataTool.h"
 #import "DPSortCityController.h"
 #import "DPQRCodeController.h"
 #import "DPDealCell.h"
 #import "DPDetailController.h"
+#import "DPFindShopsParam.h"
+#import "DPShop.h"
+
 static NSString * const kRushBuyIdentifier = @"rushBuyCell";
 
 @interface DPHomeController ()
@@ -28,7 +30,11 @@ static NSString * const kRushBuyIdentifier = @"rushBuyCell";
 // 猜你喜欢deals
 @property(nonatomic,strong) NSMutableArray *deals;
 
-@property(nonatomic,strong) DPFindDealsParam *findDealsParam;
+//
+@property(nonatomic,strong) NSMutableArray *shops;
+
+@property(nonatomic,strong) DPFindShopsParam *findShopsParam;
+
 @property (weak, nonatomic) IBOutlet UIButton *cityBtn;
 
 @end
@@ -108,7 +114,8 @@ static NSString * const kRushBuyIdentifier = @"rushBuyCell";
 - (void)initAttributes{
     
     _deals = [NSMutableArray array];
-    _findDealsParam = [[DPFindDealsParam alloc] init];
+    _shops = [NSMutableArray array];
+    _findShopsParam = [[DPFindShopsParam alloc] init];
 }
 
 //  处理定位
@@ -151,40 +158,52 @@ static NSString * const kRushBuyIdentifier = @"rushBuyCell";
 
 - (void)initRushBuyCell{
 
-    DPFindDealsParam *param = [[DPFindDealsParam alloc] init];
-    param.city_id = @(1800080000);
-    param.cat_ids = (@326).description;
-    param.page_size = @3;
-    [[[DPDealAPI alloc] initWithDealParam:param] getDealsIfsuccess:^(NSArray *deals) {
-        
-        _rushDeals = deals;
-        
-        [self.tableView reloadData];
-        
-    } failure:nil];
+//    DPFindDealsParam *param = [[DPFindDealsParam alloc] init];
+//    param.city_id = @(1800080000);
+//    param.cat_ids = (@326).description;
+//    param.page_size = @3;
+//    [[[DPDealAPI alloc] initWithDealParam:param] getDealsIfsuccess:^(NSArray *deals) {
+//        
+//        _rushDeals = deals;
+//        
+//        [self.tableView reloadData];
+//        
+//    } failure:nil];
     
 }
 
 - (void)loadNewDeals{
- 
-    _findDealsParam.city_id = UserDefaultCityID;
-    
+
+    _findShopsParam.city_id = UserDefaultCityID;
     // 当前城市与定位城市一致再传入坐标值,否则不传
-    if ([UserDefaulsCityName isEqualToString:UserDefaultlocationCityName]) {
+    if (sameCity) {
         if (LocationCoordinate) {
-            _findDealsParam.location = LocationCoordinate;
+            _findShopsParam.location = LocationCoordinate;
         }
+    }else{
+    
+        _findShopsParam.location = nil;
     }
     
-    
-    [[[DPDealAPI alloc] initWithDealParam:_findDealsParam] getDealsIfsuccess:^(NSArray *deals) {
+    [[[DPShopsAPI alloc] initWithShopsParam:_findShopsParam] getShopsIfsuccess:^(NSArray *Shops) {
         
         
+        [self.shops removeAllObjects];
         [self.deals removeAllObjects];
-        [self.deals addObjectsFromArray:deals];
+        
+        [self.shops addObjectsFromArray:Shops];
+        [Shops enumerateObjectsUsingBlock:^(DPShop*  _Nonnull shop, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            [self.deals addObject:shop.deals.firstObject];
+            
+        }];
+        
         [self.tableView reloadData];
         
-    } failure:nil];
+        
+    } failure:^(YTKBaseRequest *request) {
+        
+    }];
     
 }
 
@@ -196,16 +215,26 @@ static NSString * const kRushBuyIdentifier = @"rushBuyCell";
 
 - (void)loadMoreDeals{
         
-        _findDealsParam.page = @(_findDealsParam.page.integerValue + 1);
+        _findShopsParam.page = @(_findShopsParam.page.integerValue + 1);
+    
+    [[[DPShopsAPI alloc] initWithShopsParam:_findShopsParam] getShopsIfsuccess:^(NSArray *Shops) {
         
-        [[[DPDealAPI alloc] initWithDealParam:_findDealsParam] getDealsIfsuccess:^(NSArray *deals) {
+        [self.shops addObjectsFromArray:Shops];
+        
+        [Shops enumerateObjectsUsingBlock:^(DPShop*  _Nonnull shop, NSUInteger idx, BOOL * _Nonnull stop) {
             
-            [self.deals addObjectsFromArray:deals];
-            [self endFooterRefreshing];
-            [self.tableView reloadData];
-        } failure:^(YTKBaseRequest *request) {
-            [self endFooterRefreshing];
+            [self.deals addObject:shop.deals.firstObject];
+            
         }];
+        
+        [self endFooterRefreshing];
+        [self.tableView reloadData];
+        
+    } failure:^(YTKBaseRequest *request) {
+        
+        [self endFooterRefreshing];
+        
+    }];
 
 }
 
@@ -239,6 +268,7 @@ static NSString * const kRushBuyIdentifier = @"rushBuyCell";
         
         DPDealCell *cell = [DPDealCell cellWithTableView:tableView];
         cell.deal = self.deals[indexPath.row];
+        cell.shop = self.shops[indexPath.row];
         return cell;
     }
    
@@ -253,6 +283,7 @@ static NSString * const kRushBuyIdentifier = @"rushBuyCell";
     
     DPDetailController *detailVc = [[DPDetailController alloc] initWithStyle:UITableViewStyleGrouped];
     detailVc.deal = self.deals[indexPath.row];
+    detailVc.shop = self.shops[indexPath.row];
     detailVc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detailVc animated:YES];
 }

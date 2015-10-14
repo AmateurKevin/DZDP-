@@ -21,6 +21,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;
 @property (weak, nonatomic) IBOutlet DPCircleLabel *pageLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *saleNumLabel;
+
+@property (weak, nonatomic) IBOutlet UIView *gradientView;
+
 @end
 
 @implementation DPDetailHeaderView
@@ -43,14 +47,15 @@
 
 - (void)setup
 {
+    
+    
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.pagingEnabled = YES;
     scrollView.delegate = self;
     [self addSubview:scrollView];
-    //[self insertSubview:scrollView aboveSubview:self];
-    //[self insertSubview:scrollView belowSubview:self.dealTitle];
+    
     
     self.scrollView = scrollView;
 }
@@ -62,6 +67,17 @@
 
 - (void)layoutSubviews{
     [super layoutSubviews];
+    
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = _gradientView.bounds;
+    
+    UIColor *opaqueBlackColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1];
+    
+    UIColor *transparentBlackColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.0];
+    
+    gradient.colors = [NSArray arrayWithObjects:(id)opaqueBlackColor.CGColor,(id)transparentBlackColor.CGColor, nil];
+    [_gradientView.layer insertSublayer:gradient atIndex:0];
+    
     self.scrollView.frame = CGRectMake(0, 0, screenW, self.frame.size.height);
 }
 
@@ -76,23 +92,7 @@
         [self.scrollView addSubview:imageView];
         
     [imageView sd_setImageWithURL:imageURLs[i] placeholderImage:[UIImage imageNamed:@"common_loading_big"]];
-//      
-//      [imageView sd_setImageWithURL:imageURLs[i] placeholderImage:[UIImage imageNamed:@"common_loading_big"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-//                  CALayer *mask = [CALayer layer];
-//                  mask.contents = (id)[[UIImage imageNamed:@"home_coverpic_mask"] CGImage];
-//                  mask.frame = CGRectMake(0, imageView.height - 30, imageView.width, imageView.height);
-//          
-//                  imageView.layer.mask = mask;
-////                  imageView.layer.mask.opacity = 1;
-//                  imageView.layer.masksToBounds = YES;
-//        }];
-//        CALayer *mask = [CALayer layer];
-//        mask.contents = (id)[[UIImage imageNamed:@"home_coverpic_mask"] CGImage];
-//        mask.frame = CGRectMake(0, 0, imageView.width, imageView.height);
-//        
-//        imageView.layer.mask = mask;
-//        imageView.layer.mask.opacity = 1;
-//        imageView.layer.masksToBounds = YES;
+
         
     }
     
@@ -103,6 +103,7 @@
     [self bringSubviewToFront:self.dealTitle];
     [self bringSubviewToFront:self.descLabel];
     [self bringSubviewToFront:self.pageLabel];
+    [self bringSubviewToFront:self.gradientView];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -126,9 +127,11 @@
 - (void)setDeal:(DPDeal *)deal
 {
     _deal = deal;
-    self.dealTitle.text = deal.title;
+    self.dealTitle.text = deal.min_title;
     self.descLabel.text = deal.desc;
     self.pageLabel.text = [NSString stringWithFormat:@"%zd/%zd",1,self.imageURLs.count];
+    self.saleNumLabel.text = [NSString stringWithFormat:@"已售%d",deal.sale_num.intValue];
+    
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate

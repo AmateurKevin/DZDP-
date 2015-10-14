@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 @class DPDeal;
+@class DPShop;
 @interface DPDealCell : UITableViewCell
 
 @property(nonatomic,strong) DPDeal *deal;
+@property(nonatomic,strong) DPShop *shop;
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 

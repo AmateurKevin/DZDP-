@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BHS-nc-Omj">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pic Word Controller-->
+        <scene sceneID="Ygd-wC-mRm">
+            <objects>
+                <viewController id="BHS-nc-Omj" customClass="DPPicWordController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wgd-q6-2RT"/>
+                        <viewControllerLayoutGuide type="bottom" id="AYk-to-j5b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pQi-RL-d1W">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="af3-V3-5dI">
+                                <rect key="frame" x="0.0" y="20" width="600" height="29"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="套餐内容"/>
+                                    <segment title="商家详情"/>
+                                </segments>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="valueChanged:" destination="BHS-nc-Omj" eventType="valueChanged" id="dUL-ft-6xa"/>
+                                </connections>
+                            </segmentedControl>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYl-0E-PNB">
+                                <rect key="frame" x="0.0" y="49" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="af3-V3-5dI" firstAttribute="top" secondItem="wgd-q6-2RT" secondAttribute="bottom" id="3h7-x5-fVN"/>
+                            <constraint firstItem="AYk-to-j5b" firstAttribute="top" secondItem="hYl-0E-PNB" secondAttribute="bottom" constant="64" id="823-aM-gxy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hYl-0E-PNB" secondAttribute="trailing" id="BOR-ac-3hi"/>
+                            <constraint firstAttribute="trailing" secondItem="hYl-0E-PNB" secondAttribute="trailing" id="Muy-Oo-Q9G"/>
+                            <constraint firstItem="af3-V3-5dI" firstAttribute="leading" secondItem="pQi-RL-d1W" secondAttribute="leading" id="UT8-h8-WF6"/>
+                            <constraint firstItem="hYl-0E-PNB" firstAttribute="leading" secondItem="pQi-RL-d1W" secondAttribute="leadingMargin" id="c9A-U0-Z4c"/>
+                            <constraint firstItem="hYl-0E-PNB" firstAttribute="top" secondItem="af3-V3-5dI" secondAttribute="bottom" constant="1" id="llr-2i-q13"/>
+                            <constraint firstAttribute="trailing" secondItem="af3-V3-5dI" secondAttribute="trailing" id="nxl-jk-pBI"/>
+                            <constraint firstItem="hYl-0E-PNB" firstAttribute="leading" secondItem="pQi-RL-d1W" secondAttribute="leading" id="oPo-LC-Umh"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="BOR-ac-3hi"/>
+                                <exclude reference="c9A-U0-Z4c"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="hYl-0E-PNB" id="ZSa-jg-jS7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G57-Fo-PSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="396" y="152"/>
+        </scene>
+    </scenes>
+</document>

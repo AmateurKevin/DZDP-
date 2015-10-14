@@ -94,6 +94,9 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
     
     [self beginFullScreenAnimation];
     
+   
+
+    
     [[[DPShopsAPI alloc] initWithShopsParam:param] getShopsIfsuccess:^(NSArray *Shops) {
         
         [self.shops removeAllObjects];
@@ -150,6 +153,7 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
         
         DPDealCell *cell = [DPDealCell cellWithTableView:tableView];
         cell.deal = array[indexPath.row];
+        //为了不显示距离，shop就不用传了“😄”
         return cell;
         
     }

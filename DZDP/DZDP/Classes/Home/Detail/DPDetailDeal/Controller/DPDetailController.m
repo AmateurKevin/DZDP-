@@ -9,7 +9,7 @@
 #import "DPDetailController.h"
 #import "DPDetailHeaderView.h"
 #import "DPDeal.h"
-#import "DPMoreDetailController.h"
+#import "DPPicWordController.h"
 #import "DPDetailDealAPI.h"
 #import "DPDetailPriceCell.h"
 #import "DPDetailBaseCell.h"
@@ -19,14 +19,12 @@
 #import "UILabel+Html.h"
 #import "DPShop.h"
 #import "DPDetailShopAPI.h"
+#import "DPShopDetailController.h"
 
 @interface DPDetailController ()<DPDetailHeaderViewDelegate,UITableViewDataSource,UIWebViewDelegate,DPShopTelCellDelegate>
 @property(nonatomic,strong) DPDetailHeaderView *headerView;
 
-
-
 @property(nonatomic,strong) DPDeal *detailDeal;
-
 
 @end
 
@@ -46,7 +44,23 @@
     self.headerView = headerView;
     self.tableView.tableHeaderView = headerView;
     
-   
+    
+    if (_shop.shop_id) {
+        [DPDetailShopAPI getDetailShopWithID:_shop.shop_id success:^(DPShop *shopInfo) {
+            
+            // 刷新shop信息那一行,补全shop信息;
+            _shop.address = shopInfo.address;
+            _shop.district_id = shopInfo.district_id;
+            _shop.phone = shopInfo.phone;
+            _shop.bizarea_id = shopInfo.bizarea_id;
+            
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationMiddle];
+            
+        } failure:^(YTKBaseRequest *request) {
+            
+        }];
+
+    }
     
     
     [DPDetailDealAPI getDetailDealWithID:_deal.deal_id success:^(DPDeal *deal) {
@@ -64,9 +78,9 @@
 #pragma mark -- DPDetailHeaderViewDelegate
 - (void)detailHeaderViewPushOtherController
 {
-    DPMoreDetailController *moreDetailVc = [[DPMoreDetailController alloc] init];
-    moreDetailVc.detailDeal = _detailDeal;
-    [self.navigationController pushViewController:moreDetailVc animated:YES];
+    DPPicWordController *picWordVc = [DPPicWordController picWordController];
+    picWordVc.detailDeal = _detailDeal;
+    [self.navigationController pushViewController:picWordVc animated:YES];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -215,12 +229,21 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    // 选择商家地址那一栏
+    if (indexPath.section == 2) {
+        
+        DPShopDetailController *shopDetailVc = [[DPShopDetailController alloc] init];
+        shopDetailVc.shop = _shop;
+        [self.navigationController pushViewController:shopDetailVc animated:YES];
+        
+    }
+    
     // 图文详情
     if (indexPath.section == 3 && indexPath.row == 2) {
         
-        DPMoreDetailController *moreDetailVc = [[DPMoreDetailController alloc] init];
-        moreDetailVc.detailDeal = _detailDeal;
-        [self.navigationController pushViewController:moreDetailVc animated:YES];
+        DPPicWordController *picWordVc = [DPPicWordController picWordController];
+        picWordVc.detailDeal = _detailDeal;
+        [self.navigationController pushViewController:picWordVc animated:YES];
         
     }
     

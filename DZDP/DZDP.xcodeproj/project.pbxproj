@@ -60,10 +60,14 @@
 		469A3C0F1BCACF3800417296 /* DPSortCityController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 469A3C0E1BCACF3800417296 /* DPSortCityController.storyboard */; settings = {ASSET_TAGS = (); }; };
 		469A3C121BCAD28E00417296 /* DPSortCityHeaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 469A3C111BCAD28E00417296 /* DPSortCityHeaderController.m */; settings = {ASSET_TAGS = (); }; };
 		469A3C201BCB792600417296 /* DPBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 469A3C1F1BCB792600417296 /* DPBaseTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		469A3C291BCCECCC00417296 /* DPPicWordController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 469A3C281BCCECCC00417296 /* DPPicWordController.storyboard */; settings = {ASSET_TAGS = (); }; };
+		469A3C321BCCFE1600417296 /* WebViewJavascriptBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = 469A3C2C1BCCFE1600417296 /* WebViewJavascriptBridge.js.txt */; settings = {ASSET_TAGS = (); }; };
+		469A3C331BCCFE1600417296 /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 469A3C2D1BCCFE1600417296 /* WebViewJavascriptBridge.m */; settings = {ASSET_TAGS = (); }; };
+		469A3C341BCCFE1600417296 /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 469A3C2F1BCCFE1600417296 /* WebViewJavascriptBridgeBase.m */; settings = {ASSET_TAGS = (); }; };
+		469A3C351BCCFE1600417296 /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 469A3C311BCCFE1600417296 /* WKWebViewJavascriptBridge.m */; settings = {ASSET_TAGS = (); }; };
+		469A3C371BCD4AD900417296 /* picWord.js in Resources */ = {isa = PBXBuildFile; fileRef = 469A3C361BCD4AD900417296 /* picWord.js */; settings = {ASSET_TAGS = (); }; };
 		46B4224E1BC135910082FF93 /* UILabel+Html.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B4224D1BC135910082FF93 /* UILabel+Html.m */; settings = {ASSET_TAGS = (); }; };
 		46B422581BC148B60082FF93 /* DPDetailShopAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B422571BC148B60082FF93 /* DPDetailShopAPI.m */; settings = {ASSET_TAGS = (); }; };
-		46B4225C1BC19A2A0082FF93 /* DPBuyDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B4225A1BC19A2A0082FF93 /* DPBuyDetailCell.m */; settings = {ASSET_TAGS = (); }; };
-		46B4225D1BC19A2A0082FF93 /* DPBuyDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46B4225B1BC19A2A0082FF93 /* DPBuyDetailCell.xib */; settings = {ASSET_TAGS = (); }; };
 		46B4228B1BC263840082FF93 /* DPDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B4228A1BC263840082FF93 /* DPDetailController.m */; settings = {ASSET_TAGS = (); }; };
 		46B422A41BC263BD0082FF93 /* DPArrowRotateTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B4228F1BC263BD0082FF93 /* DPArrowRotateTipView.m */; settings = {ASSET_TAGS = (); }; };
 		46B422A51BC263BD0082FF93 /* DPArrowRotateTipView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46B422901BC263BD0082FF93 /* DPArrowRotateTipView.xib */; settings = {ASSET_TAGS = (); }; };
@@ -122,8 +126,7 @@
 		46CD2C9D1BB97E8D006B0C12 /* DPCategroryMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD2C7C1BB97E8D006B0C12 /* DPCategroryMenuCell.m */; settings = {ASSET_TAGS = (); }; };
 		46CD2C9F1BB97E8D006B0C12 /* DPFilterHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD2C801BB97E8D006B0C12 /* DPFilterHeaderView.m */; settings = {ASSET_TAGS = (); }; };
 		46CD2CA01BB97E8D006B0C12 /* DPFilterHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46CD2C811BB97E8D006B0C12 /* DPFilterHeaderView.xib */; settings = {ASSET_TAGS = (); }; };
-		46CD2CA21BB97E8D006B0C12 /* DPMoreDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD2C861BB97E8D006B0C12 /* DPMoreDetailController.m */; settings = {ASSET_TAGS = (); }; };
-		46CD2CA31BB97E8D006B0C12 /* DPMoreDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46CD2C871BB97E8D006B0C12 /* DPMoreDetailController.xib */; settings = {ASSET_TAGS = (); }; };
+		46CD2CA21BB97E8D006B0C12 /* DPPicWordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD2C861BB97E8D006B0C12 /* DPPicWordController.m */; settings = {ASSET_TAGS = (); }; };
 		46CD2CAD1BB97FAB006B0C12 /* DPMetaDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD2CAC1BB97FAB006B0C12 /* DPMetaDataTool.m */; settings = {ASSET_TAGS = (); }; };
 		46CD2CB91BB99453006B0C12 /* DPHomeHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD2CB71BB99453006B0C12 /* DPHomeHeaderCell.m */; settings = {ASSET_TAGS = (); }; };
 		46CD2CBE1BB9AE61006B0C12 /* DPHomeCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD2CBD1BB9AE61006B0C12 /* DPHomeCategoryModel.m */; settings = {ASSET_TAGS = (); }; };
@@ -233,13 +236,19 @@
 		469A3C111BCAD28E00417296 /* DPSortCityHeaderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPSortCityHeaderController.m; sourceTree = "<group>"; };
 		469A3C1E1BCB792600417296 /* DPBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPBaseTableViewController.h; sourceTree = "<group>"; };
 		469A3C1F1BCB792600417296 /* DPBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPBaseTableViewController.m; sourceTree = "<group>"; };
+		469A3C281BCCECCC00417296 /* DPPicWordController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DPPicWordController.storyboard; sourceTree = "<group>"; };
+		469A3C2B1BCCFE1600417296 /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		469A3C2C1BCCFE1600417296 /* WebViewJavascriptBridge.js.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebViewJavascriptBridge.js.txt; sourceTree = "<group>"; };
+		469A3C2D1BCCFE1600417296 /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		469A3C2E1BCCFE1600417296 /* WebViewJavascriptBridgeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridgeBase.h; sourceTree = "<group>"; };
+		469A3C2F1BCCFE1600417296 /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
+		469A3C301BCCFE1600417296 /* WKWebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		469A3C311BCCFE1600417296 /* WKWebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		469A3C361BCD4AD900417296 /* picWord.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = picWord.js; sourceTree = "<group>"; };
 		46B4224C1BC135910082FF93 /* UILabel+Html.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Html.h"; sourceTree = "<group>"; };
 		46B4224D1BC135910082FF93 /* UILabel+Html.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Html.m"; sourceTree = "<group>"; };
 		46B422561BC148B60082FF93 /* DPDetailShopAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDetailShopAPI.h; sourceTree = "<group>"; };
 		46B422571BC148B60082FF93 /* DPDetailShopAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDetailShopAPI.m; sourceTree = "<group>"; };
-		46B422591BC19A2A0082FF93 /* DPBuyDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPBuyDetailCell.h; sourceTree = "<group>"; };
-		46B4225A1BC19A2A0082FF93 /* DPBuyDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPBuyDetailCell.m; sourceTree = "<group>"; };
-		46B4225B1BC19A2A0082FF93 /* DPBuyDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPBuyDetailCell.xib; sourceTree = "<group>"; };
 		46B422891BC263840082FF93 /* DPDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDetailController.h; sourceTree = "<group>"; };
 		46B4228A1BC263840082FF93 /* DPDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDetailController.m; sourceTree = "<group>"; };
 		46B4228E1BC263BD0082FF93 /* DPArrowRotateTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPArrowRotateTipView.h; sourceTree = "<group>"; };
@@ -339,9 +348,8 @@
 		46CD2C7F1BB97E8D006B0C12 /* DPFilterHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPFilterHeaderView.h; sourceTree = "<group>"; };
 		46CD2C801BB97E8D006B0C12 /* DPFilterHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPFilterHeaderView.m; sourceTree = "<group>"; };
 		46CD2C811BB97E8D006B0C12 /* DPFilterHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPFilterHeaderView.xib; sourceTree = "<group>"; };
-		46CD2C851BB97E8D006B0C12 /* DPMoreDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPMoreDetailController.h; sourceTree = "<group>"; };
-		46CD2C861BB97E8D006B0C12 /* DPMoreDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPMoreDetailController.m; sourceTree = "<group>"; };
-		46CD2C871BB97E8D006B0C12 /* DPMoreDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPMoreDetailController.xib; sourceTree = "<group>"; };
+		46CD2C851BB97E8D006B0C12 /* DPPicWordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPPicWordController.h; sourceTree = "<group>"; };
+		46CD2C861BB97E8D006B0C12 /* DPPicWordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPPicWordController.m; sourceTree = "<group>"; };
 		46CD2CAB1BB97FAB006B0C12 /* DPMetaDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPMetaDataTool.h; sourceTree = "<group>"; };
 		46CD2CAC1BB97FAB006B0C12 /* DPMetaDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPMetaDataTool.m; sourceTree = "<group>"; };
 		46CD2CB61BB99453006B0C12 /* DPHomeHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPHomeHeaderCell.h; sourceTree = "<group>"; };
@@ -418,6 +426,7 @@
 		4614218B1BC6E4BF0053A2D9 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				469A3C2A1BCCFE1600417296 /* WebViewJavascriptBridge */,
 				4614218C1BC6E4BF0053A2D9 /* iflyMSC.framework */,
 			);
 			path = lib;
@@ -589,6 +598,20 @@
 				46B4224D1BC135910082FF93 /* UILabel+Html.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		469A3C2A1BCCFE1600417296 /* WebViewJavascriptBridge */ = {
+			isa = PBXGroup;
+			children = (
+				469A3C2B1BCCFE1600417296 /* WebViewJavascriptBridge.h */,
+				469A3C2C1BCCFE1600417296 /* WebViewJavascriptBridge.js.txt */,
+				469A3C2D1BCCFE1600417296 /* WebViewJavascriptBridge.m */,
+				469A3C2E1BCCFE1600417296 /* WebViewJavascriptBridgeBase.h */,
+				469A3C2F1BCCFE1600417296 /* WebViewJavascriptBridgeBase.m */,
+				469A3C301BCCFE1600417296 /* WKWebViewJavascriptBridge.h */,
+				469A3C311BCCFE1600417296 /* WKWebViewJavascriptBridge.m */,
+			);
+			path = WebViewJavascriptBridge;
 			sourceTree = "<group>";
 		};
 		46B422551BC148750082FF93 /* DPDetailShopAPI */ = {
@@ -932,12 +955,10 @@
 		46CD2C841BB97E8D006B0C12 /* PicWordMoreDetail */ = {
 			isa = PBXGroup;
 			children = (
-				46CD2C851BB97E8D006B0C12 /* DPMoreDetailController.h */,
-				46CD2C861BB97E8D006B0C12 /* DPMoreDetailController.m */,
-				46CD2C871BB97E8D006B0C12 /* DPMoreDetailController.xib */,
-				46B422591BC19A2A0082FF93 /* DPBuyDetailCell.h */,
-				46B4225A1BC19A2A0082FF93 /* DPBuyDetailCell.m */,
-				46B4225B1BC19A2A0082FF93 /* DPBuyDetailCell.xib */,
+				469A3C361BCD4AD900417296 /* picWord.js */,
+				46CD2C851BB97E8D006B0C12 /* DPPicWordController.h */,
+				46CD2C861BB97E8D006B0C12 /* DPPicWordController.m */,
+				469A3C281BCCECCC00417296 /* DPPicWordController.storyboard */,
 			);
 			path = PicWordMoreDetail;
 			sourceTree = "<group>";
@@ -1113,6 +1134,7 @@
 			files = (
 				46B422AF1BC263BD0082FF93 /* DPScoreCell.xib in Resources */,
 				46EBAD191B40E67C005C8757 /* sorts.plist in Resources */,
+				469A3C321BCCFE1600417296 /* WebViewJavascriptBridge.js.txt in Resources */,
 				46CD2C8A1BB97E8D006B0C12 /* DPDealCell.xib in Resources */,
 				46755FD91B3E3661005C58B4 /* Main.storyboard in Resources */,
 				46B422CD1BC3CF480082FF93 /* DPNearLocationView.xib in Resources */,
@@ -1123,8 +1145,6 @@
 				4669F1401BBD89F900860DB8 /* DPSortCitySectionSupplementView.xib in Resources */,
 				461421D31BC8E3B80053A2D9 /* DPQRCodeController.storyboard in Resources */,
 				46B422CF1BC4040C0082FF93 /* SearchRadius.plist in Resources */,
-				46CD2CA31BB97E8D006B0C12 /* DPMoreDetailController.xib in Resources */,
-				46B4225D1BC19A2A0082FF93 /* DPBuyDetailCell.xib in Resources */,
 				46755FDE1B3E3661005C58B4 /* LaunchScreen.xib in Resources */,
 				46CD2BF41BB7FA00006B0C12 /* cities.plist in Resources */,
 				4669F10E1BBC251C00860DB8 /* DPDealFooterCell.xib in Resources */,
@@ -1134,6 +1154,7 @@
 				46CD2C911BB97E8D006B0C12 /* icon_chose_bottom@2x.png in Resources */,
 				461421891BC6D5390053A2D9 /* VoiceSearch.storyboard in Resources */,
 				46CD2C901BB97E8D006B0C12 /* icon_chose_arrow_sel@2x.png in Resources */,
+				469A3C291BCCECCC00417296 /* DPPicWordController.storyboard in Resources */,
 				46CD2C8F1BB97E8D006B0C12 /* icon_chose_arrow_nor@2x.png in Resources */,
 				46CD2C081BB83A05006B0C12 /* categories.plist in Resources */,
 				4669F14F1BBFC58000860DB8 /* DPCountDownTimeView.xib in Resources */,
@@ -1144,6 +1165,7 @@
 				466B097C1BC97FCC0083B7D7 /* DPWebViewController.xib in Resources */,
 				466B09711BC955030083B7D7 /* DPNavSearchController.storyboard in Resources */,
 				46B422A51BC263BD0082FF93 /* DPArrowRotateTipView.xib in Resources */,
+				469A3C371BCD4AD900417296 /* picWord.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1195,8 +1217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46CD2C9A1BB97E8D006B0C12 /* DPCategoryMenuController.m in Sources */,
-				46CD2CA21BB97E8D006B0C12 /* DPMoreDetailController.m in Sources */,
-				46B4225C1BC19A2A0082FF93 /* DPBuyDetailCell.m in Sources */,
+				46CD2CA21BB97E8D006B0C12 /* DPPicWordController.m in Sources */,
 				46B422BD1BC266740082FF93 /* DPShopInfoCell.m in Sources */,
 				46CD2C1F1BB83B21006B0C12 /* DPFindDealsParam.m in Sources */,
 				46CD2CB91BB99453006B0C12 /* DPHomeHeaderCell.m in Sources */,
@@ -1253,11 +1274,14 @@
 				46CD2B611BB6F8D9006B0C12 /* DPDealAPI.m in Sources */,
 				46CD2C9C1BB97E8D006B0C12 /* DPButtonItem.m in Sources */,
 				46CD2C9B1BB97E8D006B0C12 /* DPDealNavigationController.m in Sources */,
+				469A3C331BCCFE1600417296 /* WebViewJavascriptBridge.m in Sources */,
+				469A3C351BCCFE1600417296 /* WKWebViewJavascriptBridge.m in Sources */,
 				46B422A71BC263BD0082FF93 /* DPDetailHeaderView.m in Sources */,
 				46B422B91BC2645B0082FF93 /* DPShopDetailController.m in Sources */,
 				46CD2CAD1BB97FAB006B0C12 /* DPMetaDataTool.m in Sources */,
 				46B422D21BC405F20082FF93 /* DPRadius.m in Sources */,
 				46B422C11BC2CE2E0082FF93 /* DPMapController.m in Sources */,
+				469A3C341BCCFE1600417296 /* WebViewJavascriptBridgeBase.m in Sources */,
 				46CD2C221BB85440006B0C12 /* DPDistrict.m in Sources */,
 				466B09771BC96B1E0083B7D7 /* DPNavSearchController.m in Sources */,
 				46B422AC1BC263BD0082FF93 /* DPHtmlCell.m in Sources */,
