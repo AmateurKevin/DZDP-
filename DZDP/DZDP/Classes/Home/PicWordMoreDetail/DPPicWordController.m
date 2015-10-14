@@ -10,6 +10,7 @@
 #import "DPDeal.h"
 #import "WebViewJavascriptBridge.h"
 #import <SDWebImage/SDWebImageManager.h>
+#import "GRMustache.h"
 
 @interface DPPicWordController ()<WebViewJavascriptBridgeBaseDelegate>
 
@@ -81,44 +82,15 @@
 }
 
 - (void)prepareHtml{
+
+    NSDictionary *renderObject = @{@"contents":_detailDeal.buy_details,
+                                   @"description":_detailDeal.shop_description};
+  
+    NSString *rendering = [GRMustacheTemplate renderObject:renderObject fromResource:@"picword" bundle:nil error:NULL];
     
-    NSMutableString *html = [[NSMutableString alloc] init];
-   [html appendString:@"<!DOCTYPE html>"];
-    [html appendString:@"<html>"];
+    NSMutableString *html = [NSMutableString stringWithString:rendering];
     
-    [html appendString:@"<head lang=\"en\">"];
-    [html appendString:@" <meta charset='utf-8'><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">"];
-    
-    [html appendString:@"<style type=\"text/css\">"];
-    [html appendString:@"img {clear: both;width: 100%;height:auto;display: block;}"];
-    [html appendString:@"</style>"];
-    
-    
-    [html appendString:@"<script type=\"text/javascript\">"];
-    
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"picWord.js" ofType:nil];
-    NSString *jsStr = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    [html appendString:jsStr];
-    
-    [html appendString:@"</script>"];
-    
-    [html appendString:@"</head>"];
-    
-    [html appendString:@"<body onload=\"onLoaded()\">"];
-    
-    [html appendString:@"<h4 id = top>套餐内容</h4>"];
-    [html appendString:@"<hr width=screen.width size=1 color=#DDDDDD align=center noshade>"];
-    [html appendString:_detailDeal.buy_details];
-    [html appendString:@"<hr width=screen.width size=1 color=#DDDDDD align=center noshade>"];
-    [html appendString:@"<hr width=screen.width size=1 color=#DDDDDD align=center noshade  style=\"padding-top: 30px\">"];
-    [html appendString:@"<h4 id = detail>商家详情</h4>"];
-    [html appendString:@"<hr width=screen.width size=1 color=#DDDDDD align=center noshade>"];
-    [html appendString:_detailDeal.shop_description];
-    
-    [html appendString:@"</body>"];
-    [html appendString:@"</html>"];
-    
-    [html replaceOccurrencesOfString:@"img src" withString:@"img esrc" options:NULL range:NSMakeRange(0, html.length)];
+     [html replaceOccurrencesOfString:@"img src" withString:@"img esrc" options:NSLiteralSearch range:NSMakeRange(0, html.length)];
     
     _html = html;
     

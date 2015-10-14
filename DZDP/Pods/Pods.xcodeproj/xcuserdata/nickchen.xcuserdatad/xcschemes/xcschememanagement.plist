@@ -14,7 +14,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GRMustache.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>INTULocationManager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JRSwizzle.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,7 +62,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>42D7387718FFA1C69E26D16CC8D228D2</key>
+		<key>0EC6B80686FBC2A686FC66763E6BBA4A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1C3C9C1ED85D88AB40F1AAF21E5D5CAE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3035677A60E93EA120C81688112D3230</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,22 +82,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9CB805EA43247049A1B6941B6CAAB04B</key>
+		<key>6946420C9F51A164E05F416FAF71DC92</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A36DC4565663CEB80D58EA5D17119933</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B2034E14ED360B9DFBE05B63E21FB906</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B226BB0C462C2DB8AD3E3DCA6823FB21</key>
+		<key>8779B5ACAF5B19B21717B4A6A82D93EB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,12 +97,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E2F74799F9EF79F0CD94AC783D543A73</key>
+		<key>B75C352073AF1BB46307876DA31FFCC1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F2D0536F380073AF6F324DC756417906</key>
+		<key>C12F4088723F1CCC67A83194E75BFC81</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C1F3EDE1CE3994B26F33C8C9F720C7CB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2F74799F9EF79F0CD94AC783D543A73</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -24,7 +24,10 @@ PODS:
     - AFNetworking/NSURLSession
   - AMap2DMap (3.1.0)
   - AMapSearch (3.0.0)
+  - GRMustache (7.3.2):
+    - JRSwizzle (~> 1.0)
   - INTULocationManager (4.0.0)
+  - JRSwizzle (1.0)
   - Mantle (2.0.5):
     - Mantle/extobjc (= 2.0.5)
   - Mantle/extobjc (2.0.5)
@@ -41,6 +44,7 @@ DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - AMap2DMap
   - AMapSearch
+  - GRMustache (~> 7.3.2)
   - INTULocationManager
   - Mantle
   - MJRefresh
@@ -53,7 +57,9 @@ SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   AMap2DMap: a6741139dd16d237713c4fd6cae9a0399ca1fe25
   AMapSearch: fd1ed96353f8a0f5c2e2463dac6a145bb3e6970f
+  GRMustache: ebe6104fd30a6d22c1f36af131e19e2dbf7cd292
   INTULocationManager: 754f2800415378b7bb2c07be103449e1f6a2cc70
+  JRSwizzle: dd5ead5d913a0f29e7f558200165849f006bb1e3
   Mantle: 1912395033f601de5adc8ee91e48f46e4c7051ad
   MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
