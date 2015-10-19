@@ -31,19 +31,23 @@
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请大声说出你想要找什么" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4f6-AP-f5F">
                                 <rect key="frame" x="94" y="90" width="187" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请稍等" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZG-IZ-8cX">
                                 <rect key="frame" x="162" y="90" width="51" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muJ-Kk-xh9">
-                                <rect key="frame" x="157.5" y="577" width="60" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muJ-Kk-xh9" customClass="DPCircleButton">
+                                <rect key="frame" x="160" y="553" width="54" height="54"/>
                                 <color key="backgroundColor" red="1" green="0.58774321330000001" blue="0.19448294059999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="识别声音"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="LtQ-7F-oxb"/>
+                                    <constraint firstAttribute="width" constant="54" id="lQR-ag-L8V"/>
+                                </constraints>
+                                <state key="normal" title="按一下"/>
                                 <connections>
                                     <action selector="startBtnHandler:" destination="nFi-Er-lDv" eventType="touchUpInside" id="bRa-Nw-HoM"/>
                                 </connections>
@@ -64,6 +68,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="speakLoudLabel" destination="4f6-AP-f5F" id="WPZ-MJ-SaZ"/>
+                        <outlet property="voiceBtn" destination="muJ-Kk-xh9" id="zDO-Ty-689"/>
                         <outlet property="waitLabel" destination="SZG-IZ-8cX" id="arH-48-Crd"/>
                     </connections>
                 </viewController>

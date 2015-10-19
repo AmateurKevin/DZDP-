@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DPHomeHeaderCell : UICollectionViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *label;
 

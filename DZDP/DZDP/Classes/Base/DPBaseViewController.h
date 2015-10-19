@@ -45,4 +45,16 @@
 - (void)endHeaderRefreshing;
 - (void)endFooterRefreshing;
 
+/**
+ *  设置背景图片
+ *
+ *  @param backgroundImage 背景图片
+ */
+- (void)setupBackgroundImage:(UIImage *)backgroundImage;
+
+/**
+ *  展示没有数据的背景图
+ */
+- (void)showEmptyImage;
+
 @end

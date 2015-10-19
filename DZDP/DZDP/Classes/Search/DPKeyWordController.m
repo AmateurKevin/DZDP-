@@ -144,7 +144,10 @@
     
 }
 
+//- (void)viewWillAppear:(BOOL)animated{}
+
 - (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
     _searchController.active = YES;
     [_searchController.searchBar becomeFirstResponder ];
 }

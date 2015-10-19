@@ -32,19 +32,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
+
+    [self initTableView];
+    [self getShopInfo];
+    [self getMoreDetailAboutDeal];
+    
+}
+
+- (void)initTableView{
+    
     self.tableView.estimatedRowHeight = 44;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    
     DPDetailHeaderView *headerView = [DPDetailHeaderView detailHeaderView];
-   // self.automaticallyAdjustsScrollViewInsets = NO;
     headerView.frame = CGRectMake(0, 64, self.view.frame.size.width, 200);
     headerView.delegate = self;
-//    [self.view addSubview:headerView];
     self.headerView = headerView;
     self.tableView.tableHeaderView = headerView;
+
+}
+
+- (void)getShopInfo{
     
-    
+    [self beginFullScreenAnimation];
     if (_shop.shop_id) {
         [DPDetailShopAPI getDetailShopWithID:_shop.shop_id success:^(DPShop *shopInfo) {
             
@@ -56,23 +65,23 @@
             
             [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationMiddle];
             
+            [self stopFullScreenAnimation];
         } failure:^(YTKBaseRequest *request) {
-            
+            [self stopFullScreenAnimation];
         }];
-
+        
     }
-    
-    
-    [DPDetailDealAPI getDetailDealWithID:_deal.deal_id success:^(DPDeal *deal) {
-        // 为了产生多张图片的效果
+}
+
+- (void)getMoreDetailAboutDeal{
+
+    [[[DPDetailDealAPI alloc] initWithDealID:_deal.deal_id] getDetailDealIfsuccess:^(DPDeal *deal) {
         self.headerView.imageURLs = @[deal.image,deal.image,deal.image];
         self.headerView.deal = deal;
         _detailDeal = deal;
         [self.tableView reloadData];
-    } failure:^(YTKBaseRequest *request) {
         
-    }];
-    
+    } failure:nil];
 }
 
 #pragma mark -- DPDetailHeaderViewDelegate

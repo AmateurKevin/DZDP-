@@ -13,6 +13,6 @@
 
 - (id)initWithShopsParam:(DPFindShopsParam *)param;
 
-- (void)getShopsIfsuccess:(void(^)(NSArray* Shops))success failure:(void(^)(YTKBaseRequest*request))failure;
+- (void)getShopsIfsuccess:(void(^)(NSArray* shops))success failure:(void (^)())failure;
 
 @end

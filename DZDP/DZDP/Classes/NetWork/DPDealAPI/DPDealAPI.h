@@ -8,11 +8,12 @@
 
 #import "DPBaseAPI.h"
 #import "DPFindDealsParam.h"
+
 @class DPDeal;
 @interface DPDealAPI : DPBaseAPI
 
 - (id)initWithDealParam:(DPFindDealsParam *)param;
 
-- (void)getDealsIfsuccess:(void(^)(NSArray* deals))success failure:(void(^)(YTKBaseRequest*request))failure;
+- (void)getDealsIfsuccess:(void (^)(NSArray *))success failure:(void (^)())failure;
 
 @end

@@ -51,7 +51,7 @@
 #define DPRecentCityPlist [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"recentCity.plist"]
 
 
-//#define DPBgColor [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1]
+#define DPBgColor [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1]
 
 // 背景浅灰
 #define DPBgGrayColor [UIColor colorWithRed:231/255.0 green:231/255.0 blue:231/255.0 alpha:1]
@@ -62,6 +62,9 @@
 // 讯飞
 #define DPIflyAPPID_VALUE @"5616859c"
 
+// 获得RGB颜色
+#define RGBA(r, g, b, a)                    [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+#define RGB(r, g, b)                        RGBA(r, g, b, 1.0f)
 
 
 

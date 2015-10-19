@@ -17,4 +17,5 @@ pod 'INTULocationManager'
 pod 'AMap2DMap'
 
 pod 'AMapSearch'
+
 pod 'GRMustache', '~> 7.3.2'

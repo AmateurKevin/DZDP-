@@ -12,12 +12,12 @@
 @interface DPGeocoderTool : NSObject
 
 // 获得城市名
-+ (NSString *)getCityNameFromLocation:(CLLocation *)currentLocation;
+//+ (NSString *)getCityNameFromLocation:(CLLocation *)currentLocation;
 
 // 获得城市名对应的Dpcity,
-+ (void)getCityFromLocation:(CLLocation *)currentLocation andExecuteBlock:(void(^)(DPCity *city))block;
++ (void)getCityFromLocation:(CLLocation *)currentLocation andExecuteBlock:(void(^)(DPCity *city,NSString *address,NSString *locationStr))block;
 
 // 获得地址全称
-+ (void)getFullAddressFromLocation:(CLLocation *)currentLocation andExecute:(void(^)(NSString *address))block;
+//+ (void)getFullAddressFromLocation:(CLLocation *)currentLocation andExecute:(void(^)(NSString *address))block;
 
 @end

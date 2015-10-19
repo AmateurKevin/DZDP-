@@ -115,22 +115,22 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
 #pragma mark -- netWork
 - (void)loadNewShops:(DPFindShopsParam *)param{
     
-    if (param.location.length <= 0) {
-        
-        [SVProgressHUD showErrorWithStatus:@"定位未成功"];
-        
-    }
+    [self beginFullScreenAnimation];
     
-    [[[DPShopsAPI alloc] initWithShopsParam:param] getShopsIfsuccess:^(NSArray *Shops) {
-        
+    [[[DPShopsAPI alloc] initWithShopsParam:param] getShopsIfsuccess:^(NSArray *shops) {
         [self.shops removeAllObjects];
-        [self.shops addObjectsFromArray:Shops];
+        [self.shops addObjectsFromArray:shops];
         
         [self.sectionShops removeAllObjects];
         [self updateSectionShops];
         [self.tableView reloadData];
+        [self stopFullScreenAnimation];
+
+    } failure:^{
         
-    } failure:nil];
+    }];
+    
+    
     
 }
 

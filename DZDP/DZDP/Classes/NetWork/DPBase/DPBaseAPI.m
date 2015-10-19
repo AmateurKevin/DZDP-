@@ -14,5 +14,13 @@
     return @{@"apikey":@"972c070425838a9eee65ceb7fd352115"};
 }
 
+/**
+ *  所有请求缓存三分钟
+ *
+ *  @return 缓存时长
+ */
+- (NSInteger)cacheTimeInSeconds{
+    return 3 * 60;
+}
 
 @end

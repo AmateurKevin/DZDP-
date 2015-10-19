@@ -12,7 +12,6 @@
 
 @property(nonatomic,strong) NSArray *rushModels;
 
-
-@property (weak, nonatomic) IBOutlet UIView *countDownView;
+@property(nonatomic, strong) NSMutableArray *rushData;
 
 @end

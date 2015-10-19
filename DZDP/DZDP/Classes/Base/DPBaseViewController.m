@@ -1,14 +1,16 @@
 //
-//  DPBaseTableViewController.m
+//  DPBaseViewController.m
 //  DZDP
 //
-//  Created by nickchen on 15/10/12.
+//  Created by nickchen on 15/10/7.
 //  Copyright © 2015年 https://github.com/nickqiao/. All rights reserved.
 //
 
-#import "DPBaseTableViewController.h"
+#import "DPBaseViewController.h"
+
 #import <MJRefresh.h>
-@interface DPBaseTableViewController ()
+
+@interface DPBaseViewController ()
 
 {
     NSMutableArray *pullAnimationImages;
@@ -20,21 +22,22 @@
 
 @end
 
-@implementation DPBaseTableViewController
+@implementation DPBaseViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     
-    
     pullAnimationImages = [NSMutableArray array];
     shakeAnimationImages = [NSMutableArray array];
-    
+
     NSMutableArray *pullAnimationName = [NSMutableArray array];
-    for (int i = 1; i <= 60 ; i++) {
+    for (int i = 1; i <=60 ; i++) {
         [pullAnimationName addObject:[NSString stringWithFormat:@"dropdown_anim__000%d",i]];
     }
+    
     NSArray *shakeAnimationName =
-    @[@"dropdown_loading_01",@"dropdown_loading_02",@"dropdown_loading_03"];
+  @[@"dropdown_loading_01",@"dropdown_loading_02",@"dropdown_loading_03"];
     for (NSString *str in pullAnimationName) {
         UIImage *image = [UIImage imageNamed:str];
         [pullAnimationImages addObject:image];
@@ -50,7 +53,7 @@
 }
 
 - (void)beginFullScreenAnimation{
-    
+
     // Load images
     NSArray *fullscreenImageNames = @[@"loading_fullscreen_anim_01",
                                       @"loading_fullscreen_anim_02",
@@ -64,22 +67,24 @@
     
     // Normal Animation
     _FullScreenImageView = [[UIImageView alloc] init];
+    _FullScreenImageView.frame = self.view.frame;
+    _FullScreenImageView.contentMode = UIViewContentModeCenter;
     
-    _FullScreenImageView.size = CGSizeMake(90, 90);
-    _FullScreenImageView.center = self.view.center;
+    _FullScreenImageView.backgroundColor = DPBgColor;
+    _FullScreenImageView.center =  CGPointMake(DPScreenWidth * 0.5, DPScreenHeight * 0.5 );
     _FullScreenImageView.animationImages = images;
     _FullScreenImageView.animationDuration = 0.5;
     
     [self.view addSubview:_FullScreenImageView];
     [_FullScreenImageView startAnimating];
-    
+
     
 }
 
 - (void)stopFullScreenAnimation{
-    
-    [_FullScreenImageView stopAnimating];
-    [_FullScreenImageView removeFromSuperview];
+
+     [_FullScreenImageView stopAnimating];
+     [_FullScreenImageView removeFromSuperview];
 }
 
 - (void)shouldPullDownRefresh:(BOOL)isAdd
@@ -107,7 +112,7 @@
     if (isAdd) {
         MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
         self.tableView.footer = footer;
-        
+  
     }else{
         self.tableView.footer = nil;
     }
@@ -133,78 +138,18 @@
 - (void)endHeaderRefreshing{
     
     [self.tableView.header endRefreshing];
-    
+
 }
 
 - (void)endFooterRefreshing{
     [self.tableView.footer endRefreshing];
 }
 
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+- (void)setupBackgroundImage:(UIImage *)backgroundImage {
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    backgroundImageView.image = backgroundImage;
+    [self.view insertSubview:backgroundImageView atIndex:0];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

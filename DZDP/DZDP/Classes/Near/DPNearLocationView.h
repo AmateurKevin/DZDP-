@@ -10,7 +10,7 @@
 @class CLLocation;
 @protocol DPNearLocationViewDelegate  <NSObject>
 @optional
-- (void)nearLocationViewRefreshLocation:(NSString *)Location;
+- (void)nearLocationViewRefreshLocation:(NSString *)Location With:(DPCity *)city;
 
 @end
 

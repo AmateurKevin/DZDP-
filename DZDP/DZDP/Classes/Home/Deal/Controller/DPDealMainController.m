@@ -93,10 +93,7 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
 - (void)loadNewShops:(DPFindShopsParam *)param{
     
     [self beginFullScreenAnimation];
-    
    
-
-    
     [[[DPShopsAPI alloc] initWithShopsParam:param] getShopsIfsuccess:^(NSArray *Shops) {
         
         [self.shops removeAllObjects];
@@ -107,10 +104,11 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
         [self stopFullScreenAnimation];
         [self.tableView reloadData];
         
-    } failure:nil];
+    } failure:^{
+        [self stopFullScreenAnimation];
+    }];
     
 }
-
 
 - (void)loadMoreShops:(DPFindShopsParam *)param{
     
@@ -217,8 +215,8 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
     DPLog(@"%@",shop);
     DPShopDetailController *vc = [[DPShopDetailController alloc] init];
     vc.shop = shop;
-    [self.navigationController pushViewController:vc animated:YES];
     
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark -- UITableViewDelegate

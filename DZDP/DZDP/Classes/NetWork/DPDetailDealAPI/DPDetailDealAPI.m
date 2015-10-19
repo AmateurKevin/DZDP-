@@ -30,33 +30,72 @@
              };
 }
 
-+ (void)getDetailDealWithID:(NSNumber *)dealID success:(void(^)(DPDeal *deal))success failure:(void(^)(YTKBaseRequest *request))failure{
+//+ (void)getDetailDealWithID:(NSNumber *)dealID success:(void(^)(DPDeal *deal))success failure:(void(^)(YTKBaseRequest *request))failure{
+//    
+//    [[[self alloc] initWithDealID:dealID] startWithCompletionBlockWithSuccess:^(YTKBaseRequest *request) {
+//        
+//        if ([request.responseJSONObject[@"errno"] isEqualToNumber:@(1005)]) {
+//            
+//            [SVProgressHUD showSuccessWithStatus:@"没有获取到数据" maskType:SVProgressHUDMaskTypeBlack];
+//            
+//        }
+//
+//        if ([request.responseJSONObject[@"errno"] isEqualToNumber: @(0)]){
+//            
+//            if (success) {
+//                DPDeal *deal = [MTLJSONAdapter modelOfClass:[DPDeal class] fromJSONDictionary:request.responseJSONObject[@"deal"] error:nil];
+//                success(deal);
+//            }
+//
+//            
+//        }
+//            } failure:^(YTKBaseRequest *request) {
+//        
+//        if (![request.responseJSONObject[@"errno"] isEqualToNumber: @(0)]) {
+//            
+//            if (failure) failure(request);
+//            
+//        }
+//        
+//    }];
+//}
+
+- (void)getDetailDealIfsuccess:(void(^)(DPDeal *deal))success failure:(void (^)())failure{
     
-    [[[self alloc] initWithDealID:dealID] startWithCompletionBlockWithSuccess:^(YTKBaseRequest *request) {
-        
+    [self startWithCompletionBlockWithSuccess:^(YTKBaseRequest *request) {
+      
+        // 没有错误信息才开始解析
         if ([request.responseJSONObject[@"errno"] isEqualToNumber:@(1005)]) {
             
-            [SVProgressHUD showSuccessWithStatus:@"没有获取到数据" maskType:SVProgressHUDMaskTypeBlack];
+            [SVProgressHUD showSuccessWithStatus:@"没有更多的数据了" maskType:SVProgressHUDMaskTypeBlack];
+            if (failure)  failure();
             
         }
-
+        
+        
         if ([request.responseJSONObject[@"errno"] isEqualToNumber: @(0)]){
             
             if (success) {
                 DPDeal *deal = [MTLJSONAdapter modelOfClass:[DPDeal class] fromJSONDictionary:request.responseJSONObject[@"deal"] error:nil];
                 success(deal);
             }
-
-            
+ 
         }
-            } failure:^(YTKBaseRequest *request) {
+        
+    } failure:^(YTKBaseRequest *request) {
         
         if (![request.responseJSONObject[@"errno"] isEqualToNumber: @(0)]) {
             
-            if (failure) failure(request);
+            [SVProgressHUD showErrorWithStatus:@"网络不好,请检查网络设置"];
             
         }
         
+        if(failure) failure();
+        
     }];
+    
+    
 }
+
+
 @end

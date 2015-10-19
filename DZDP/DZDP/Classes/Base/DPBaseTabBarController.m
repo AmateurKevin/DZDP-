@@ -1,32 +1,33 @@
 //
-//  YQTabBarController.m
+//  DPBaseTabBarController.m
 //  DZDP
 //
-//  Created by nickchen on 15/6/27.
-//  Copyright (c) 2015年 https://github.com/nickqiao All rights reserved.
+//  Created by nickchen on 15/10/18.
+//  Copyright © 2015年 https://github.com/nickqiao/. All rights reserved.
 //
 
-#import "YQTabBarController.h"
+#import "DPBaseTabBarController.h"
 #import "DPVoiceSearchController.h"
 #import "DPSearchResultsViewController.h"
 #import "DPSearchResultsViewController.h"
 #import "DPNavSearchController.h"
 
-@interface YQTabBarController ()<UITabBarDelegate,UITabBarControllerDelegate,DPVoiceSearchControllerDeletage,DPNavSearchControllerDelegate,DPNavSearchControllerDelegate>
+@interface DPBaseTabBarController ()<UITabBarDelegate,UITabBarControllerDelegate,DPVoiceSearchControllerDeletage,DPNavSearchControllerDelegate,DPNavSearchControllerDelegate>
 
 @property(nonatomic,strong) UINavigationController *navController;
 
-
 @end
 
-@implementation YQTabBarController
+@implementation DPBaseTabBarController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
     
-    //
+    // 初始化tabbar
     [self initTabbar];
     
+    //当前的navController
     _navController = self.viewControllers.firstObject;
     
     // 成为语音控制器的代理
@@ -34,34 +35,22 @@
     
     //  导航栏搜索控制器代理
     [DPNavSearchController sharedInstance].proxy = self;
-    
+
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark -- initTabbar
 - (void)initTabbar{
+    
+    for (UITabBarItem *item in self.tabBar.items) {
+        [item setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor orangeColor],NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
+    }
 
-    NSMutableDictionary *dictionary = @{}.mutableCopy;
-    dictionary[NSForegroundColorAttributeName] = [UIColor orangeColor];
-    
-    UITabBar *tabbar = self.tabBar;
-    UITabBarItem *tabBarItem0 = [tabbar.items objectAtIndex:0];
-    tabBarItem0.selectedImage = [[UIImage imageNamed:@"home_footbar_icon_dianping_pressed"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    [tabBarItem0 setTitleTextAttributes:dictionary forState:UIControlStateSelected];
-    
-    UITabBarItem *tabBarItem1 = [tabbar.items objectAtIndex:1];
-    tabBarItem1.selectedImage = [[UIImage imageNamed:@"home_footbar_icon_found_pressed"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    [tabBarItem1 setTitleTextAttributes:dictionary forState:UIControlStateSelected];
-    
-    UITabBarItem *tabBarItem2 = [tabbar.items objectAtIndex:2];
-    tabBarItem2.selectedImage = [[UIImage imageNamed:@"home_footbar_icon_found_pressed"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    [tabBarItem2 setTitleTextAttributes:dictionary forState:UIControlStateSelected];
-    
-    UITabBarItem *tabBarItem3 = [tabbar.items objectAtIndex:3];
-    tabBarItem3.selectedImage = [[UIImage imageNamed:@"home_footbar_icon_my_pressed"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    [tabBarItem3 setTitleTextAttributes:dictionary forState:UIControlStateSelected];
-    
     self.delegate = self;
-
     
 }
 
@@ -96,22 +85,34 @@
     
     DPSearchResultsViewController *vc =[[DPSearchResultsViewController alloc] init];
     vc.shopsParam.keyword = result;
-    vc.hidesBottomBarWhenPushed = YES;
     [_navController pushViewController:vc animated:YES];
     
 }
 
 #pragma mark -- DPNavSearchControllerDelegate
 - (void)navSearchControllerGetkeyword:(NSString *)keyword{
-
+    
     DPSearchResultsViewController *vc = [[DPSearchResultsViewController alloc] init];
-    vc.hidesBottomBarWhenPushed = YES;
+    
     vc.shopsParam.keyword = keyword;
     
     [_navController pushViewController:vc animated:YES];
-
+    
 }
 
 
+#pragma mark - View rotation
+
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
 
 @end

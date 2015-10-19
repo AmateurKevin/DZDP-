@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DPBaseTableViewController.h"
+
 @class DPDeal;
 @class DPShop;
-@interface DPDetailController : UITableViewController
+@interface DPDetailController : DPBaseTableViewController
 @property(nonatomic,strong) DPDeal *deal;
 @property(nonatomic,strong) DPShop *shop;
 @end

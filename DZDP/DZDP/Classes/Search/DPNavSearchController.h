@@ -21,6 +21,11 @@
 
 + (instancetype)sharedInstance;
 
+/**
+ *  设置搜索框的文字
+ *
+ *  @param text 将要设置的搜索文字
+ */
 - (void)setSearchBarText:(NSString *)text;
 
 @end

@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *speakLoudLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *waitLabel;
+@property (weak, nonatomic) IBOutlet UIButton *voiceBtn;
 
 @property (nonatomic, strong) NSString *pcmFilePath;//音频文件路径
 @property (nonatomic, strong) IFlySpeechRecognizer *iFlySpeechRecognizer;//不带界面的识别对象
@@ -82,6 +83,14 @@
  启动听写
  *****/
 - (IBAction)startBtnHandler:(id)sender {
+    
+//    [UIView animateWithDuration:<#(NSTimeInterval)#> animations:<#^(void)animations#> completion:<#^(BOOL finished)completion#>]
+//    
+//    [UIView animateWithDuration:0.5 animations:^{
+//        _voiceBtn.transform = CGAffineTransformMakeScale(1.3, 1.3);
+//        //_voiceBtn.alpha = 0;
+//        
+//    }];
     
     DPLog(@"%s[IN]",__func__);
     

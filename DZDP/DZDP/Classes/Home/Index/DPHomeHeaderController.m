@@ -69,7 +69,7 @@ static NSUInteger const RowCount = 4;
     if ([model.cat_id  isEqual: @(-1)]) {
         
         DPCategoryMenuController *vc = [[DPCategoryMenuController alloc] init];
-        vc.hidesBottomBarWhenPushed = YES;
+        
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }
@@ -86,7 +86,7 @@ static NSUInteger const RowCount = 4;
     
     DPDealMainController *vc = [[DPDealMainController alloc] init];
     vc.shopsParam = param;
-    vc.hidesBottomBarWhenPushed = YES;
+   
     [self.navigationController pushViewController:vc animated:YES];
     
 }

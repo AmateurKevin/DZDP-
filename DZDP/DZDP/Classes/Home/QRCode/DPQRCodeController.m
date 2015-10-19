@@ -10,7 +10,9 @@
 #import <AVFoundation/AVFoundation.h>
 #import "DPWebViewController.h"
 @interface DPQRCodeController ()<AVCaptureMetadataOutputObjectsDelegate>
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scanLineTop;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *containerHeight;
 
 @property(nonatomic,strong) AVCaptureSession *captureSession;
@@ -20,7 +22,7 @@
 // 边框涂层
 @property(nonatomic,strong) CALayer *drawLayer;
 @property(nonatomic,strong) AVCaptureMetadataOutput *output;
-//@property(nonatomic,strong) AVCaptureMetadataInput *input;
+
 @property(nonatomic,strong) AVCaptureDeviceInput *inputDevice;
 
 

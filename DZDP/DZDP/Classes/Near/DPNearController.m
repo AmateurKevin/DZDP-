@@ -134,7 +134,11 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
         [self stopFullScreenAnimation];
         [self.tableView reloadData];
         
-    } failure:nil];
+        [self stopFullScreenAnimation];
+
+    } failure:^{
+        [self stopFullScreenAnimation];
+    }];
     
 }
 
@@ -352,9 +356,10 @@ static NSString * const separatorCellReuseIdentifier = @"separator";
 }
 
 #pragma mark -- DPNearLocationViewDelegate
-- (void)nearLocationViewRefreshLocation:(NSString *)Location{
+- (void)nearLocationViewRefreshLocation:(NSString *)Location With:(DPCity *)city{
     
     self.shopsParam.location = Location;
+    self.shopsParam.city_id = city.city_id;
     [self loadNewShops:self.shopsParam];
 
 }

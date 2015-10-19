@@ -87,20 +87,21 @@
     return self;
 }
 
-- (void)getShopsIfsuccess:(void(^)(NSArray* shops))success failure:(void(^)(YTKBaseRequest*request))failure{
-    
-    //[SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
-    
+
+
+- (void)getShopsIfsuccess:(void(^)(NSArray* shops))success failure:(void (^)())failure{
+   
     [self startWithCompletionBlockWithSuccess:^(YTKBaseRequest *request) {
         DPLog(@"%@",request.responseString);
         // 没有错误信息才开始解析 ,0代表成功
         
+        // 没有错误信息才开始解析
         if ([request.responseJSONObject[@"errno"] isEqualToNumber:@(1005)]) {
             
-                [SVProgressHUD showSuccessWithStatus:@"没有获取到数据" maskType:SVProgressHUDMaskTypeBlack];
+            [SVProgressHUD showSuccessWithStatus:@"没有更多的数据了" maskType:SVProgressHUDMaskTypeBlack];
+            if (failure)  failure();
             
         }
-        
         
         if ([request.responseJSONObject[@"errno"] isEqualToNumber: @(0)]) {
             
@@ -111,8 +112,6 @@
                     NSArray *shops = [MTLJSONAdapter modelsOfClass:[DPShop class] fromJSONArray:request.responseJSONObject[@"data"][@"shops"] error:nil];
                     
                     if (shops) {
-                        
-                        //[SVProgressHUD dismiss];
                         success(shops);
                     }
                 }
@@ -126,9 +125,8 @@
             
         }
         
-        if (failure) {
-            failure(request);
-        }
+        if (failure) failure();
+       
         
     }];
 

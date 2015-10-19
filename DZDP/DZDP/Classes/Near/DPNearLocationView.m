@@ -27,30 +27,32 @@ static NSTimeInterval  const LocationTimeOut = 10;
     
     
     [self refreshLocation];
-    
-    
-    
+   
 }
 
 - (void)refreshLocation{
     [[INTULocationManager sharedInstance] requestLocationWithDesiredAccuracy:INTULocationAccuracyCity timeout:LocationTimeOut block:^(CLLocation *currentLocation, INTULocationAccuracy achievedAccuracy, INTULocationStatus status) {
         
-        
-        [DPGeocoderTool getFullAddressFromLocation:currentLocation andExecute:^(NSString *address) {
-            self.locationLabel.text = address;
-        }];
-        
-        if ([self.delegate respondsToSelector:@selector(nearLocationViewRefreshLocation:)]) {
-            NSString *location = [NSString stringWithFormat:@"%f,%f",currentLocation.coordinate.longitude,currentLocation.coordinate.latitude];
+        [DPGeocoderTool getCityFromLocation:currentLocation andExecuteBlock:^(DPCity *city, NSString *address,NSString *locationStr) {
             
-            [self.delegate nearLocationViewRefreshLocation:location];
-        }
+            self.locationLabel.text = address;
+
+            if ([self.delegate respondsToSelector:@selector(nearLocationViewRefreshLocation:With:)]) {
+
+                [self.delegate nearLocationViewRefreshLocation:locationStr With:city];
+            }
+
+            
+        }];
+       
+        
         
     }];
 }
 
 - (IBAction)refreshBtnClicked:(id)sender {
     
+    self.locationLabel.text = @"正在定位中";
     [self refreshLocation];
 }
 

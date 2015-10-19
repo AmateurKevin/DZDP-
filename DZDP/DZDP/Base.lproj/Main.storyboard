@@ -49,6 +49,7 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="76t-eP-RoW">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="Aii-BK-XmJ">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aY5-UX-UK3">
                                 <rect key="frame" x="20" y="11" width="66" height="22"/>
@@ -62,6 +63,11 @@
                                 </connections>
                             </button>
                         </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="OVZ-gs-HAc">
+                            <rect key="frame" x="123.5" y="5.5" width="191" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <barButtonItem key="rightBarButtonItem" image="oversea_navibar_icon_qr" id="WkG-rR-syh">
                             <connections>
                                 <action selector="QRCodeBtnClicked:" destination="eVg-Bz-USr" id="kCq-dJ-Y4L"/>
@@ -293,12 +299,12 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fop-21-w0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1199" y="46"/>
+            <point key="canvasLocation" x="-1327" y="14"/>
         </scene>
         <!--附近-->
         <scene sceneID="zkc-mY-ydJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aXt-4c-mOq" customClass="YQNavigationController" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aXt-4c-mOq" customClass="DPBaseNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="附近" image="home_footbar_icon_found" id="1YX-hM-hmn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Ii-hR-Mq2">
@@ -317,7 +323,7 @@
         <!--首页-->
         <scene sceneID="K9E-O0-6QC">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XQb-t4-ogb" customClass="YQNavigationController" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XQb-t4-ogb" customClass="DPBaseNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="首页" image="home_footbar_icon_dianping" id="e8f-k9-HDm"/>
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -342,7 +348,7 @@
         <!--发现-->
         <scene sceneID="drg-sU-gob">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zmf-tQ-poS" customClass="YQNavigationController" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zmf-tQ-poS" customClass="DPBaseNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="发现" image="home_footbar_icon_found" id="jFq-SN-fQ7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="biN-3x-l0H">
@@ -380,7 +386,7 @@
         <!--语音搜索-->
         <scene sceneID="w60-Ax-9GA">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3k7-CO-EgU" customClass="YQNavigationController" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3k7-CO-EgU" customClass="DPBaseNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="2" title="语音搜索" id="jMQ-2y-q80"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Pg-K2-b96">
@@ -394,7 +400,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qdt-ZW-Cnn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1911" y="134"/>
+            <point key="canvasLocation" x="-1911" y="678"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="kEj-Fq-5Lx">
@@ -412,7 +418,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UnJ-84-r29" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2394" y="207"/>
+            <point key="canvasLocation" x="-2450" y="767"/>
         </scene>
     </scenes>
     <resources>

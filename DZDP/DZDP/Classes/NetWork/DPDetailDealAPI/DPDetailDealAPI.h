@@ -12,6 +12,6 @@
 
 - (id)initWithDealID:(NSNumber *)deal_id;
 
-+ (void)getDetailDealWithID:(NSNumber *)dealID success:(void(^)(DPDeal * deal))success failure:(void(^)(YTKBaseRequest *request))failure;
+- (void)getDetailDealIfsuccess:(void(^)(DPDeal *deal))success failure:(void (^)())failure;
 
 @end

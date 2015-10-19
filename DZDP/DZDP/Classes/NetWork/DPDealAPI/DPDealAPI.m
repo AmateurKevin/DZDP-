@@ -81,14 +81,16 @@
              };
 }
 
-- (void)getDealsIfsuccess:(void(^)(NSArray* deals))success failure:(void(^)(YTKBaseRequest *request))failure{
+
+- (void)getDealsIfsuccess:(void (^)(NSArray *))success failure:(void (^)())failure{
+   
     [self startWithCompletionBlockWithSuccess:^(YTKBaseRequest *request) {
-        //DPLog(@"%@",request.responseString);
-        // 没有错误信息才开始解析
+        
         if ([request.responseJSONObject[@"errno"] isEqualToNumber:@(1005)]) {
             
-            [SVProgressHUD showSuccessWithStatus:@"没有获取到数据" maskType:SVProgressHUDMaskTypeBlack];
-            
+            [SVProgressHUD showSuccessWithStatus:@"没有更多的数据了" maskType:SVProgressHUDMaskTypeBlack];
+            if (failure)  failure();
+        
         }
         
         
@@ -97,31 +99,32 @@
             if (success) {
                 
                 if (request.responseJSONObject[@"data"][@"deals"] != [NSNull null]) {
-                  
+                    
                     NSArray *deals = [MTLJSONAdapter modelsOfClass:[DPDeal class] fromJSONArray:request.responseJSONObject[@"data"][@"deals"] error:nil];
                     
                     if (deals) {
                         
-                        [SVProgressHUD dismiss];
-
                         success(deals);
                     }
                 }
-
+                
+            }
         }
-    }
     } failure:^(YTKBaseRequest *request) {
         
         if (![request.responseJSONObject[@"errno"] isEqualToNumber: @(0)]) {
             
             [SVProgressHUD showErrorWithStatus:@"网络不好,请检查网络设置"];
-
+            
         }
         
-        if(failure) failure(request);
+        if(failure) failure();
         
     }];
+
+    
 }
+
 
 
 @end

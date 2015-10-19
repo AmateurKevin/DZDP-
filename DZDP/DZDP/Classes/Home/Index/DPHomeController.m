@@ -16,7 +16,7 @@
 #import "DPDetailController.h"
 #import "DPFindShopsParam.h"
 #import "DPShop.h"
-
+#import "DPNavSearchController.h"
 static NSString * const kRushBuyIdentifier = @"rushBuyCell";
 
 @interface DPHomeController ()
@@ -43,6 +43,8 @@ static NSString * const kRushBuyIdentifier = @"rushBuyCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //self.navigationItem.titleView.tintColor = [UIColor redColor];
     
     // 初始化导航栏
     [self initNav];
@@ -103,12 +105,37 @@ static NSString * const kRushBuyIdentifier = @"rushBuyCell";
         [self.cityBtn setTitle:@"北京市" forState:UIControlStateNormal];
     }
     
-//    UISearchBar *searchBar = [[UISearchBar alloc] init];
-//    searchBar.placeholder = @"搜索商家或地点";
-//    self.searchBar = searchBar;
-//    searchBar.delegate = self;
-//    self.navigationItem.titleView = searchBar;
+    //搜索框
+    UIImageView *searchView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 25)];
+        //searchView.image = [UIImage imageNamed:@"searcBbar"];
+    searchView.backgroundColor = RGBA(20, 20, 20, 0.3);
+    searchView.layer.masksToBounds = YES;
+    searchView.layer.cornerRadius = 12;
+    self.navigationItem.titleView = searchView;
     
+    searchView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *recognizer =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(searchBarTaped)];
+    [searchView addGestureRecognizer:recognizer];
+    
+    //
+    UIImageView *searchImage = [[UIImageView alloc] initWithFrame:CGRectMake(5, 3, 15, 15)];
+    
+    [searchImage setImage:[UIImage imageNamed:@"searchBar_Icon_Search"]];
+    [searchView addSubview:searchImage];
+    
+    UILabel *placeHolderLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 0, 150, 25)];
+    placeHolderLabel.font = [UIFont boldSystemFontOfSize:13];
+        placeHolderLabel.text = @"请输入商家或地点";
+    //placeHolderLabel.text = @"鲁总专享版";
+    placeHolderLabel.textColor = [UIColor whiteColor];
+    [searchView addSubview:placeHolderLabel];
+    
+}
+
+- (void)searchBarTaped{
+    DPNavSearchController *vc = [DPNavSearchController sharedInstance];
+    
+    [self presentViewController:vc animated:NO completion:nil];
 }
 
 - (void)initAttributes{
@@ -130,7 +157,7 @@ static NSString * const kRushBuyIdentifier = @"rushBuyCell";
                 
                 NSString *location = [NSString stringWithFormat:@"%f,%f",currentLocation.coordinate.longitude,currentLocation.coordinate.latitude];
                 
-                [DPGeocoderTool getCityFromLocation:currentLocation andExecuteBlock:^(DPCity *city) {
+                [DPGeocoderTool getCityFromLocation:currentLocation andExecuteBlock:^(DPCity *city,NSString *address,NSString *locationStr) {
                     
                     // 定位名称与当前使用城市不符合,弹出切换城市的提醒
                     if (![UserDefaulsCityName isEqualToString:city.city_name]) {
@@ -284,7 +311,6 @@ static NSString * const kRushBuyIdentifier = @"rushBuyCell";
     DPDetailController *detailVc = [[DPDetailController alloc] initWithStyle:UITableViewStyleGrouped];
     detailVc.deal = self.deals[indexPath.row];
     detailVc.shop = self.shops[indexPath.row];
-    detailVc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detailVc animated:YES];
 }
 

@@ -51,7 +51,7 @@ static NSString * const reuseIdentifier = @"cityHeader";
         
        
         
-        [DPGeocoderTool getCityFromLocation:currentLocation andExecuteBlock:^(DPCity *city) {
+        [DPGeocoderTool getCityFromLocation:currentLocation andExecuteBlock:^(DPCity *city,NSString *address,NSString *locationStr) {
             
             _locationCity =city;
             dispatch_async(dispatch_get_main_queue(), ^{
